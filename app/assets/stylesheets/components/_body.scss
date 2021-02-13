@@ -4,10 +4,14 @@ h1 {
 }
 
 // Glassmorphism effect
+
+.background {
+  width: 100%;
+  height: 100%;
+}
+
 .glass {
   color: #ecf0f1;
-  border-radius: 8px;
-  padding: 20px;
   background: rgba( 255, 255, 255, 0.2 );
   border: solid 1px rgba(255,255,255,0.3);
   backgroud-clip: padding-box;
