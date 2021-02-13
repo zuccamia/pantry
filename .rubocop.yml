@@ -1,14 +1,15 @@
 AllCops:
   NewCops: enable
   Exclude:
-    - 'bin/**/*'
-    - 'db/**/*'
-    - 'config/**/*'
-    - 'node_modules/**/*'
-    - 'script/**/*'
-    - 'support/**/*'
-    - 'tmp/**/*'
-    - 'test/**/*'
+    - "bin/**/*"
+    - "db/**/*"
+    - "config/**/*"
+    - "node_modules/**/*"
+    - "script/**/*"
+    - "support/**/*"
+    - "tmp/**/*"
+    - "test/**/*"
+  SuggestExtensions: false
 
 Style/ConditionalAssignment:
   Enabled: false
