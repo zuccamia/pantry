@@ -1,3 +1,4 @@
+
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
@@ -9,4 +10,13 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar-brand-name h4 {
+  margin-bottom: 0;
+}
+
+
+.navbar-light .navbar-toggler {
+  border:none;
 }
