@@ -10,7 +10,7 @@ class ItemAmountsController < ApplicationController
   def update
     @item_amount = ItemAmount.find(params[:id])
     @item_amount.update(item_amount_params)
-    redirect_to item_amount_path(@item_amount)
+    redirect_to item_amounts_path
   end
 
   private
