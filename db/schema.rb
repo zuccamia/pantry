@@ -10,10 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_13_023531) do
+ActiveRecord::Schema.define(version: 2021_02_13_052245) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "item_amounts", force: :cascade do |t|
+    t.string "description"
+    t.bigint "item_id", null: false
+    t.date "expiry_date"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["item_id"], name: "index_item_amounts_on_item_id"
+    t.index ["user_id"], name: "index_item_amounts_on_user_id"
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string "item_name"
+    t.string "category"
+    t.string "sub_category"
+    t.text "notes"
+    t.integer "pantry_max"
+    t.string "pantry_metric"
+    t.integer "refrigerate_max"
+    t.string "refrigerate_metric"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "recipes", force: :cascade do |t|
     t.string "recipe_name"
@@ -37,5 +61,7 @@ ActiveRecord::Schema.define(version: 2021_02_13_023531) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "item_amounts", "items"
+  add_foreign_key "item_amounts", "users"
   add_foreign_key "recipes", "users"
 end
