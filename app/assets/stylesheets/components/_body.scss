@@ -1,0 +1,34 @@
+// fonts
+h1 {
+  font-size: 24px;
+}
+
+h2
+
+h3 {
+
+}
+
+h4
+
+h5 {
+  font-size: 20px;
+}
+
+h6 {
+  font-size: 16px;
+}
+
+p {
+  font-size: 8px;
+}
+
+// Glassmorphism effect
+
+.glass {
+  color: #ecf0f1;
+  background: rgba( 255, 255, 255, 0.2 );
+  border: solid 1px rgba(255,255,255,0.3);
+  backgroud-clip: padding-box;
+  backdrop-filter: blur(10px );
+}
