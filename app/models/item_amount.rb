@@ -9,7 +9,7 @@ class ItemAmount < ApplicationRecord
     return if expiry_date.blank?
 
     if expiry_date < Date.today
-      errors.add(:expiry_date, "cannot be before today. Are you sure to add this to the pantry?")
+      errors.add(:expiry_date, "cannot be before today. Are you sure you want to add this to the pantry?")
     end
   end
 end
