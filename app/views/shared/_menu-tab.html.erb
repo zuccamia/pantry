@@ -1,14 +1,12 @@
-<div class="container">
-  <ul class="nav nav-tabs bootstrap-tabs" id="myTab" role="tablist">
-    <li class="nav-item" role="presentation">
-      <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Pantry</a>
-    </li>
-    <li class="nav-item" role="presentation">
-      <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Recipes</a>
-    </li>
-  </ul>
-  <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">link to pantry index</div>
-    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">link to recipe index</div>
-  </div>
+<ul class="nav nav-tabs bootstrap-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Pantry</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Recipes</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"><%= render '/shared/pantry-category-card' %></div>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">link to recipe index</div>
 </div>
