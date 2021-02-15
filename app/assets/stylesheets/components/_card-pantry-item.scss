@@ -1,0 +1,50 @@
+// pantry item card - accordion bootstrap overwrite
+
+.card-body {
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 20px;
+}
+
+// custom css: card-pantry-item
+.card-pantry-item {
+  border-radius: 10px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+// custom css: pantry-item-name
+.card-pantry-item-name {
+  background-color: $gray-green;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px 8px 16px 24px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-right: none;
+  border-radius: 20px 0 0 20px;
+  p {
+    margin: 0px;
+    font-family: $body-font;
+  }
+}
+
+// custom css: pantry-item-days
+.card-pantry-item-amount {
+  background-color: $light-green;
+  color: black;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px 16px 16px 16px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0 20px 20px 0;
+  width: 100%;
+  p {
+    margin: 0px;
+    font-family: $body-font;
+  }
+}
+
