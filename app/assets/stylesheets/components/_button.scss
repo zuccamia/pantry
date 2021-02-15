@@ -1,0 +1,85 @@
+// button with solid color
+.button-solid {
+  color: $light-blue;
+  font-family: $headers-font;
+  text-align: center;
+  border: 1px solid $light-blue;
+  padding: 8px 8px;
+  border-radius: 30px;
+  font-weight: bold;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+
+  p {
+    font-size: 16px;
+    margin: 0;
+  }
+}
+
+.button-solid:hover {
+  opacity: 1;
+}
+
+
+// button with outline, white background
+.button-outline {
+  color: white;
+  font-family: $headers-font;
+  text-align: center;
+  padding: 8px 8px;
+  border-radius: 30px;
+  background: $light-blue;
+  transition: background 0.3s ease;
+    p {
+    font-size: 16px;
+    margin: 0;
+  }
+}
+
+.button-outline:hover {
+  background: $light-blue;
+  color: white;
+}
+
+// delete badge, "x",
+.badge-delete {
+  p{
+  font-size: 20px;
+  color: $dark-gray;
+  }
+}
+
+.badge-delete:hover {
+  opacity: 1;
+}
+
+// button-plus-minus
+.button-plus-minus {
+  color: white;
+  font-family: $headers-font;
+  text-align: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  padding: 4px;
+  background: $light-blue;
+  transition: background 0.3s ease;
+    p {
+    font-size: 13px;
+    color: white;
+    margin: 0;
+    font-weight: ligher;
+  }
+}
+
+// tags
+// 1.use bootstrap: badge badge-pill badge-{input color below}
+// $primary:   - $light-blue;
+// $success:   - $leaf;
+// $info:      - $alert-yello;
+
+// 2.then overwrite the font-family to: $headers-font
+
+
+
+
