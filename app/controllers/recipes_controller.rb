@@ -10,4 +10,10 @@ class RecipesController < ApplicationController
   def new
     @recipe = Recipe.new
   end
+
+  private
+
+  def recipe_params
+    params.require(:recipe).permit(:tag_list, :recipe_name)
+  end
 end
