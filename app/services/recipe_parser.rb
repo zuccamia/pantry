@@ -20,28 +20,13 @@ class RecipeParser
 
   def self.import(recipe_id)
     # save chosen recipe
-    recipe = fetch_search_results.select { |recipe| recipe[:recipe_id] == recipe_id }.first
+    recipe = recipe_list.select { |result| result[:recipe_id] == recipe_id }.first
     recipe = Recipe.new(recipe_name: recipe[:recipe_name])
     recipe.user = current_user
     recipe.save
 
     # add recipe amounts to recipe
-    ingredient_url = "https://api.spoonacular.com/recipes/#{recipe_id}/ingredientWidget.json?apiKey=#{api_key}"
-    ingredients = JSON.parse(URI.open(ingredient_url).read)['ingredients']
-    ingredients.each do |ingredient|
-      if Item.exist?(item_name: ingredient['name'].capitalize)
-        item = Item.where(item_name: ingredient['name'].capitalize)
-      else
-        item = Item.new(item_name: ingredient['name'].capitalize)
-        tmp_category = Category.new(main_category: 'Undecided')
-        item.category = tmp_category
-        item.save
-      end
-      recipe_amount = RecipeAmount.new(description: "#{ingredient['amount']['metric']['value']} #{ingredient['amount']['metric']['unit']}")
-      recipe_amount.item = item
-      recipe_amount.recipe = recipe
-      recipe_amount.save
-    end
+    add_ingredients_to(recipe)
   end
 
   private
@@ -59,10 +44,30 @@ class RecipeParser
     end
   end
 
+  def add_ingredients_to(recipe)
+    ingredient_url = "https://api.spoonacular.com/recipes/#{recipe_id}/ingredientWidget.json?apiKey=#{api_key}"
+    ingredients = JSON.parse(URI.open(ingredient_url).read)['ingredients']
+    ingredients.each do |ingredient|
+      if Item.exist?(item_name: ingredient['name'].capitalize)
+        item = Item.where(item_name: ingredient['name'].capitalize)
+      else
+        item = Item.new(item_name: ingredient['name'].capitalize)
+        tmp_category = Category.create(main_category: 'Undecided')
+        item.category = tmp_category
+        item.save
+      end
+      recipe_amount = RecipeAmount.new(description: "#{ingredient['amount']['metric']['value']} #{ingredient['amount']['metric']['unit']}")
+      recipe_amount.item = item
+      recipe_amount.recipe = recipe
+      recipe_amount.save
+      recipe.tag_list.add(item.item_name)
+    end
+  end
+
   def api_key
     ENV['SPOONACULAR']
   end
 end
 
 id = (RecipeParser.new(['apple', 'butter']).recipe_list[0][:recipe_id])
-puts RecipeParser.ingredients_list(id)
+p RecipeParser.import(id)
