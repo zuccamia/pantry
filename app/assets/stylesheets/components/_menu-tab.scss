@@ -5,7 +5,7 @@
   font-weight: bold;
   margin-bottom: 16px;
   color: $light-blue;
-  border-bottom: 2px solid $light-blue;
+  border-bottom: 1px solid $light-blue;
   border-top: none;
   border-right: none;
   border-left: none;
@@ -27,6 +27,22 @@
 }
 
 .nav-link {
-  padding: 8px 2px;
+  padding: 8px 1px;
   margin: 0 16px;
+}
+
+
+#recipe-tab {
+  color: $light-leaf;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+}
+
+#recipe-tab.active {
+  color: $light-leaf;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid $light-leaf;
 }
