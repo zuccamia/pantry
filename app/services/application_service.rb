@@ -3,6 +3,7 @@ class ApplicationService
   require 'json'
   require 'dotenv'
   Dotenv.load
+  require 'active_record'
   
   def self.call(*args, &block)
     new(*args, &block).call

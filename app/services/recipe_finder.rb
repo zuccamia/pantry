@@ -2,16 +2,17 @@ require_relative './application_service'
 
 class RecipeFinder < ApplicationService
 
-  def initialize(tags)
-    @tags = tags
+  def initialize(tag)
+    @tag = tag
   end
 
   def call
     fetch_search_results.map do |recipe|
       {
-        recipe_id: recipe['id'],
-        recipe_name: recipe['title'],
-        recipe_img_url: recipe['image']
+        id: recipe['id'],
+        name: recipe['title'],
+        summary: get_summary(recipe['id']),
+        img_url: recipe['image']
       }
     end
   end
@@ -19,8 +20,8 @@ class RecipeFinder < ApplicationService
   private
 
   def fetch_search_results
-    result_number = 10
-    search_url = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=#{@tags}&number=#{result_number}&apiKey=#{api_key}"
+    result_number = 5
+    search_url = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=#{@tag}&number=#{result_number}&apiKey=#{api_key}"
     results = JSON.parse(URI.open(search_url).read)
 
     # filter results with instructions only
@@ -29,5 +30,10 @@ class RecipeFinder < ApplicationService
       instructions = JSON.parse(URI.open(instruction_url).read)
       instructions.any?
     end
+  end
+
+  def get_summary(recipe_id)
+    summary_url = "https://api.spoonacular.com/recipes/#{recipe_id}/summary?apiKey=#{api_key}"
+    summary = JSON.parse(URI.open(summary_url).read)['summary']
   end
 end
