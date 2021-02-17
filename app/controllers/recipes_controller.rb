@@ -12,10 +12,11 @@ class RecipesController < ApplicationController
   end
 
   def search
-    @recipes = RecipeParser.new(params[:tags]).recipe_list
+    @recipes = RecipeFinder.call(params[:tags])
+    # return an array of recipe hashes with Spoonacular ID, recipe title and image url as keys
   end
 
   def import
-    RecipeParser.import(params[:recipe_id])
+    RecipeParser.import(@recipes, params[:recipe_id])
   end
 end

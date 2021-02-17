@@ -1,4 +1,4 @@
-class RecipeParser
+class RecipeParser < ApplicationService
   require 'open-uri'
   require 'json'
   require 'dotenv'
@@ -8,43 +8,24 @@ class RecipeParser
     @tags = tags
   end
 
-  def recipe_list
-    fetch_search_results.map do |recipe|
-      {
-        recipe_id: recipe['id'],
-        recipe_name: recipe['title'],
-        recipe_img_url: recipe['image']
-      }
-    end
-  end
+  
 
-  def self.import(recipe_id)
-    # save chosen recipe
-    recipe = recipe_list.select { |result| result[:recipe_id] == recipe_id }.first
-    recipe = Recipe.new(recipe_name: recipe[:recipe_name])
+  def self.import(recipe_list, recipe_id)
+    # user choose a recipe and send params recipe_id to recipes#import
+    # get title and image of the recipe from search_recipes (to avoid making additional API calls)
+    # create a new Recipe object to save chosen recipe
+    user_choice = recipe_list.select { |result| result[:recipe_id] == recipe_id }.first
+    recipe = ApplicationRecord::Recipe.new(recipe_name: user_choice[:recipe_name])
     recipe.user = current_user
     recipe.save
 
     # add recipe amounts to recipe
-    add_ingredients_to(recipe)
+    add_ingredients_to(recipe, recipe_id)
   end
 
   private
 
-  def fetch_search_results
-    result_number = 10
-    search_url = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=#{@tags}&number=#{result_number}&apiKey=#{api_key}"
-    results = JSON.parse(URI.open(search_url).read)
-
-    # filter results with instructions only
-    results.filter do |recipe|
-      instruction_url = "https://api.spoonacular.com/recipes/#{recipe['id']}/analyzedInstructions?apiKey=#{api_key}"
-      instructions = JSON.parse(URI.open(instruction_url).read)
-      instructions.any?
-    end
-  end
-
-  def add_ingredients_to(recipe)
+  def add_ingredients_to(recipe, recipe_id)
     ingredient_url = "https://api.spoonacular.com/recipes/#{recipe_id}/ingredientWidget.json?apiKey=#{api_key}"
     ingredients = JSON.parse(URI.open(ingredient_url).read)['ingredients']
     ingredients.each do |ingredient|
@@ -64,10 +45,24 @@ class RecipeParser
     end
   end
 
+  def fetch_search_results
+    result_number = 10
+    search_url = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=#{@tags}&number=#{result_number}&apiKey=#{api_key}"
+    results = JSON.parse(URI.open(search_url).read)
+
+    # filter results with instructions only
+    results.filter do |recipe|
+      instruction_url = "https://api.spoonacular.com/recipes/#{recipe['id']}/analyzedInstructions?apiKey=#{api_key}"
+      instructions = JSON.parse(URI.open(instruction_url).read)
+      instructions.any?
+    end
+  end
+
   def api_key
     ENV['SPOONACULAR']
   end
 end
 
-id = (RecipeParser.new(['apple', 'butter']).recipe_list[0][:recipe_id])
-p RecipeParser.import(id)
+recipes = RecipeParser.new(['apple', 'butter']).search_recipes
+id = (RecipeParser.new(['apple', 'butter']).search_recipes[0][:recipe_id])
+p RecipeParser.import(recipes, id)
