@@ -4,4 +4,7 @@ class Recipe < ApplicationRecord
   has_many :items, through: :recipe_amounts
 
   validates :recipe_name, presence: true, length: { minimum: 5 }
+  acts_as_taggable_on :tags
+
+  has_one_attached :photo
 end

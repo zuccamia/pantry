@@ -29,5 +29,9 @@ class RecipesController < ApplicationController
     RecipeImporter.call(@recipe, @user)   
     
     redirect_to recipes_path    # to see the imported recipe added to my recipes
+  private
+
+  def recipe_params
+    params.require(:recipe).permit(:tag_list, :recipe_name, :photo)
   end
 end
