@@ -1,1 +1,9 @@
-<h1>Recipe</h1>
+<ul class="nav nav-tabs bootstrap-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="pantry-tab" data-bs-toggle="tab" href="#pantry" role="tab" aria-controls="pantry" aria-selected="false">Pantry</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link active" id="recipe-tab" data-bs-toggle="tab" href="#recipes" role="tab" aria-controls="recipe" aria-selected="true">Recipes</a>
+  </li>
+</ul>
+<%= render 'shared/recipe-show-content' %>
