@@ -1,16 +1,11 @@
-<div class="recipe-card-grid">
+<div class="recipe-cards-grid">
   <% @recipes.each do |recipe| %>
-    <div class="recipe-card">
-      <div class="recipe-card-photo">
-        <%= image_tag "sushi.jpg", class: "recipe-card-photo" %>
+    <div class="recipe-cards">
+      <div class="recipe-cards-photo">
+        <%= image_tag "sushi.jpg", class: "recipe-cards-photo" %>
       </div>
-      <div class="recipe-card-body">
-        <div class="recipe-card-title">
-          <h6><%= recipe.recipe_name.capitalize %></h6>
-        </div>
-        <div class="recipe-card-edit">
-          <p><i class="far fa-edit"></i></p>
-        </div>
+      <div class="recipe-cards-body">
+        <h6 class="recipe-cards-title"><%= link_to recipe.recipe_name.capitalize, recipe_path(recipe) %></h6>
       </div>
     </div>
   <% end %>
