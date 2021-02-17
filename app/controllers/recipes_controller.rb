@@ -29,6 +29,8 @@ class RecipesController < ApplicationController
     RecipeImporter.call(@recipe, @user)   
     
     redirect_to recipes_path    # to see the imported recipe added to my recipes
+  end
+
   private
 
   def recipe_params

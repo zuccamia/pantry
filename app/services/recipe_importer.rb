@@ -24,6 +24,8 @@ class RecipeImporter < ApplicationService
       recipe_amount.item = item
       recipe_amount.recipe = recipe
       recipe_amount.save
+      recipe.tag_list.add(item.item_name)
+      recipe.save
     end
   end
 
