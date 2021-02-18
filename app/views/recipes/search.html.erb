@@ -1,5 +1,4 @@
 <%# added for testing purpose, to be restructured and styled later  %>
-
 <h1>Top Search Results</h1>
 <% @recipes.each do |recipe| %>
   <%= link_to view_recipe_path(recipe_id: recipe[:id]) do %>
