@@ -1,6 +1,7 @@
 class ItemAmountsController < ApplicationController
   def index
     @item_amounts = ItemAmount.all
+    @recipes = Recipe.all
   end
 
   def edit

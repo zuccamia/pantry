@@ -24,7 +24,7 @@ class RecipesController < ApplicationController
   def import
     @recipe = RecipeParser.call(params[:recipe_id])
     @user = current_user        # unable to use current_user in service object so need to assign to @user variable here
-    
+  
     # create a new Recipe object and its recipe amounts when user clicks on `Save` after viewing a recipe
     RecipeImporter.call(@recipe, @user)   
     
