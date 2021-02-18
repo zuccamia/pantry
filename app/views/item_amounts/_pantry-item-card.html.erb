@@ -1,10 +1,12 @@
 <div class="card-pantry-item">
   <div class="card-pantry-item-name">
-    <h6>Milk</h6>
-    <p>Expires in 5 day(s)</p>
+    <% @items.each do |item| %>
+      <h6><%= @item.item_name %></h6>
+    <% end %>
+    <p>Expires in <%= @item_amounts.expiry_date %> day(s)</p>
   </div>
   <div class="card-pantry-item-amount">
-    <h5>1</h5>
+    <h5><%= @item_amounts.description.to_s %></h5>
     <p>left</p>
   </div>
 </div>
