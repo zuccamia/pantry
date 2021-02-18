@@ -12,4 +12,9 @@ Rails.application.routes.draw do
   end
 
   resources :recipe_amounts, only: [:destroy]
+
+  # routes for recipe API interaction
+  get '/search', to: 'recipes#search', as: 'search_recipe'
+  get '/view', to: 'recipes#view', as: 'view_recipe'
+  get '/save', to: 'recipes#import', as: 'import_recipe'
 end
