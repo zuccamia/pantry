@@ -1,6 +1,6 @@
 <div class="card-pantry-item">
   <div class="card-pantry-item-name">
-    <% @categories.item.each do |item| %>
+    <% @category.items.each do |item| %>
       <h6><%= @item.item_name %></h6>
     <% end %>
     <p>Expires in <%= @item_amounts.expiry_date %> day(s)</p>
