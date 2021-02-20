@@ -1,0 +1,14 @@
+<div class="card-pantry-item">
+  <div class="card-pantry-item-name">
+    <% @item_amounts.each do |item_amount| %>
+      <h6><%= item_amount.item.item_name %></h6>
+      <p>Expires on <%= item_amounts.expiry_date %> day(s)</p>
+    <% end %>
+  </div>
+  <div class="card-pantry-item-amount">
+    <% @item_amounts.each do |item_amount| %>
+      <h5><%= @item_amount.description.to_s %></h5>
+      <p>left</p>
+    <% end %>
+  </div>
+</div>

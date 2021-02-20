@@ -31,16 +31,50 @@ def seed_items
   end
 end
 
-puts "Cleaning database..."
-Item.destroy_all
-Category.destroy_all
-ItemAmount.destroy_all
-Recipe.destroy_all
-RecipeAmount.destroy_all
+def seed_item_amounts
+  becky = User.new(first_name: "Rebecca", last_name: "Windsor")
+  becky.email = "becky@test.com"
+  becky.password = "test123"
+  becky.save
+  puts "Create user #{becky.first_name}"
 
-puts "Seeding database..."
-seed_categories
-puts "Created #{Category.all.count} categories"
+  3.times do
+    item_amount = ItemAmount.new(description: "#{[20, 50, 70, 100, 150, 200].sample} gram")
+    item_amount.item = Category.find(6).items.sample
+    item_amount.user = becky
+    item_amount.expiry_date = Date.today.next_year([1, 2, 3].sample)
+    item_amount.save
+  end
 
-seed_items
-puts "Created #{Item.all.count} items"
+  3.times do
+    item_amount = ItemAmount.new(description: "#{(2..7).to_a.sample} cups")
+    item_amount.item = Category.find(19).items.sample
+    item_amount.user = becky
+    item_amount.save
+  end
+
+  2.times do
+    item_amount = ItemAmount.new(description: "#{(2..10).to_a.sample} fruits")
+    item_amount.item = Category.find(18).items.sample
+    item_amount.user = becky
+    item_amount.save
+  end
+end
+
+# puts "Cleaning database..."
+# Item.destroy_all
+# Category.destroy_all
+# ItemAmount.destroy_all
+# Recipe.destroy_all
+# RecipeAmount.destroy_all
+User.destroy_all
+
+# puts "Seeding database..."
+# seed_categories
+# puts "Created #{Category.all.count} categories"
+
+# seed_items
+# puts "Created #{Item.all.count} items"
+
+seed_item_amounts
+puts "Created #{ItemAmount.all.count} item amounts"

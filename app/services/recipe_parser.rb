@@ -35,10 +35,7 @@ class RecipeParser < ApplicationService
 
   def parse_instructions(instructions)
     instructions.map do |step|
-      {
-        number: step['number'],
-        description: step['step']
-      }
+      "#{step['number']}. #{step['step']}"
     end
   end
 end

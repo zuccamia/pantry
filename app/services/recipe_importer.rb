@@ -8,7 +8,11 @@ class RecipeImporter < ApplicationService
   end
 
   def call
-    my_recipe = Recipe.new(recipe_name: @recipe[:name])
+    my_recipe = Recipe.new(
+      recipe_name: @recipe[:name],
+      summary: @recipe[:summary],
+      instructions: @recipe[:instructions].join("\n")
+    )
     my_recipe.user = @user
     my_recipe.save
 
