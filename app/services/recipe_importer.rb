@@ -15,7 +15,6 @@ class RecipeImporter < ApplicationService
       image: @recipe[:img_url]
     )
     my_recipe.user = @user
-    my_recipe.save
 
     add_recipe_amounts(@recipe[:ingredients], my_recipe)
   end
