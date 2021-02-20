@@ -7,7 +7,9 @@
       <div class="recipe-card-body">
         <div class="recipe-card-title">
           <h6><%= @recipe.recipe_name.capitalize %></h6>
-          <span class="recipe-card-tags badge badge-pill badge-success">tags</span>
+          <% @recipe.tag_list.each do |tag| %>
+            <span class="recipe-card-tags badge badge-pill badge-success"><%= tag %></span>
+          <% end %>
         </div>
         <div class="recipe-card-content">
           <p class="recipe-card-edit"><i class="far fa-edit"></i></p>
