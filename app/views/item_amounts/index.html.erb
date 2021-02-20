@@ -1,17 +1,17 @@
 <div class="container">
-  <% @categories.each do |category| %>
+  <% @item_amounts.each_with_index do |category, index| %>
     <div id="accordion">
       <div class="card">
-        <div class="card-header" id=<%="heading#{category.id.to_s}"%>>
+        <div class="card-header" id=<%="heading#{index}"%>>
           <h6>
-            <button class="pantry-category-header" data-toggle="collapse" data-target=<%="#collapse#{category.id.to_s}"%> aria-expanded="true" aria-controls=<%="collapse#{category.id.to_s}"%>>
-              <%= category.sub_category.nil? ? category.main_category.capitalize : category.sub_category.capitalize %>
+            <button class="pantry-category-header" data-toggle="collapse" data-target=<%="#collapse#{index}"%> aria-expanded="true" aria-controls=<%="collapse#{index}"%>>
+              <%= category.first.capitalize %>
             </button>
           </h6>
         </div>
-        <div id=<%="collapse#{category.id.to_s}"%> class="collapse show" aria-labelledby=<%="heading#{category.id.to_s}"%> data-parent="#accordion">
+        <div id=<%="collapse#{index}"%> class="collapse show" aria-labelledby=<%="heading#{index}"%> data-parent="#accordion">
           <div class="card-body">
-            <%= render 'pantry-item-card' %>
+            <%= render 'pantry-item-card', item_amounts: category.last %>
           </div>
         </div>
       </div>
