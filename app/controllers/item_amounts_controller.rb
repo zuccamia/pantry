@@ -1,6 +1,8 @@
 class ItemAmountsController < ApplicationController
   def index
     @item_amounts = ItemAmount.all
+    @categories = Category.all
+    @items = Item.all
     @recipes = Recipe.all
   end
 

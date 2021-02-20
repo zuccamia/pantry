@@ -1,18 +1,20 @@
 <div class="container">
-  <div id="accordion">
-    <div class="card">
-      <div class="card-header" id="headingOne">
-        <h6>
-          <button class="pantry-category-header" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            <i class="far fa-lemon"></i> Fruit
-          </button>
-        </h6>
-      </div>
-      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-        <div class="card-body">
-          <%= render 'pantry-item-card' %>
+  <% @categories.each do |category| %>
+    <div id="accordion">
+      <div class="card">
+        <div class="card-header" id=<%="heading#{category.id.to_s}"%>>
+          <h6>
+            <button class="pantry-category-header" data-toggle="collapse" data-target=<%="#collapse#{category.id.to_s}"%> aria-expanded="true" aria-controls=<%="collapse#{category.id.to_s}"%>>
+              <%= category.sub_category.nil? ? category.main_category.capitalize : category.sub_category.capitalize %>
+            </button>
+          </h6>
+        </div>
+        <div id=<%="collapse#{category.id.to_s}"%> class="collapse show" aria-labelledby=<%="heading#{category.id.to_s}"%> data-parent="#accordion">
+          <div class="card-body">
+            <%= render 'pantry-item-card' %>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  <% end %>
 </div>
