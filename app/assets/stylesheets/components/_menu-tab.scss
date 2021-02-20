@@ -1,48 +1,10 @@
-.nav-tabs {
-  justify-content: center;
-}
-.nav-tabs .nav-link.active {
-  font-weight: bold;
-  margin-bottom: 16px;
-  color: $light-blue;
-  border-bottom: 1px solid $light-blue;
-  border-top: none;
-  border-right: none;
-  border-left: none;
+.menu-tabs {
+  text-align: center;
+  :active {
+    border-bottom: 1px solid $light-leaf;
+  }
 }
 
-.nav-tabs .nav-link {
-  color: $light-blue;
-  font-weight: lighter;
-  border: none;
-}
-
-.nav-tabs .nav-item.show .nav-link {
-  color: $light-blue;
-  border: none;
-}
-
-.nav-tabs {
-  border: none;
-}
-
-.nav-link {
-  padding: 8px 1px;
-  margin: 0 16px;
-}
-
-
-#recipe-tab {
+.recipe-tab {
   color: $light-leaf;
-  border-top: none;
-  border-right: none;
-  border-left: none;
-}
-
-#recipe-tab.active {
-  color: $light-leaf;
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  border-bottom: 1px solid $light-leaf;
 }

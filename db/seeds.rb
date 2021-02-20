@@ -3,7 +3,7 @@ require 'csv'
 def seed_categories
   category_text = File.read(Rails.root.join('lib', 'seeds', 'categories.csv'))
   category_csv = CSV.parse(category_text, headers: true)
-  
+
   category_csv.each do |row|
     Category.create(
       main_category: row[0],
@@ -15,7 +15,7 @@ end
 def seed_items
   item_text = File.read(Rails.root.join('lib', 'seeds', 'items.csv'))
   item_csv = CSV.parse(item_text, headers: true)
-  
+
   item_csv.each do |row|
     item = Item.create(
       category_id: row[0],
@@ -61,20 +61,20 @@ def seed_item_amounts
   end
 end
 
-# puts "Cleaning database..."
-# Item.destroy_all
-# Category.destroy_all
-# ItemAmount.destroy_all
-# Recipe.destroy_all
-# RecipeAmount.destroy_all
+puts "Cleaning database..."
+Item.destroy_all
+Category.destroy_all
+ItemAmount.destroy_all
+Recipe.destroy_all
+RecipeAmount.destroy_all
 User.destroy_all
 
-# puts "Seeding database..."
-# seed_categories
-# puts "Created #{Category.all.count} categories"
+puts "Seeding database..."
+seed_categories
+puts "Created #{Category.all.count} categories"
 
-# seed_items
-# puts "Created #{Item.all.count} items"
+seed_items
+puts "Created #{Item.all.count} items"
 
 seed_item_amounts
 puts "Created #{ItemAmount.all.count} item amounts"

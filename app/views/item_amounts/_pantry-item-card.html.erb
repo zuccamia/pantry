@@ -1,14 +1,16 @@
-<div class="card-pantry-item">
-  <div class="card-pantry-item-name">
-    <% @item_amounts.each do |item_amount| %>
+<% item_amounts.each do |item_amount| %> 
+  <div class="card-pantry-item">
+    <div class="card-pantry-item-name <%= item_amount.expired? ? "card-pantry-item-expired" : "" %>">
       <h6><%= item_amount.item.item_name %></h6>
-      <p>Expires on <%= item_amounts.expiry_date %> day(s)</p>
-    <% end %>
+      <% if item_amount.expiry_date.present? %>
+        <div class="tag-search">
+          <p>Expires: <%= item_amount.expiry_date %></p>
+          <p><i class="fas fa-search"></i></p>
+        </div>
+      <% end %>
+    </div>
+    <div class="card-pantry-item-amount <%= item_amount.expired? ? "card-pantry-item-expired" : "" %>">
+      <h6><%= item_amount.description.to_s %></h6>
+    </div>
   </div>
-  <div class="card-pantry-item-amount">
-    <% @item_amounts.each do |item_amount| %>
-      <h5><%= @item_amount.description.to_s %></h5>
-      <p>left</p>
-    <% end %>
-  </div>
-</div>
+<% end %>
