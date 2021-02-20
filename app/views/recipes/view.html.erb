@@ -1,17 +1,24 @@
 <%# added for testing purpose, to be restructured and styled later  %>
 <div class="container">
   <%= image_tag(@recipe[:img_url]) %>
-  <h1>Title</h1>
-  <%= @recipe[:name] %>
-  <h1>Summary</h1>
-  <p><%= simple_format(@recipe[:summary]) %></p>
-  <h1>Ingredients</h1>
-  <% @recipe[:ingredients].each do |ingredient| %>
-    <p><%= ingredient[:name] %>: <span><%= ingredient[:description] %></span></p>
-  <% end %>
-  <h1>Instructions</h1>
-  <% @recipe[:instructions].each do |step| %>
-    <p><%= simple_format(step) %></p>
-  <% end %>
-  <%= link_to 'Save', import_recipe_path(recipe_id: @recipe[:id]) %>
+  <div class="recipe-title">
+    <h1><%= @recipe[:name] %></h1>
+  </div>
+  <div class="content-box">
+    <h5>Summary</h5>
+    <p><%= simple_format(@recipe[:summary]) %></p>
+  </div>
+  <div class="content-box">
+    <h5>Ingredients</h5>
+    <% @recipe[:ingredients].each do |ingredient| %>
+      <p><%= ingredient[:name] %>: <span><%= ingredient[:description] %></span></p>
+    <% end %>
+  </div>
+  <div class="content-box">
+    <h5>Instructions</h5>
+    <% @recipe[:instructions].each do |step| %>
+      <p><%= simple_format(step) %></p>
+    <% end %>
+  </div>
+  <%= link_to 'Save', import_recipe_path(recipe_id: @recipe[:id]), class: "button-solid" %>
 </div>
