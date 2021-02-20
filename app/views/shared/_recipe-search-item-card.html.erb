@@ -5,7 +5,7 @@
         <%= recipe[:name] %>
       <% end %>
       <br>
-      <%= simple_format(recipe[:summary]) %>
+      <%= simple_format(recipe[:summary][0..200] + "...") %>
     </div>
   <% end %>
 </div>
