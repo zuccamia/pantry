@@ -17,4 +17,6 @@ Rails.application.routes.draw do
   get '/search', to: 'recipes#search', as: 'search_recipe'
   get '/view', to: 'recipes#view', as: 'view_recipe'
   get '/save', to: 'recipes#import', as: 'import_recipe'
+
+  get '/category', to: 'categories#index', as: 'pantry'
 end
