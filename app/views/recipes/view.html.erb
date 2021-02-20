@@ -1,20 +1,15 @@
 <%# added for testing purpose, to be restructured and styled later  %>
-
 <%= image_tag(@recipe[:img_url]) %>
 <h1>Title</h1>
 <%= @recipe[:name] %>
-
 <h1>Summary</h1>
 <p><%= simple_format(@recipe[:summary]) %></p>
-
 <h1>Ingredients</h1>
 <% @recipe[:ingredients].each do |ingredient| %>
   <p><%= ingredient[:name] %>: <span><%= ingredient[:description] %></span></p>
 <% end %>
-
 <h1>Instructions</h1>
 <% @recipe[:instructions].each do |step| %>
   <p><%= simple_format(step) %></p>
 <% end %>
-
 <%= link_to 'Save', import_recipe_path(recipe_id: @recipe[:id]) %>
