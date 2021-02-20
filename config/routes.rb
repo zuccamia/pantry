@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/component', to: 'pages#component', as: 'component'
 
-  resources :item_amounts, only: [:index, :edit, :update, :destroy]
+  resources :item_amounts, only: [:edit, :update, :destroy]
 
   resources :items, only: [:new, :create]
 
@@ -18,5 +18,5 @@ Rails.application.routes.draw do
   get '/view', to: 'recipes#view', as: 'view_recipe'
   get '/save', to: 'recipes#import', as: 'import_recipe'
 
-  get '/category', to: 'categories#index', as: 'pantry'
+  get '/pantry', to: 'item_amounts#index', as: 'item_amounts'
 end
