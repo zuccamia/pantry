@@ -2,6 +2,7 @@ class RecipesController < ApplicationController
   def index
     @recipes = Recipe.all
     @recipes = Recipe.tagged_with(params[:tag]) if params[:tag].present?
+    @tag = params[:tag]
   end
 
   def show
