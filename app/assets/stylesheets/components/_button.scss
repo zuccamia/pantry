@@ -1,5 +1,5 @@
 // button with solid color
-.button-solid {
+.button-ouline {
   color: $light-blue;
   font-family: $headers-font;
   text-align: center;
@@ -22,7 +22,7 @@
 
 
 // button with outline, white background
-.button-outline {
+.button-solid {
   color: white;
   font-family: $headers-font;
   text-align: center;
@@ -30,6 +30,7 @@
   border-radius: 30px;
   background: $light-blue;
   transition: background 0.3s ease;
+  margin: 16px;
     p {
     font-size: 16px;
     margin: 0;
