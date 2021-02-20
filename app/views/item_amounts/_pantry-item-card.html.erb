@@ -1,4 +1,4 @@
-    <% @item_amounts.each do |item_amount| %>
+<% item_amounts.each do |item_amount| %> 
   <div class="card-pantry-item">
     <div class="card-pantry-item-name">
       <h6><%= item_amount.item.item_name %></h6>
@@ -7,7 +7,7 @@
       <% end %>
     </div>
     <div class="card-pantry-item-amount">
-      <h5><%= item_amount.description.to_s %></h5>
+      <h5><%= item_amount.description.to_s %></h5> 
       <p>left</p>
     </div>
   </div>
