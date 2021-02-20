@@ -1,0 +1,11 @@
+<div class="card-pantry-search">
+  <% @recipes.each do |recipe| %>
+    <div class="card-pantry-search-name">
+      <%= link_to view_recipe_path(recipe_id: recipe[:id]) do %>
+        <%= recipe[:name] %>
+      <% end %>
+      <br>
+      <%= simple_format(recipe[:summary][0..200] + "...") %>
+    </div>
+  <% end %>
+</div>
