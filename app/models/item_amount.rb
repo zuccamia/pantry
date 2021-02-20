@@ -14,6 +14,6 @@ class ItemAmount < ApplicationRecord
   end
 
   def expired?
-    expiry_date.present? ? expiry_date < Date.today : false
+    expiry_date.present? ? (expiry_date - Date.today) < 3 : false
   end
 end
