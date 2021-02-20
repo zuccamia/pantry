@@ -11,7 +11,7 @@
   border-radius: 10px;
   width: 100%;
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 2.8fr 1.2fr;
   margin-bottom: 8px;
 }
 
@@ -21,7 +21,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 16px 8px 16px 24px;
+  padding: 16px;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-right: none;
   border-radius: 20px 0 0 20px;
@@ -38,14 +38,13 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 16px 16px 16px 16px;
+  justify-content: center;
+  padding: 16px;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0 20px 20px 0;
   width: 100%;
-  p {
+  h6 {
     margin: 0px;
-    font-family: $body-font;
   }
 }
 
@@ -71,4 +70,16 @@
     margin: 0px;
     font-family: $body-font;
   }
+}
+
+.tag-search {
+  display: flex;
+  justify-content: space-between;
+   p {
+    font-size: 12px;
+   }
+}
+
+.card-pantry-item-expired {
+  background-color: $dark-salmon;
 }
