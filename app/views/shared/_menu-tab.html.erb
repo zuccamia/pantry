@@ -1,6 +1,10 @@
 <div class="container">
-  <div class="menu-tabs">
-    <%= link_to "Pantry", item_amounts_path, class: "pantry-tab" %>
-    <%= link_to "Recipes", recipes_path, class: "recipe-tab" %>
+  <div class="menu-tabs fixed-bottom">
+    <div class="pantry-tab">
+      <%= link_to "Pantry", item_amounts_path, class: "pantry-tab" %>
+    </div>
+    <div class="recipe-tab">
+      <%= link_to "Recipes", recipes_path, class: "recipe-tab" %>
+    </div>
   </div>
 </div>
