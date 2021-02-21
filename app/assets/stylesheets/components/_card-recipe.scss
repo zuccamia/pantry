@@ -2,7 +2,7 @@
 
 .recipe-cards-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   flex-grow: 1;
   grid-gap: 8px;
   margin: 8px;
@@ -15,7 +15,6 @@
   flex-direction: column;
   justify-content: center;
   border: 1px solid rgba(0, 0, 0, 0.125);
-  border-color: $light-leaf;
   border-radius: 24px;
   font-family: $headers-font;
 }
@@ -29,9 +28,9 @@
 }
 
 .recipe-cards-body{
-  height: 100px;
+  height: 100%;
   padding: 16px 12px 12px 12px;
-          vertical-align: middle;
+  vertical-align: middle;
 
 }
 
