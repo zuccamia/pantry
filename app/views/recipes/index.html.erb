@@ -1,14 +1,16 @@
-<div class="recipe-cards-grid">
-  <% @recipes.each do |recipe| %>
-    <div class="recipe-cards">
-      <div class="recipe-cards-photo">
-        <img src="<%= recipe.image %>" class= "recipe-cards-photo">
+<div class="container">
+  <div class="recipe-cards-grid">
+    <% @recipes.each do |recipe| %>
+      <div class="recipe-cards">
+        <div class="recipe-cards-photo">
+          <img src="<%= recipe.image %>" class= "recipe-cards-photo">
+        </div>
+        <div class="recipe-cards-body">
+          <h6 class="recipe-cards-title"><%= link_to recipe.recipe_name.capitalize, recipe_path(recipe) %></h6>
+        </div>
       </div>
-      <div class="recipe-cards-body">
-        <h6 class="recipe-cards-title"><%= link_to recipe.recipe_name.capitalize, recipe_path(recipe) %></h6>
-      </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
+  <%# added for testing purpose, 'chocolate' to be replaced by a `tag` variable  %>
+  <%= link_to 'Search', search_recipe_path(tag: @tag) %>
 </div>
-<%# added for testing purpose, 'chocolate' to be replaced by a `tag` variable  %>
-<%= link_to 'Search', search_recipe_path(tag: @tag) %>
