@@ -6,17 +6,15 @@
       </div>
       <div class="recipe-card-body">
         <div class="recipe-card-title">
-          <h6><%= @recipe.recipe_name.capitalize %></h6>
-          <% @recipe.tag_list.each do |tag| %>
-            <span class="recipe-card-tags badge badge-pill badge-success"><%= tag %></span>
-          <% end %>
+          <h5><%= @recipe.recipe_name.capitalize %></h5>
         </div>
         <div class="recipe-card-content">
           <p class="recipe-card-edit"><i class="far fa-edit"></i></p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae odio, voluptates omnis natus dolor commodi sunt blanditiis illo quae hic eligendi aut ducimus cupiditate ipsa vero architecto dignissimos qui perspiciatis!</p>
           <div class="recipe-ingredient-amount">
-            <p>item name</p>
-            <p>amount</p>
+            <h5>Ingredients</h5>
+          </div>
+          <div class="recipe-card-content">
+            <h5>Instructions</h5>
           </div>
         </div>
       </div>
