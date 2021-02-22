@@ -2,16 +2,16 @@
 <div class="container">
   <%= image_tag(@recipe[:img_url]) %>
   <div class="recipe-title">
-    <h1><%= @recipe[:name] %></h1>
+    <h3><%= @recipe[:name] %></h3>
   </div>
   <div class="content-box">
-    <h5>Ingredients</h5>
+    <h4>Ingredients</h4>
     <% @recipe[:ingredients].each do |ingredient| %>
       <p><%= ingredient[:name] %>: <span><%= ingredient[:description] %></span></p>
     <% end %>
   </div>
   <div class="content-box">
-    <h5>Instructions</h5>
+    <h4>Instructions</h4>
     <% @recipe[:instructions].each do |step| %>
       <p><%= simple_format(step) %></p>
     <% end %>

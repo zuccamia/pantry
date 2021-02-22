@@ -7,15 +7,18 @@
   box-shadow: 0 0 4px rgba(0,0,0,0.1);
   display: flex;
   justify-content: center;
+  a {
+    font-size: 15px;
+  }
 }
 
 .pantry-tab {
   padding: 0 16px;
-  color: $light-blue;
+  color: $bright-leaf;
 
 }
 
 .recipe-tab {
   padding: 0 16px;
-  color: $light-leaf;
+  color: $bright-mint;
 }
