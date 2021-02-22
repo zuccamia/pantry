@@ -12,7 +12,9 @@
 .pantry-tab {
   padding: 0 16px;
   color: $light-blue;
-
+  p {
+    font-size: 6px;
+  }
 }
 
 .recipe-tab {

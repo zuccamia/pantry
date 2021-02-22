@@ -1,10 +1,16 @@
 <div class="container">
   <div class="menu-tabs fixed-bottom">
     <div class="pantry-tab">
-      <%= link_to "Pantry", item_amounts_path, class: "pantry-tab" %>
+      <h4><%= link_to ('<i class="far fa-plus-square"></i></i>').html_safe, item_amounts_path, class: "pantry-tab" %></h4>
+    </div>
+    <div class="pantry-tab">
+      <h4><%= link_to ('<i class="fas fa-shopping-basket"></i>').html_safe, item_amounts_path, class: "pantry-tab" %></h4>
     </div>
     <div class="recipe-tab">
-      <%= link_to "Recipes", recipes_path, class: "recipe-tab" %>
+      <h4><%= link_to ('<i class="fas fa-utensils"></i>').html_safe, recipes_path, class: "recipe-tab" %></h4>
+    </div>
+    <div class="recipe-tab">
+      <h4><%= link_to ('<i class="fas fa-folder-plus"></i>').html_safe, new_recipe_path, class: "recipe-tab" %></h4>
     </div>
   </div>
 </div>

@@ -1,0 +1,35 @@
+// pantry category card - accordion bootstrap overwrite
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);;
+  border-radius: 24px;
+  font-family: $headers-font;
+  margin: 8px 0;
+}
+.card-header {
+  padding: 12px 20px 0 20px;
+  margin-bottom: 0;
+  background-color: transparent;
+  border-bottom: none;
+  border-radius: 24px;
+}
+
+.card-header:first-child {
+  border-radius: 24px;
+}
+
+// custom css
+// button: category heading
+button {
+  margin: 10px 0 10px 0;
+  color: $bright-leaf;
+  border-image: none;
+  border-style: none;
+  background-color: transparent;
+}
