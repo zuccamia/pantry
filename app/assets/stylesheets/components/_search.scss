@@ -1,0 +1,43 @@
+.search-results {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-family: "Spartan", "Helvetica", "sans-serif";
+  margin: 20px 8px ;
+}
+
+.search-body {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 0px;
+}
+
+// card-pantry-search
+.card-pantry-search {
+  border-radius: 10px;
+  width: 100%;
+  display: grid;
+}
+
+// pantry-item-search
+.card-pantry-search-name {
+  background-color: $white-leaf;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 20px;
+  width: 100%;
+  p {
+    margin: 0px;
+    font-family: $body-font;
+  }
+
+  a {
+    color: $leaf;
+    text-decoration: none;
+    background-color: transparent;
+  }
+}
