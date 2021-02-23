@@ -73,15 +73,22 @@
   border-radius: 50px;
   border: 1px solid $bright-mint;
   transition: background 0.3s ease;
-  margin: 40px;
-    h5 {
+  margin: 0 40px;
+  h5 {
     margin: 0;
-    }
+  }
+  a {
+    text-decoration: none;
+  }
 }
 
 .action-button-outline:hover {
   background: $bright-mint;
+  color: white;
   opacity: 1;
+  a {
+    color: white;
+  }
 }
 
 // delete badge, "x",

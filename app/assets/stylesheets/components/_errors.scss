@@ -1,0 +1,15 @@
+.error-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  grid-template-columns: 1fr;
+  margin-top: 100px;
+    h4 {
+    font-family: $body-font;
+    line-height: 1.8;
+    }
+}
+
+.error-image {
+
+}
