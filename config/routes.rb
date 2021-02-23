@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/component', to: 'pages#component', as: 'component'
 
-  resources :item_amounts, only: [:edit, :update, :destroy]
+  resources :item_amounts, only: [:new, :edit, :update, :destroy]
 
   resources :items, only: [:new, :create]
 
