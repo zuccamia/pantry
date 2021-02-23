@@ -21,7 +21,7 @@
 
 // pantry-item-search
 .card-pantry-search-name {
-  background-color: $white-leaf;
+  background-color: $white-mint;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -36,7 +36,8 @@
   }
 
   a {
-    color: $leaf;
+    color: $bright-mint;
+    font-size: 15px;
     text-decoration: none;
     background-color: transparent;
   }

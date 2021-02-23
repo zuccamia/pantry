@@ -1,9 +1,9 @@
 // button with solid color
-.button-ouline {
-  color: $light-blue;
+.button-outline {
+  color: $light-mint;
   font-family: $headers-font;
   text-align: center;
-  border: 1px solid $light-blue;
+  border: 1px solid $mint;
   padding: 8px 8px;
   border-radius: 30px;
   font-weight: bold;
@@ -28,7 +28,7 @@
   text-align: center;
   padding: 8px 8px;
   border-radius: 30px;
-  background: $light-blue;
+  background: $mint;
   transition: background 0.3s ease;
   margin: 16px;
     p {
@@ -38,7 +38,7 @@
 }
 
 .button-outline:hover {
-  background: $light-blue;
+  background: $mint;
   color: white;
 }
 
@@ -63,7 +63,7 @@
   height: 24px;
   border-radius: 50%;
   padding: 4px;
-  background: $light-blue;
+  background: $mint;
   transition: background 0.3s ease;
     p {
     font-size: 13px;
@@ -75,7 +75,7 @@
 
 // tags
 // 1.use bootstrap: badge badge-pill badge-{input color below}
-// $primary:   - $light-blue;
+// $primary:   - $light-mint;
 // $success:   - $leaf;
 // $info:      - $alert-yello;
 
