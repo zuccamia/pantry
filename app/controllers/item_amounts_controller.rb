@@ -9,6 +9,10 @@ class ItemAmountsController < ApplicationController
     @recipes = Recipe.all
   end
 
+  def new
+    @item_amount = ItemAmount.new
+  end
+
   def edit
     @item_amount = ItemAmount.find(params[:id])
   end
