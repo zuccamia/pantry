@@ -13,6 +13,10 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new
   end
 
+  def edit
+    @recipe = Recipe.find(params[:id])
+  end
+
   def search
     @recipes = RecipeFinder.call(params[:tag])
     # return a search result array @recipes of recipe hashes with Spoonacular ID, recipe title and image url as keys
@@ -25,12 +29,14 @@ class RecipesController < ApplicationController
 
   def import
     @recipe = RecipeParser.call(params[:recipe_id])
-    @user = current_user        # unable to use current_user in service object so need to assign to @user variable here
-  
+    @user = current_user
+    # unable to use current_user in service object so need to assign to @user variable here
+
     # create a new Recipe object and its recipe amounts when user clicks on `Save` after viewing a recipe
-    RecipeImporter.call(@recipe, @user)   
-    
-    redirect_to recipes_path    # to see the imported recipe added to my recipes
+    RecipeImporter.call(@recipe, @user)
+
+    redirect_to recipes_path
+    # to see the imported recipe added to my recipes
   end
 
   private
