@@ -1,7 +1,7 @@
 <div class="container">
   <div>
     <%= simple_form_for [@item_amount] do |f| %>
-      <%= f.association :item.name %>
+      <%= f.association :item, label_method: :item_name %>
       <%= f.input :description %>
       <%= f.submit class: 'btn btn-secondary' %>
     <% end %>
