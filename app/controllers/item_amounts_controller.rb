@@ -4,7 +4,7 @@ class ItemAmountsController < ApplicationController
     @item_amounts = {}
     @categories.each do |category|
       category_name = category.sub_category.nil? ? category.main_category : category.sub_category
-      @item_amounts[category_name] =  category.item_amounts
+      @item_amounts[category_name] = category.item_amounts
     end
     @recipes = Recipe.all
   end
