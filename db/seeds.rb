@@ -1,5 +1,12 @@
 require 'csv'
 
+require 'database_cleaner/active_record'
+
+DatabaseCleaner.strategy = :truncation
+
+# then, whenever you need to clean the DB
+DatabaseCleaner.clean
+
 def seed_categories
   category_text = File.read(Rails.root.join('lib', 'seeds', 'categories.csv'))
   category_csv = CSV.parse(category_text, headers: true)
@@ -40,7 +47,7 @@ def seed_item_amounts
 
   3.times do
     item_amount = ItemAmount.new(description: "#{[20, 50, 70, 100, 150, 200].sample} gram")
-    item_amount.item = Category.find(6).items.sample
+    item_amount.item = Category.first.items.sample
     item_amount.user = becky
     item_amount.expiry_date = Date.today.next_year([1, 2, 3].sample)
     item_amount.save
@@ -48,14 +55,14 @@ def seed_item_amounts
 
   3.times do
     item_amount = ItemAmount.new(description: "#{(2..7).to_a.sample} cups")
-    item_amount.item = Category.find(19).items.sample
+    item_amount.item = Category.third.items.sample
     item_amount.user = becky
     item_amount.save
   end
 
   2.times do
     item_amount = ItemAmount.new(description: "#{(2..10).to_a.sample} fruits")
-    item_amount.item = Category.find(18).items.sample
+    item_amount.item = Category.fifth.items.sample
     item_amount.user = becky
     item_amount.save
   end
