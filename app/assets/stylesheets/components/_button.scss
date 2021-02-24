@@ -1,6 +1,6 @@
 // button with solid color
 .button-outline {
-  color: $light-mint;
+  color: $bright-mint;
   font-family: $headers-font;
   text-align: center;
   border: 1px solid $mint;
@@ -16,7 +16,7 @@
   }
 }
 
-.button-solid:hover {
+.button-outline:hover {
   opacity: 1;
 }
 
@@ -30,6 +30,27 @@
   border-radius: 30px;
   background: $mint;
   transition: background 0.3s ease;
+  margin: 32px;
+    p {
+    font-size: 16px;
+    margin: 0;
+    }
+}
+
+.button-solid:hover {
+  background: $mint;
+  color: white;
+}
+
+// button light-yellow
+.button-solid-yellow {
+  color: $dark-gray;
+  font-family: $headers-font;
+  text-align: center;
+  padding: 8px 8px;
+  border-radius: 30px;
+  background: $light-yello;
+  transition: background 0.3s ease;
   margin: 16px;
     p {
     font-size: 16px;
@@ -37,9 +58,37 @@
   }
 }
 
-.button-outline:hover {
-  background: $mint;
+.button-solid:hover {
+  background: $light-yello;
   color: white;
+}
+
+
+// action button
+.action-button-outline {
+  color: $bright-mint;
+  font-family: $headers-font;
+  text-align: center;
+  padding: 18px 8px;
+  border-radius: 50px;
+  border: 1px solid $bright-mint;
+  transition: background 0.3s ease;
+  margin: 0 40px;
+  h5 {
+    margin: 0;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+.action-button-outline:hover {
+  background: $bright-mint;
+  color: white;
+  opacity: 1;
+  a {
+    color: white;
+  }
 }
 
 // delete badge, "x",

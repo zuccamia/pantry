@@ -1,16 +1,30 @@
 <div class="container">
-  <div class="recipe-cards-grid">
-    <% @recipes.each do |recipe| %>
-      <div class="recipe-cards">
-        <div class="recipe-cards-photo">
-          <img src="<%= recipe.image %>" class= "recipe-cards-photo">
+  <% if @recipes.empty? %>
+    <div class="recipe-cards-grid">
+      <div class="error-message">
+        <div class="error-image">
+          <%= image_tag "recipe.png", alt: "recipe.png" %>
         </div>
-        <div class="recipe-cards-body">
-          <h5 class="recipe-cards-title"><%= link_to recipe.recipe_name.capitalize, recipe_path(recipe) %></h5>
+        <h4>Nothing saved yet with <br>
+          <span class="text-primary"><%= params[:tag].capitalize %>.</span><br>
+          Would you like to search recommended recipes?</h4>
+        <br>
+        <br>
+        <div class= "action-button-outline">
+          <h5><%= link_to 'Search &nbsp; <i class="fas fa-search"></i>'.html_safe, search_recipe_path(tag: @tag)%></h5>
         </div>
       </div>
+    <% else %>
+      <% @recipes.each do |recipe| %>
+        <div class="recipe-cards">
+          <div class="recipe-cards-photo">
+            <img src="<%= recipe.image %>" class= "recipe-cards-photo">
+          </div>
+          <div class="recipe-cards-body">
+            <h5 class="recipe-cards-title"><%= link_to recipe.recipe_name.capitalize, recipe_path(recipe) %></h5>
+          </div>
+        </div>
+      <% end %>
     <% end %>
   </div>
-  <%# added for testing purpose, 'chocolate' to be replaced by a `tag` variable  %>
-  <%= link_to 'Search', search_recipe_path(tag: @tag) %>
 </div>
