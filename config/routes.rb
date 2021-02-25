@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :items, only: [:new, :create]
 
-  resources :recipes, only: [:index, :show, :new, :create, :destroy] do
+  resources :recipes do
     resources :recipe_amounts, only: [:new, :create]
   end
 
