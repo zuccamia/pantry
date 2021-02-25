@@ -1,20 +1,13 @@
-<div class="container">
-  <% @item_amounts.each_with_index do |category, index| %>
-    <div id="accordion">
-      <div class="card">
-        <div class="card-header" id=<%="heading#{index}"%>>
-          <h3>
-            <button class="pantry-category-header" data-toggle="collapse" data-target=<%="#collapse#{index}"%> aria-expanded="true" aria-controls=<%="collapse#{index}"%>>
-              <%= category.first.capitalize %>
-            </button>
-          </h3>
-        </div>
-        <div id=<%="collapse#{index}"%> class="collapse show" aria-labelledby=<%="heading#{index}"%> data-parent="#accordion">
-          <div class="card-body">
-            <%= render 'item_amounts/pantry-item-card', item_amounts: category.last %>
-          </div>
-        </div>
-      </div>
-    </div>
-  <% end %>
+
+<ul class="nav nav-tabs bootstrap-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a class="nav-link active" id="pantry-tab" data-bs-toggle="tab" href="#pantry" role="tab" aria-controls="pantry" aria-selected="true">All items</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="recipe-tab" data-bs-toggle="tab" href="#recipe" role="tab" aria-controls="recipe" aria-selected="false">Expiring items</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="pantry" role="tabpanel" aria-labelledby="pantry-tab"><%= render 'pantry-all-item' %></div>
+  <div class="tab-pane fade" id="recipe" role="tabpanel" aria-labelledby="recipe-tab"><%= render 'expiring-items' %></div>
 </div>
