@@ -2,7 +2,11 @@
   <div class="grid">
     <div class="recipe-card-item">
       <div class="recipe-card-photo">
-        <%= image_tag "choco-fudge.jpg", class: "recipe-card-photo" %>
+        <% if @recipe.image.nil? %> 
+        <%= cl_image_tag @recipe.photo.key, class: "recipe-card-photo", alt: "My Recipe" %>
+        <% else %>
+        <%= image_tag (@recipe.image), class: "recipe-card-photo" %>
+        <% end %>
       </div>
       <div class="recipe-card-body">
         <div class="recipe-card-title">
@@ -12,9 +16,12 @@
           <p class="recipe-card-edit"><i class="far fa-edit"></i></p>
           <div class="recipe-ingredient-amount">
             <h5>Ingredients</h5>
+            <p><%= @recipe.recipe_amounts.each do |recipe_amounts| %>
+            <% end %></p>
           </div>
           <div class="recipe-card-content">
             <h5>Instructions</h5>
+            <p><%= @recipe.instructions %></p>
           </div>
         </div>
       </div>
