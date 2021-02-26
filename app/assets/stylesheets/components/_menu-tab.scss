@@ -3,21 +3,36 @@
   background-color: white;
   width: 100%;
   height: 60px;
-  padding: 20px;
+  padding: 12px;
   box-shadow: 0 0 4px rgba(0,0,0,0.1);
   display: flex;
   justify-content: center;
   a {
-    font-size: 15px;
+    font-size: 20px;
+  }
+  p {
+    font-size: 10px;
+    line-height: 1.8;
+
+  }
+
+  h4 {
+    margin: 0;
   }
 }
 
 .pantry-tab {
+  display: flex;
+  flex-direction: column;
   padding: 0 16px;
+  text-align: center;
   color: $bright-leaf;
 }
 
 .recipe-tab {
+  display: flex;
+  flex-direction: column;
   padding: 0 16px;
+  text-align: center;
   color: $bright-mint;
 }
