@@ -1,0 +1,49 @@
+.nav-tabs {
+  justify-content: center;
+  font-size: 15px;
+  font-family: $headers-font;
+  font-weight: 400;
+}
+.nav-tabs .nav-link.active {
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: $bright-leaf;
+  border-bottom: 2px solid $bright-leaf;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+}
+
+.nav-tabs .nav-link {
+  color: $dark-gray;
+  border: none;
+}
+
+.nav-tabs .nav-item.show .nav-link {
+  color: $bright-leaf;
+  border: none;
+}
+
+.nav-tabs {
+  border: none;
+}
+
+.nav-link {
+  padding: 8px 2px;
+  margin: 0 16px;
+}
+
+#expiring-tab {
+  color: $dark-gray;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+}
+
+#expiring-tab.active {
+  color: $dark-salmon;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid $dark-salmon;
+}

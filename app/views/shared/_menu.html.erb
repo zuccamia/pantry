@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="menu-icons fixed-bottom">
+    <div class="pantry-icon">
+      <h4><%= link_to ('<i class="far fa-plus-square"></i></i>').html_safe, new_item_amount_path, class: "pantry-icon" %></h4>
+    </div>
+    <div class="pantry-icon">
+      <h4><%= link_to ('<i class="fas fa-shopping-basket"></i>').html_safe, item_amounts_path, class: "pantry-icon" %></h4>
+    </div>
+    <div class="recipe-icon">
+      <h4><%= link_to ('<i class="fas fa-utensils"></i>').html_safe, recipes_path, class: "recipe-icon" %></h4>
+    </div>
+    <div class="recipe-icon">
+      <h4><%= link_to ('<i class="fas fa-folder-plus"></i>').html_safe, new_recipe_path, class: "recipe-icon" %></h4>
+    </div>
+  </div>
+</div>
