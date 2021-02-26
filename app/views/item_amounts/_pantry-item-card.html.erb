@@ -1,7 +1,7 @@
 <% item_amounts.each do |item_amount| %>
   <div class="card-pantry-item">
     <div class="card-pantry-item-name <%= item_amount.expired? ? "card-pantry-item-expired" : "" %>">
-      <h4><%= item_amount.item.item_name %></h4>
+      <h5><%= item_amount.item.item_name %></h5>
       <div class="tag-search">
         <div>
           <% if item_amount.expiry_date.present? %>
