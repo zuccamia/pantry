@@ -1,9 +1,12 @@
 <div class="container">
-  <div>
-    <%= simple_form_for @item_amount do |f| %>
-      <%= f.association :item, label_method: :item_name %>
-      <%= f.input :description %>
-      <%= f.submit class: 'btn btn-secondary' %>
-    <% end %>
+  <h5 class="page-title">What's the new item?</h5>
+  <div class="form-container">
+    <div class="grid">
+      <%= simple_form_for @item_amount do |f| %>
+        <%= f.association :item, label_method: :item_name %>
+        <%= f.input :description %>
+        <%= f.submit 'Save', class: 'btn btn-success' %>
+      <% end %>
+    </div>
   </div>
 </div>
