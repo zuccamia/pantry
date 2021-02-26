@@ -9,13 +9,18 @@
         <% end %>
       </div>
       <div class="recipe-card-body">
-        <div class="recipe-card-title">
+        <div class="recipe-card-title d-flex">
           <h5><%= @recipe.recipe_name.capitalize %></h5>
+          &nbsp;
+          <p class="recipe-card-edit"><%= link_to ('<i class="far fa-edit"></i>').html_safe, edit_recipe_path(@recipe) %></p>
         </div>
         <div class="recipe-card-content">
-          <p class="recipe-card-edit"><%= link_to ('<i class="far fa-edit"></i>').html_safe, new_recipe_recipe_amount_path(@recipe) %></p>
           <div class="recipe-ingredient-amount">
-            <h5>Ingredients</h5>
+            <div class="d-flex">
+              <h5>Ingredients</h5>
+              &nbsp;
+              <p class="recipe-card-edit"><%= link_to ('<i class="far fa-edit"></i>').html_safe, new_recipe_recipe_amount_path(@recipe) %></p>
+            </div>
             <p><% @recipe.recipe_amounts.each do |recipe_amount| %>
                 <%= recipe_amount.item.item_name.capitalize %>
               <% end %></p>

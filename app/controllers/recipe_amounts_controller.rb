@@ -9,7 +9,9 @@ class RecipeAmountsController < ApplicationController
   end
 
   def create
+    @recipe = Recipe.find(params[:recipe_id])
     @recipe_amount = RecipeAmount.new(recipe_amount_params)
+    @recipe_amount.recipe = @recipe
     @recipe_amount.save
     redirect_to recipe_path(@recipe)
   end

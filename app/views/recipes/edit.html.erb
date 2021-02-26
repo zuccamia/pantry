@@ -1,0 +1,10 @@
+<div class="container">
+  <div>
+    <%= simple_form_for @recipe do |f| %>
+      <%= f.input :recipe_name %>
+      <%= f.input :instructions %>
+      <%= f.input :photo, as: :file %>
+      <%= f.submit class: 'btn btn-secondary' %>
+    <% end %>
+  </div>
+</div>
