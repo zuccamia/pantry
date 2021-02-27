@@ -22,6 +22,6 @@ Rails.application.routes.draw do
   post '/pantry', to: 'item_amounts#create'
 
   # routes for barcode scanning
-  get '/get_barcode', to: 'item_amounts#scan_barcode', as: 'scan_barcode'
+  get '/get_barcode', to: 'item_amounts#scan_barcode', as: 'get_barcode'
   get '/add_barcode_item', to: 'item_amounts#new_barcode_item'
 end

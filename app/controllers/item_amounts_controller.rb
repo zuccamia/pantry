@@ -32,6 +32,10 @@ class ItemAmountsController < ApplicationController
     redirect_to item_amounts_path
   end
 
+  def scan_barcode
+    render 'scan_barcode'
+  end
+
   def new_barcode_item
     @item = BarcodeReader.call(params[:upc])
     render 'new' if @item.nil?
