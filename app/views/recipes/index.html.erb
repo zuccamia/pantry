@@ -15,8 +15,8 @@
         </div>
       </div>
     <% else %>
-      <% @recipes.each do |recipe| %>
-        <div class="recipe-cards">
+      <div class="recipe-cards">
+        <% @recipes.each do |recipe| %>
           <div class="recipe-cards-photo">
             <% if recipe.image.nil? %> 
               <%= cl_image_tag recipe.photo.key, class: "recipe-cards-photo", alt: "My Recipe" %>
