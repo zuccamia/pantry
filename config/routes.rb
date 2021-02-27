@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :items, only: [:new, :create]
 
   resources :recipes do
-    resources :recipe_amounts, only: [:new, :create]
+    resources :recipe_amounts, only: [:new, :create, :edit]
   end
 
   resources :recipe_amounts, only: [:destroy]
