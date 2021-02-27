@@ -3,10 +3,11 @@
     <div class="recipe-cards-grid">
       <div class="error-message">
         <div class="error-image">
-          <%= image_tag "recipe.png", alt: "recipe.png" %>
+          <i class="fas fa-utensils"></i>
         </div>
-        <h4>Nothing yet saved with 
-          <span class="text-primary"><%= params[:tag].nil? ? "this recipe" : params[:tag].capitalize %>.</span><br><br>
+        <h4>Nothing yet saved with<br>
+          <span class="text-primary"><%= params[:tag].nil? ? "this recipe" : params[:tag].capitalize %>.</span><br>
+          <br>
           Would you like to search our recommended recipes?</h4>
         <br>
         <br>
@@ -18,7 +19,7 @@
       <div class="recipe-cards">
         <% @recipes.each do |recipe| %>
           <div class="recipe-cards-photo">
-            <% if recipe.image.nil? %> 
+            <% if recipe.image.nil? %>
               <%= cl_image_tag recipe.photo.key, class: "recipe-cards-photo", alt: "My Recipe" %>
             <% else %>
               <%= image_tag (recipe.image), class: "recipe-cards-photo" %>
