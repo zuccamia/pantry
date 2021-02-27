@@ -1,7 +1,7 @@
 <div class="container">
   <div>
   <p>Add amount for <strong><%= @item.item_name %></strong>:</p>
-    <%= simple_form_for [@item_amount] do |f| %>
+    <%= simple_form_for @item_amount do |f| %>
       <%= f.hidden_field :item_id, value: @item.id %>
       <%= f.input :description %>
       <%= f.submit class: 'btn btn-secondary' %>
