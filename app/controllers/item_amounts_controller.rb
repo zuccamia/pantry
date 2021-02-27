@@ -23,6 +23,9 @@ class ItemAmountsController < ApplicationController
     redirect_to item_amounts_path
   end
 
+  def scan_barcode
+  end
+
   private
 
   def item_amount_params
