@@ -1,6 +1,7 @@
 .error-message {
   display: flex;
   flex-direction: column;
+  text-align: center;
   justify-content: center;
   grid-template-columns: 1fr;
   margin-top: 100px;
@@ -11,5 +12,13 @@
 }
 
 .error-image {
-
+  font-size: 70px;
+  color: $bright-mint;
+  // background-color: $bright-mint;
+  // padding: 24px;
+  // height: 100px;
+  // width: 100px;
+  // border-radius: 50%;
+  text-align: center;
+  margin: 30px;
 }
