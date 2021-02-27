@@ -14,8 +14,4 @@ class ApplicationService
   def api_key
     ENV['SPOONACULAR']
   end
-
-  def license_key
-    ENV['SCANDIT_KEY']
-  end
 end

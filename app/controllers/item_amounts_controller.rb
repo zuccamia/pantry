@@ -13,6 +13,15 @@ class ItemAmountsController < ApplicationController
     @item_amount = ItemAmount.new
   end
 
+  def create
+    @item_amount = ItemAmount.new(item_amount_params)
+    @item_amount.item = Item.find(params[:item_id].nil? ? params[:item_amount][:item_id] : params[:item_id])
+    @item_amount.user = current_user
+    @item_amount.save
+
+    redirect_to item_amounts_path
+  end
+
   def edit
     @item_amount = ItemAmount.find(params[:id])
   end
@@ -23,13 +32,16 @@ class ItemAmountsController < ApplicationController
     redirect_to item_amounts_path
   end
 
-  def scan_barcode
+  def new_barcode_item
+    @item = BarcodeReader.call(params[:upc])
+    render 'new' if @item.nil?
+    @item_amount = ItemAmount.new
   end
 
   private
 
   def item_amount_params
-    params.require(:item_amount).permit(:description, :expiry_date)
+    params.require(:item_amount).permit(:description, :expiry_date, :item_id)
   end
 
   def filtered_categories
