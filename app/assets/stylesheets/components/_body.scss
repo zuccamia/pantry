@@ -13,3 +13,11 @@
   background-clip: padding-box;
   backdrop-filter: blur(10px);
 }
+
+//page-title
+.page-title {
+  text-align: center;
+  color: $bright-leaf;
+  padding: 8px;
+  font-weight: bolder;
+}
