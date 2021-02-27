@@ -17,10 +17,12 @@ class RecipeAmountsController < ApplicationController
   end
 
   def edit
+    @recipe = Recipe.find(params[:recipe_id])
     @recipe_amount = RecipeAmount.find(params[:id])
   end
 
   def update
+    @recipe = Recipe.find(params[:recipe_id])
     @recipe_amount = RecipeAmount.find(params[:id])
     @recipe_amount.update(recipe_amount_params)
     redirect_to recipe_path(@recipe)
