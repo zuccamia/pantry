@@ -78,7 +78,20 @@ input#recipe_amount_description.form-control {
 }
 
 span.select2-selection.select2-selection--single {
-  margin-top: 10px 16px 16px 30px;
+  margin: 16px;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 16px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+    border-color: #888 transparent transparent transparent;
+    border-style: solid;
+    border-width: 5px 4px 0 4px;
+    height: 0;
+    left: 50%;
+    margin-left: -44px;
+    margin-top: 13px;
+    position: absolute;
+    top: 50%;
+    width: 0;
 }
