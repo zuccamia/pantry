@@ -66,3 +66,19 @@ input#recipe_photo.form-control-file {
 input#file-upload-button {
   padding: 12px;
 }
+
+
+// recipe-amounts
+input#recipe_amount_description.form-control {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 16px;
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+span.select2-selection.select2-selection--single {
+  margin-top: 10px 16px 16px 30px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 16px;
+}

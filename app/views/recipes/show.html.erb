@@ -9,9 +9,9 @@
       <%= link_to ('<i class="far fa-edit"></i>').html_safe, edit_recipe_path(@recipe) %></h3>
   </div>
   <div class="content-box">
-    <h4>Ingredients <%= link_to ('<i class="far fa-edit"></i>').html_safe, edit_recipe_recipe_amount_path(@recipe) %></h4>
+    <h4>Ingredients </h4>
     <% @recipe.recipe_amounts.each do |recipe_amount| %>
-      <p><%= recipe_amount.description %></p>
+      <p><%= recipe_amount.description %> <%= link_to ('<i class="far fa-edit"></i>').html_safe, edit_recipe_recipe_amount_path(@recipe, recipe_amount) %></p>
     <% end %>
   </div>
   <div class="content-box">
