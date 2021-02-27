@@ -19,4 +19,9 @@ Rails.application.routes.draw do
   get '/save', to: 'recipes#import', as: 'import_recipe'
 
   get '/pantry', to: 'item_amounts#index', as: 'item_amounts'
+  post '/pantry', to: 'item_amounts#create'
+
+  # routes for barcode scanning
+  get '/get_barcode', to: 'item_amounts#scan_barcode', as: 'get_barcode'
+  get '/add_barcode_item', to: 'item_amounts#new_barcode_item'
 end

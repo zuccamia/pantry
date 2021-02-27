@@ -1,0 +1,6 @@
+<script src="https://cdn.jsdelivr.net/npm/scandit-sdk@5.x"></script>
+<%= form_tag '/add_barcode_item', method: :get, id: 'barcode-form' do %>
+  <%= hidden_field_tag :upc, params[:upc] %>
+<% end %>
+
+<div id="scandit-barcode-picker" style="max-width: 1280px; max-height: 80%;"></div>
