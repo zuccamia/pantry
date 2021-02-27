@@ -91,6 +91,36 @@
   }
 }
 
+
+// action button leaf
+.action-button-outline-leaf {
+  color: $bright-leaf;
+  font-family: $headers-font;
+  text-align: center;
+  padding: 18px 8px;
+  border-radius: 50px;
+  border: 1px solid $bright-leaf;
+  transition: background 0.3s ease;
+  margin: 0 40px;
+  h5 {
+    margin: 0;
+  }
+  a {
+    color: $bright-leaf;
+    text-decoration: none;
+  }
+}
+
+.action-button-outline-leaf:hover {
+  background: $bright-leaf;
+  color: white;
+  opacity: 1;
+  a {
+    color: white;
+  }
+}
+
+
 // delete badge, "x",
 .badge-delete {
   p{
