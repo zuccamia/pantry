@@ -1,23 +1,21 @@
 <div class="container">
-  <% if @recipe.image.nil? %> 
+  <% if @recipe.image.nil? %>
     <%= cl_image_tag @recipe.photo.key, class: "recipe-card-photo", alt: "My Recipe" %>
   <% else %>
     <%= image_tag (@recipe.image), class: "recipe-card-photo" %>
   <% end %>
-
   <div class="recipe-title">
-    <h3><%= @recipe.recipe_name.capitalize %></h3>
+    <h3><%= @recipe.recipe_name.capitalize %>
+      <%= link_to ('<i class="far fa-edit"></i>').html_safe, edit_recipe_path(@recipe) %></h3>
   </div>
-
   <div class="content-box">
-    <p class="recipe-card-edit"><i class="far fa-edit"></i></p>
-      <h4>Ingredients</h4>
-      <p><%= @recipe.recipe_amounts.each do |recipe_amounts| %>
-        <% end %></p>
+    <h4>Ingredients <%= link_to ('<i class="far fa-edit"></i>').html_safe, edit_recipe_recipe_amount_path(@recipe) %></h4>
+    <% @recipe.recipe_amounts.each do |recipe_amount| %>
+      <p><%= recipe_amount.description %></p>
+    <% end %>
   </div>
-
   <div class="content-box">
     <h4>Instructions</h4>
-    <p><%= @recipe.instructions %></p>
+    <p><%= simple_format(@recipe.instructions)%></p>
   </div>
 </div>
