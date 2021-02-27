@@ -15,9 +15,16 @@
 }
 
 //page-title
-.page-title {
+.page-title-item {
   text-align: center;
   color: $bright-leaf;
+  padding: 8px;
+  font-weight: bolder;
+}
+
+.page-title-recipe {
+  text-align: center;
+  color: $bright-mint;
   padding: 8px;
   font-weight: bolder;
 }

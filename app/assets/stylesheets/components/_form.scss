@@ -9,10 +9,11 @@ label {
   margin: 0 16px;
 }
 
+// new_item amounts
 select#item_amount_item_id.form-control {
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 16px;
-  padding: 24px 24px;
+  height: 50px;
   margin-top: 10px;
   margin-bottom: 30px;
 }
@@ -20,7 +21,7 @@ select#item_amount_item_id.form-control {
 input#item_amount_description.form-control {
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 16px;
-  padding: 24px 24px;
+  height: 50px;
   margin-top: 10px;
   margin-bottom: 30px;
 }
@@ -30,4 +31,38 @@ input.btn.btn-success {
   color: white;
   margin: 0 16px;
   border-radius: 12px;
+}
+
+
+// new_item amounts
+input#recipe_recipe_name.form-control {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 16px;
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+textarea#recipe_instructions.form-control {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 16px;
+  height: 250px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+input.btn.btn-primary {
+  font-family: $headers-font;
+  color: white;
+  margin: 0 16px;
+  border-radius: 12px;
+}
+
+input#recipe_photo.form-control-file {
+  margin: 0 16px;
+  padding: 10px 0;
+}
+
+input#file-upload-button {
+  padding: 12px;
 }

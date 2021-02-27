@@ -1,10 +1,13 @@
 <div class="container">
-  <div>
-    <%= simple_form_for @recipe do |f| %>
-      <%= f.input :recipe_name %>
-      <%= f.input :instructions %>
-      <%= f.input :photo, as: :file %>
-      <%= f.submit class: 'btn btn-secondary' %>
-    <% end %>
+  <h5 class="page-title-recipe">What's on the menu?</h5>
+  <div class="form-container">
+    <div class="grid">
+      <%= simple_form_for @recipe do |f| %>
+        <%= f.input :recipe_name %>
+        <%= f.input :instructions %>
+        <%= f.input :photo, as: :file %>
+        <%= f.submit class: 'btn btn-primary' %>
+      <% end %>
+    </div>
   </div>
 </div>
