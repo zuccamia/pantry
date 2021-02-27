@@ -1,23 +1,23 @@
 <div class="container">
-  <div class="grid">
-    <div class="recipe-card-item">
-      <div class="recipe-card-photo">
-        <%= image_tag "choco-fudge.jpg", class: "recipe-card-photo" %>
-      </div>
-      <div class="recipe-card-body">
-        <div class="recipe-card-title">
-          <h5><%= @recipe.recipe_name.capitalize %></h5>
-        </div>
-        <div class="recipe-card-content">
-          <p class="recipe-card-edit"><i class="far fa-edit"></i></p>
-          <div class="recipe-ingredient-amount">
-            <h5>Ingredients</h5>
-          </div>
-          <div class="recipe-card-content">
-            <h5>Instructions</h5>
-          </div>
-        </div>
-      </div>
-    </div>
+  <% if @recipe.image.nil? %> 
+    <%= cl_image_tag @recipe.photo.key, class: "recipe-card-photo", alt: "My Recipe" %>
+  <% else %>
+    <%= image_tag (@recipe.image), class: "recipe-card-photo" %>
+  <% end %>
+
+  <div class="recipe-title">
+    <h3><%= @recipe.recipe_name.capitalize %></h3>
+  </div>
+
+  <div class="content-box">
+    <p class="recipe-card-edit"><i class="far fa-edit"></i></p>
+      <h4>Ingredients</h4>
+      <p><%= @recipe.recipe_amounts.each do |recipe_amounts| %>
+        <% end %></p>
+  </div>
+
+  <div class="content-box">
+    <h4>Instructions</h4>
+    <p><%= @recipe.instructions %></p>
   </div>
 </div>

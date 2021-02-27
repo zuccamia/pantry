@@ -5,7 +5,7 @@
   grid-template-columns: 1fr;
   flex-grow: 1;
   grid-gap: 8px;
-  margin: 8px;
+  margin: 16px;
   margin-top: 0;
 }
 
@@ -15,9 +15,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 24px;
+  background-color: $mint;
   font-family: $headers-font;
+  margin-bottom: 16px;
 }
 
 .recipe-cards-photo{
@@ -42,7 +43,7 @@
 
   }
   a {
-    color: $bright-mint;
+    color: $white;
     text-decoration: none;
     background-color: transparent;
   }

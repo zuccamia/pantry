@@ -7,6 +7,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+    @recipe_amount = RecipeAmount.new
   end
 
   def new
@@ -15,9 +16,10 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
+    @recipe.user = current_user
     @recipe.save
 
-    redirect_to recipes_path
+    redirect_to new_recipe_recipe_amount_path(@recipe)
   end
 
   def edit

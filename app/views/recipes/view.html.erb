@@ -1,6 +1,6 @@
-<%# added for testing purpose, to be restructured and styled later  %>
 <div class="container">
-  <%= image_tag(@recipe[:img_url]) %>
+  <%= image_tag(@recipe[:img_url], width: "80%") %>
+  <%# Added width above to temporarily solve issues with picture size and lower navbar %>
   <div class="recipe-title">
     <h3><%= @recipe[:name] %></h3>
   </div>

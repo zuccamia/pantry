@@ -25,7 +25,7 @@
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-right: none;
   border-radius: 20px 0 0 20px;
-  h4 {
+  h5 {
     font-weight: 400;
     color: $dark-gray;
   }
@@ -85,5 +85,5 @@
 }
 
 .card-pantry-item-expired {
-  background-color: $dark-salmon;
+  background-color: $white-salmon;
 }

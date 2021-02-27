@@ -1,0 +1,10 @@
+<div class="container">
+  <h2>Ingredients</h2>
+  <div>
+    <%= simple_form_for [ @recipe, @recipe_amount ] do |f| %>
+      <%= f.association :item, input_html: { class: "select2" }, include_hidden: false %>
+      <%= f.input :description %>
+      <%= f.submit "Add", class: "btn btn-success mt-10" %>
+    <% end %>
+  </div>
+</div>

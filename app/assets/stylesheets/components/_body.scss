@@ -1,6 +1,6 @@
 // body-content
 .container {
-  margin-top: 68px;
+  margin-top: 82px;
   margin-bottom: 68px;
 }
 
@@ -12,4 +12,19 @@
   border: solid 1px rgba(255,255,255,0.3);
   background-clip: padding-box;
   backdrop-filter: blur(10px);
+}
+
+//page-title
+.page-title-item {
+  text-align: center;
+  color: $bright-leaf;
+  padding: 8px;
+  font-weight: bolder;
+}
+
+.page-title-recipe {
+  text-align: center;
+  color: $bright-mint;
+  padding: 8px;
+  font-weight: bolder;
 }
