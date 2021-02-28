@@ -2,8 +2,12 @@
   justify-content: center;
   font-size: 15px;
   font-family: $headers-font;
-  font-weight: 400;
+  font-weight: 300;
+  a {
+    font-family: $headers-font;
+  }
 }
+
 .nav-tabs .nav-link.active {
   font-weight: bold;
   margin-bottom: 16px;

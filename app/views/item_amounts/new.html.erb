@@ -1,18 +1,18 @@
-<div class="container">
-  <h5 class="page-title-item">What's the new item?</h5>
-  <div class="action-button-outline-leaf">
-    <%= link_to 'Add with barcode', get_barcode_path %>
-  </div>
-  <div>
-    <p>Product not found? <%= link_to 'Create one for later!', "https://world.openfoodfacts.org/" %></p>
-  </div>
-  <div class="form-container">
-    <div class="grid">
-      <%= simple_form_for @item_amount do |f| %>
-        <%= f.association :item, label_method: :item_name %>
-        <%= f.input :description %>
-        <%= f.submit 'Save', class: 'btn btn-success' %>
-      <% end %>
-    </div>
+<div class="container grid">
+  <ul class="nav nav-tabs bootstrap-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="nav-link active" id="recipe-tab" data-bs-toggle="tab" href="#recipe" role="tab" aria-controls="recipe" aria-selected="false">Receipt&nbsp; <i class="fas fa-receipt"></i></a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="barcode-tab" data-bs-toggle="tab" href="#barcode" role="tab" aria-controls="barcode" aria-selected="false">Barcode&nbsp; <i class="fas fa-barcode"></i></a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="text-tab" data-bs-toggle="tab" href="#text" role="tab" aria-controls="text" aria-selected="true">Text&nbsp; <i class="far fa-keyboard"></i></a>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="recipe" role="tabpanel" aria-labelledby="recipe-tab"><%= render 'add-item-recipe' %></div>
+    <div class="tab-pane fade" id="barcode" role="tabpanel" aria-labelledby="barcode-tab"><%= render 'add-item-barcode' %></div>
+    <div class="tab-pane fade" id="text" role="tabpanel" aria-labelledby="text-tab"><%= render 'add-item-text' %></div>
   </div>
 </div>
