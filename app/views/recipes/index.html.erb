@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container grid">
   <% if @recipes.empty? %>
     <div class="recipe-cards-grid">
       <div class="error-message">
@@ -11,9 +11,9 @@
           Would you like to search our recommended recipes?</h4>
         <br>
         <br>
-        <div class= "action-button-outline">
-          <h5><%= link_to 'Search &nbsp; <i class="fas fa-search"></i>'.html_safe, search_recipe_path(tag: @tag)%></h5>
-        </div>
+      </div>
+      <div class= "action-button-outline">
+        <h5><%= link_to 'Search &nbsp; <i class="fas fa-search"></i>'.html_safe, search_recipe_path(tag: @tag)%></h5>
       </div>
     <% else %>
       <% @recipes.each do |recipe| %>

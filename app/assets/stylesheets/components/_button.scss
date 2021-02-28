@@ -9,7 +9,6 @@
   font-weight: bold;
   opacity: 0.6;
   transition: opacity 0.3s ease;
-
   p {
     font-size: 16px;
     margin: 0;
@@ -64,16 +63,20 @@
 }
 
 
-// action button
+// action button - outline
 .action-button-outline {
   color: $bright-mint;
   font-family: $headers-font;
   text-align: center;
-  padding: 18px 8px;
+  padding: 16px;
   border-radius: 50px;
   border: 1px solid $bright-mint;
   transition: background 0.3s ease;
-  margin: 0 40px;
+  min-width: 40%;
+  max-width: 60%;
+  justify-self: center;
+  margin: 10px 0;
+
   h5 {
     margin: 0;
   }
@@ -83,7 +86,7 @@
 }
 
 .action-button-outline:hover {
-  background: $bright-mint;
+  background: $mint;
   color: white;
   opacity: 1;
   a {
@@ -92,16 +95,19 @@
 }
 
 
-// action button leaf
+// action button outline leaf
 .action-button-outline-leaf {
   color: $bright-leaf;
   font-family: $headers-font;
   text-align: center;
-  padding: 18px 8px;
+  padding: 16px;
   border-radius: 50px;
   border: 1px solid $bright-leaf;
   transition: background 0.3s ease;
-  margin: 0 40px;
+  min-width: 40%;
+  max-width: 60%;
+  justify-self: center;
+  margin: 10px 0;
   h5 {
     margin: 0;
   }
@@ -112,7 +118,73 @@
 }
 
 .action-button-outline-leaf:hover {
-  background: $bright-leaf;
+  background: $leaf;
+  color: white;
+  opacity: 1;
+  a {
+    color: white;
+  }
+}
+
+
+// action button solid mint
+.action-button-solid {
+  color: $white;
+  font-family: $headers-font;
+  text-align: center;
+  padding: 16px;
+  border-radius: 50px;
+  background-color: $bright-mint;
+  transition: background 0.3s ease;
+  min-width: 40%;
+  max-width: 60%;
+  justify-self: center;
+  margin: 10px 0;
+
+  h5 {
+    margin: 0;
+  }
+  a {
+    margin: 0;
+    text-decoration: none;
+  }
+}
+
+.action-button-solid:hover {
+  background: $mint;
+  color: white;
+  opacity: 1;
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+
+// action button solid leaf
+.action-button-solid-leaf {
+  color: $white;
+  font-family: $headers-font;
+  text-align: center;
+  padding: 16px;
+  border-radius: 50px;
+  background-color: $bright-leaf;
+  transition: background 0.3s ease;
+  min-width: 40%;
+  max-width: 60%;
+  justify-self: center;
+  margin: 10px 0;
+  h5 {
+    margin: 0;
+  }
+  a {
+    color: $bright-leaf;
+    text-decoration: none;
+  }
+}
+
+.action-button-solid-leaf:hover {
+  border: 1px solid $leaf;
   color: white;
   opacity: 1;
   a {
