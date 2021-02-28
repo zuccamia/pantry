@@ -10,10 +10,14 @@ class BarcodeReader < ApplicationService
   def call
     # return a hash of product info
     product = Openfoodfacts::Product.get(@upc, locale: 'jp')
-    item_name = product.product_name
-    category_name = product.categories.split(',').first # openfoodfacts record categories as a string of a category list
-
-    create_item(item_name, category_name)
+    if product
+      item_name = product.product_name
+      category_name = product.categories.split(',').first # openfoodfacts record categories as a string of a category list
+    
+      create_item(item_name, category_name)
+    else
+      "Not found"
+    end
   end
 
   private

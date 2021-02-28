@@ -3,6 +3,9 @@
   <div class="action-button-outline-leaf">
     <%= link_to 'Add with barcode', get_barcode_path %>
   </div>
+  <div>
+    <p>Product not found? <%= link_to 'Create one for later!', "https://world.openfoodfacts.org/" %></p>
+  </div>
   <div class="form-container">
     <div class="grid">
       <%= simple_form_for @item_amount do |f| %>

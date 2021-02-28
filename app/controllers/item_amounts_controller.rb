@@ -37,9 +37,12 @@ class ItemAmountsController < ApplicationController
   end
 
   def new_barcode_item
-    @item = BarcodeReader.call(params[:upc])
-    render 'new' if @item.nil?
     @item_amount = ItemAmount.new
+    @item = BarcodeReader.call(params[:upc])
+    if @item == "Not found"
+      flash.now[:alert] = "Sorry, this product is not yet registered in our database"
+      render 'new'
+    end
   end
 
   private
