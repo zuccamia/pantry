@@ -32,6 +32,12 @@ class ItemAmountsController < ApplicationController
     redirect_to item_amounts_path
   end
 
+  def destroy
+    @item_amount = ItemAmount.find(params[:id])
+    @item_amount.destroy
+    redirect_to item_amounts_path
+  end
+
   def scan_barcode
     render 'scan_barcode'
   end

@@ -16,6 +16,9 @@
       </div>
       <div class="card-pantry-item-amount <%= item_amount.expired? ? "card-pantry-item-expired" : "" %>">
         <h5><%= item_amount.description.to_s %></h5>
+        <%= link_to item_amount_path(item_amount), method: :delete, data: { confirm: "Item used up?" }, class: "text-secondary" do %>
+          <i class="far fa-trash-alt"></i>
+        <% end %>
       </div>
     </div>
   <% end %>
