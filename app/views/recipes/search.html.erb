@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container grid">
   <div class="search-results">
     <%= form_tag recipes_path, method: :get do %>
       <%= text_field_tag :query,
@@ -14,9 +14,7 @@
       <%= render '/shared/recipe-search-item-card' %>
     </div>
   </div>
-  <div>
-    <div class="action-button-outline">
-      <h5>Show more results &nbsp; <i class="fas fa-arrow-down"></i></h5>
-    </div>
+  <div class="action-button-outline">
+    <h5>Show more results &nbsp; <i class="fas fa-arrow-down"></i></h5>
   </div>
 </div>

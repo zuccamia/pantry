@@ -3,7 +3,7 @@
   grid-template-columns: 1fr;
   grid-gap: 4px;
   flex-grow: 1;
-  justify-items: center;
+  justify-content: center;
 }
 
 // Smallest device
@@ -39,4 +39,9 @@
   .cards {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
+}
+
+
+.grid-container {
+  border: 1px solid rgba(0, 0, 0, 0.125);
 }
