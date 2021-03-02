@@ -25,7 +25,8 @@
   </table>
   <h4 class="sub-heading">Instructions</h4>
   <div class="content-box">
+    <h4>Instructions</h4>
     <p><%= simple_format(@recipe.instructions) %></p>
   </div>
-  <%= link_to "Delete recipe", recipe_path(@recipe), method: :delete, data: { confirm: "Delete recipe?" }, class: "action-button-solid"%>
+  <%= link_to "Delete recipe", recipe_path(@recipe), method: :delete, data: { confirm: "Delete recipe?" }, class: "action-button-solid" %>
 </div>
