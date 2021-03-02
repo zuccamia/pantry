@@ -18,7 +18,6 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
     @recipe.user = current_user
     @recipe.save
-
     redirect_to new_recipe_recipe_amount_path(@recipe)
   end
 
@@ -64,6 +63,6 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:tag_list, :recipe_name, :summary, :instructions, :photo)
+    params.require(:recipe).permit(:tag_list, :recipe_name, :summary, :instructions, :photo, recipe_amounts_attributes: [:description, :item_id, :recipe_id])
   end
 end
