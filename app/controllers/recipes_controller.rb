@@ -17,9 +17,11 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(recipe_params)
     @recipe.user = current_user
-    @recipe.save
-
-    redirect_to new_recipe_recipe_amount_path(@recipe)
+    if @recipe.save
+      redirect_to new_recipe_recipe_amount_path(@recipe), notice: 'Your recipe was successfully created!'
+    else
+      render :new
+    end
   end
 
   def edit
@@ -29,14 +31,13 @@ class RecipesController < ApplicationController
   def update
     @recipe = Recipe.find(params[:id])
     @recipe.update(recipe_params)
-    redirect_to recipe_path(@recipe)
+    redirect_to recipe_path(@recipe), notice: 'Your recipe was successfully updated.'
   end
 
   def destroy
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
-
-    redirect_to recipes_path
+    redirect_to recipes_path, notice: 'Your recipe was successfully deleted.'
   end
 
   def search
