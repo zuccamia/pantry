@@ -1,19 +1,29 @@
-<div class="container">
-  <% if @recipe.image.nil? %>
-    <%= cl_image_tag @recipe.photo.key, class: "recipe-card-photo", alt: "My Recipe" %>
-  <% else %>
-    <%= image_tag (@recipe.image), class: "recipe-card-photo" %>
-  <% end %>
-  <div class="recipe-title">
-    <h3><%= @recipe.recipe_name.capitalize %>
-      <%= link_to ('<i class="far fa-edit"></i>').html_safe, edit_recipe_path(@recipe) %></h3>
-  </div>
-  <div class="content-box">
-    <h4>Ingredients <%= link_to ('<i class="far fa-edit"></i>').html_safe, new_recipe_recipe_amount_path(@recipe) %></h4>
-    <% @recipe.recipe_amounts.each do |recipe_amount| %>
-      <p><%= recipe_amount.description %> <%= link_to ('<i class="far fa-edit"></i>').html_safe, edit_recipe_recipe_amount_path(@recipe, recipe_amount) %></p>
+<div class="container grid">
+  <div class="recipe-card">
+    <% if @recipe.image.nil? %>
+      <%= cl_image_tag @recipe.photo.key, class: "recipe-card-photo", alt: "My Recipe" %>
+    <% else %>
+      <%= image_tag (@recipe.image), class: "recipe-card-photo" %>
     <% end %>
+    <div class="recipe-card-body">
+      <div class="recipe-card-title">
+        <h3><%= @recipe.recipe_name.capitalize %>
+          <%= link_to ('<i class="far fa-edit"></i>').html_safe, edit_recipe_path(@recipe) %></h3>
+      </div>
+    </div>
   </div>
+  <div class="tags">
+    <p>tags</p>
+  </div>
+  <h4 class="sub-heading">Ingredients <%= link_to ('<i class="far fa-edit"></i>').html_safe, new_recipe_recipe_amount_path(@recipe) %></h4>
+  <table>
+    <% @recipe.recipe_amounts.each do |recipe_amount| %>
+      <tr class="ingredient-box">
+        <td><%= recipe_amount.description %> <%= link_to ('<i class="far fa-edit"></i>').html_safe, edit_recipe_recipe_amount_path(@recipe, recipe_amount) %></td>
+      </tr>
+    <% end %>
+  </table>
+  <h4 class="sub-heading">Instructions</h4>
   <div class="content-box">
     <h4>Instructions</h4>
     <p><%= simple_format(@recipe.instructions) %></p>
