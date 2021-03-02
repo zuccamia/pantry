@@ -13,7 +13,7 @@
     </div>
   </div>
   <div class="tags">
-    <p>tags</p>
+    <%= render 'shared/tag-list' %>
   </div>
   <h4 class="sub-heading">Ingredients <%= link_to ('<i class="far fa-edit"></i>').html_safe, new_recipe_recipe_amount_path(@recipe) %></h4>
   <table>
