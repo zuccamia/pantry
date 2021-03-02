@@ -13,7 +13,7 @@
     </div>
   </div>
   <div class="tags">
-    tags
+    <p>tags</p>
   </div>
   <h4 class="sub-heading">Ingredients <%= link_to ('<i class="far fa-edit"></i>').html_safe, new_recipe_recipe_amount_path(@recipe) %></h4>
   <table>
@@ -25,7 +25,7 @@
   </table>
   <h4 class="sub-heading">Instructions</h4>
   <div class="content-box">
-    <p><%= simple_format(@recipe.instructions)%></p>
+    <p><%= simple_format(@recipe.instructions) %></p>
   </div>
   <%= link_to "Delete recipe", recipe_path(@recipe), method: :delete, data: { confirm: "Delete recipe?" }, class: "action-button-solid"%>
 </div>
