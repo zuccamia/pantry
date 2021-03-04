@@ -1,0 +1,5 @@
+<% @recipe.tag_list.each do |tag| %>
+  <%= link_to recipes_path(tag: tag), class: "btn btn-secondary btn-sm mx-1" do %>
+    <%= tag %>
+  <% end %>
+<% end %>
