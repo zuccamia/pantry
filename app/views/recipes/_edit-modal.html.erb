@@ -1,0 +1,37 @@
+<div class="modal fade" id="editRecipe" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Edit recipe for <strong><%= @recipe.recipe_name.capitalize %></strong></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- recipe name and instructions-->
+        <div>
+          <%= simple_form_for @recipe do |f| %>
+            <h5><strong>Recipe name</strong></h5>
+            <div class="modal-box">
+              <%= f.input :recipe_name, label: false %>
+            </div>
+            <h5><strong>Ingredients</strong></h5>
+            <%= f.simple_fields_for :recipe_amounts do |recipe_amount| %>
+              <div class="modal-box">
+                <%= recipe_amount.association :item, label_method: :item_name, input_html: { class: "select2" }, include_hidden: true, label: false %>
+                <%= recipe_amount.input :description, label: false %>
+              </div>
+            <% end %>
+            <h5><strong>Instructions</strong></h5>
+            <div class="modal-box">
+              <%= f.input :instructions, label: false %>
+            </div>
+            <h5><strong>Photo</strong></h5>
+            <%= f.input :photo, as: :file, label: false %>
+            <%= f.submit class: 'btn action-button-solid' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
