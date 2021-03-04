@@ -2,4 +2,4 @@ meta_product_name: "Pantry"
 meta_title: "Pantry - Reduce Food Waste"
 meta_description: "Pantry helps you reduce food waste."
 meta_image: "cover.png" # should exist in `app/assets/images/`
-twitter_account: "@product_twitter_account"   # required for Twitter Cards
+twitter_account: "@lewagontokyo"   # required for Twitter Cards
