@@ -1,6 +1,6 @@
 
-<% content_for :meta_title, "#{@recipe.recipe_name,capitalize} is on #{DEFAULT_META["meta_product_name"]}" %>
-<% content_for :meta_description, recipe[:summary][0..200] + "..." %>
+<% content_for :meta_title, "#{@recipe.recipe_name.capitalize} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @recipe[:summary][0..200] + "..." %>
 <% content_for :meta_image, cl_image_path(@recipe.image) %>
 
 <div class="container grid">
