@@ -1,6 +1,13 @@
 <% content_for :meta_title, "#{@recipe.recipe_name.capitalize} is on #{DEFAULT_META["meta_product_name"]}" %>
-<% content_for :meta_description, @recipe[:summary][0..200] + "..." %>
-<% content_for :meta_image, cl_image_path(@recipe.image) %>
+<% if @recipe.summary %>
+  <% content_for :meta_description, @recipe.summary[0..200] + "..." %>
+<% end %>
+<% if @recipe.photo.key %>
+  <% content_for :meta_image, cl_image_path(@recipe.photo.key) %>
+<% else %>
+  <% content_for :meta_image, cl_image_path(@recipe.image) %>
+<% end %>
+
 <div class="container grid">
   <div class="recipe-card">
     <% if @recipe.image.nil? %>
