@@ -3,7 +3,7 @@
     <%= form_tag recipes_path, method: :get do %>
       <%= text_field_tag :query,
     params[:query],
-    class: "form-control",
+    class: "search-form",
     placeholder: "Top results for #{params[:tag]}"
   %>
       <div class="search-button">
