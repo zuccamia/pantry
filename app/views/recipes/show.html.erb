@@ -21,8 +21,15 @@
     </div>
     <h4 class="sub-heading">Ingredients</h4>
     <table>
-      <% @recipe.recipe_amounts.each do |recipe_amount| %>
+      <% @available_items.each do |recipe_amount| %>
         <tr class="ingredient-box">
+          <td><%= recipe_amount.item.item_name %> <span><i class="fas fa-check-circle"></i></span></td>
+          <td><%= recipe_amount.description %></td>
+        </tr>
+      <% end %>
+      <% @shopping_list.each do |recipe_amount| %>
+        <tr class="ingredient-box">
+          <td><%= recipe_amount.item.item_name %></td>
           <td><%= recipe_amount.description %></td>
         </tr>
       <% end %>
