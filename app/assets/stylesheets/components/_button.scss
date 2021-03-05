@@ -232,6 +232,12 @@
 
 // 2.then overwrite the font-family to: $headers-font
 
+.badge {
+  font-family: $headers-font;
+  padding: 6px 10px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
 
 
 

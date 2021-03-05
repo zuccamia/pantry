@@ -7,7 +7,6 @@
 <% else %>
   <% content_for :meta_image, cl_image_path(@recipe.image) %>
 <% end %>
-
 <div class="container grid">
   <div class="recipe-card">
     <% if @recipe.image.nil? %>
@@ -17,16 +16,19 @@
     <% end %>
     <div class="recipe-card-body">
       <div class="recipe-card-title">
-        <h3><%= @recipe.recipe_name.capitalize %>
+        <h3><%= @recipe.recipe_name.capitalize %>&nbsp;
           <a href="#" class="text-primary" data-toggle="modal" data-target="#editRecipe">
             <i class="far fa-edit"></i></a>
         </div>
       </div>
+      <div class="tags">
+        <%= render 'shared/tag-list' %>
+      </div>
     </div>
-    <div class="tags">
-      <%= render 'shared/tag-list' %>
-    </div>
-    <h4 class="sub-heading">Ingredients</h4>
+    <br>
+    <h4 class="sub-heading">Ingredients&nbsp;
+      <a href="#" class="text-primary" data-toggle="modal" data-target="#editRecipe">
+        <i class="far fa-edit"></i></a></h4>
     <table>
       <% @available_items.each do |recipe_amount| %>
         <tr class="ingredient-box">
@@ -35,13 +37,16 @@
         </tr>
       <% end %>
       <% @shopping_list.each do |recipe_amount| %>
-        <tr class="ingredient-box">
+        <tr class="ingredient-box-amount">
           <td><%= recipe_amount.item.item_name %></td>
           <td><%= recipe_amount.description %></td>
         </tr>
       <% end %>
     </table>
-    <h4 class="sub-heading">Instructions</h4>
+    <br>
+    <h4 class="sub-heading">Instructions&nbsp;
+      <a href="#" class="text-primary" data-toggle="modal" data-target="#editRecipe">
+        <i class="far fa-edit"></i></a></h4>
     <div class="content-box">
       <p><%= simple_format(@recipe.instructions) %></p>
     </div>
