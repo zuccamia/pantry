@@ -1,9 +1,13 @@
-  
 <div class="grid">
-  <div class="action-button-outline-leaf">
-    <%= link_to 'Add with barcode', get_barcode_path %>
+  <div class="mt-5">
+    <script src="https://cdn.jsdelivr.net/npm/scandit-sdk@5.x"></script>
+    <%= form_tag '/add_barcode_item', method: :get, id: 'barcode-form' do %>
+      <%= hidden_field_tag :upc, params[:upc] %>
+    <% end %>
+    <div id="scandit-barcode-picker" style="max-width: 1280px; max-height: 80%;"></div>
   </div>
-  <div>
-    <p>Product not found? <%= link_to 'Create one for later!', "https://world.openfoodfacts.org/" %></p>
+  <div class="error-message">
+    <h4>Product not found?<br>
+      <%= link_to 'Create one for later!', "https://world.openfoodfacts.org/", class: "text-success" %></h4>
   </div>
 </div>
