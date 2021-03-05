@@ -1,7 +1,7 @@
 .navbar {
   padding: 0 16px;
   position: top;
-  box-shadow: 0 0 4px rgba(0,0,0,0.2);
+  border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 .navbar-lewagon {
   justify-content: space-between;
@@ -17,11 +17,8 @@
 }
 
 .navbar-brand-name {
-  display:flex;
-  h2 {
-  padding-top: 10px;
   margin-bottom: 0;
-  }
+  color: $bright-mint;
 }
 
 .navbar-light .navbar-toggler {
