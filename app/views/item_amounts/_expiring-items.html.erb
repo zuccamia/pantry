@@ -1,5 +1,4 @@
-  <% @item_amounts.each do |item_amount| %>
-  <% if item_amount.expired? %>
+  <% @expiring_items.each do |item_amount| %>
     <div class="card-pantry-item">
       <div class="card-pantry-item-name <%= item_amount.expired? ? "card-pantry-item-expired" : "" %>">
         <h5><%= item_amount.item.item_name %></h5>
@@ -21,5 +20,4 @@
         <% end %>
       </div>
     </div>
-  <% end %>
 <% end %>

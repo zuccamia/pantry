@@ -2,10 +2,7 @@ class ItemAmountsController < ApplicationController
   def index
     @categories = filtered_categories
     @item_amounts = ItemAmount.all
-    # @categories.each do |category|
-    #   category_name = category.sub_category.nil? ? category.main_category : category.sub_category
-    #   @item_amounts[category_name] = category.item_amounts
-    # end
+    @expiring_items = @item_amounts.filter { |item_amount| item_amount.expired? }
     @recipes = Recipe.all
   end
 
