@@ -1,74 +1,91 @@
 .modal-title {
-  color: $bright-mint;
+  color: $dark-gray;
   font-size: 18px;
+
 }
 
 .modal-body {
-  color: $bright-mint;
+  h5 {
+    color: $bright-mint;
+  }
 }
 .modal-box {
-  border: 2px solid $bright-mint;
-  margin-bottom: 32px;
-  border-radius: 24px;
-  background-color: white;
+    margin-bottom: 20px;
 }
-
 
 // Recipe-edit-modal
-
-input#recipe_recipe_name.form-control.is-valid.string.required {
-  border: none;
-  border-radius: 16px;
-  height: 50px;
-  background-color: transparent;
-  margin-bottom: 0;
+//arrow
+.modal-box .select2-container--default .select2-selection--single .select2-selection__arrow b {
+    border-color: #888 transparent transparent transparent;
+    border-style: solid;
+    border-width: 5px 4px 0 4px;
+    height: 0;
+    left: 50%;
+    margin-left: -24px;
+    margin-top: -2px;
+    position: absolute;
+    top: 50%;
+    width: 0;
 }
 
-textarea#recipe_instructions.form-control {
-  border: none;
-  border-radius: 16px;
-  background-color: transparent;
-  margin-bottom: 0;
+//check-mark
+.was-validated .form-control:valid, .form-control.is-valid {
+    border-color: #bfbdbd;
+    padding-right: calc(1.5em + 0.75rem);
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
 }
 
 .select2-container {
+    width: 100%;
+    padding: 0px 16px 0px 16px;
+    line-height: 28px;
+}
+
+.modal-box .form-control .is-valid .string .required {
   width: 100%;
-  box-sizing: border-box;
-  display: inline-block;
-  margin: 0;
-  position: relative;
-  vertical-align: middle;
+}
+.modal-box .form-group {
+ margin-bottom: 0;
 }
 
-// #recipe_recipe_amounts_attributes_0_description {
-//   margin-top: 0;
-//   font-size: 12px;
-//   color: #495057;
-//   background-color: transparent;
-//   background-clip: padding-box;
-//   border: none;
-// }
+.modal-box .form-control {
+}
+.modal-box .select2-selection__rendered {
+border-color: #bfbdbd;
+}
+
+.modal-box input#recipe_recipe_name.form-control.is-valid.string.required {
+  border-radius: 4px;
+  height: 50px;
+}
+
+.modal-box textarea#recipe_instructions.form-control {
+  border-radius: 4px;
+  margin-bottom: 0;
+  height: 250px;
+}
 
 
-.form-group.string.required.recipe_recipe_amounts_description.form-group-valid {
-  margin-top: 0;
+.modal-box .form-control {
+  display: block;
+  margin-left: 16px;
+  width: 89%;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
   font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
   color: #495057;
-  background-color: transparent;
+  background-color: #fff;
   background-clip: padding-box;
-  border: none;
+  border-radius: 4px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-.form-control {
-  margin-top: 0;
-  font-size: 12px;
-  color: #495057;
-  background-color: transparent;
-  background-clip: padding-box;
-  border: none;
-}
-
-.input#recipe_photo.form-control-file {
-  margin-left: 0;
-  padding: 10px 0;
+.close {
+  color: $bright-mint;
+  font-weight: bold;
+  font-size: 24px
 }
