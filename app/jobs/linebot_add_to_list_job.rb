@@ -19,5 +19,11 @@ class LinebotAddToListJob < ApplicationJob
         'OK'
       end
     end
+
+    private
+
+    def add_item_to
+      
+    end
   end
 end
