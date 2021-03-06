@@ -1,6 +1,6 @@
 require "test_helper"
 
-class Api::LinebotsControllerTest < ActionDispatch::IntegrationTest
+class LinebotsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
