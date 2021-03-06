@@ -9,9 +9,9 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
 
     ingredients = @recipe.recipe_amounts
-    pantry = ItemAmount.all.map { |item_amount| item_amount.item }
+    pantry = ItemAmount.all.map { |item_amount| item_amount.item.item_name }
 
-    @available_items = ingredients.filter { |recipe_amount| pantry.include?(recipe_amount.item) }
+    @available_items = ingredients.filter { |recipe_amount| pantry.include?(recipe_amount.item.item_name) }
     @shopping_list = ingredients - @available_items
   end
 
