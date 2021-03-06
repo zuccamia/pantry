@@ -9,6 +9,7 @@
     "bootstrap": "^4.6.0",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1",
+    "scandit-sdk": "^5.5.3",
     "select2": "^4.1.0-rc.0",
     "turbolinks": "^5.2.0"
   },
