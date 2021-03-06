@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_06_095021) do
+ActiveRecord::Schema.define(version: 2021_03_06_175344) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2021_03_06_095021) do
   end
 
   create_table "item_amounts", force: :cascade do |t|
-    t.string "description"
+    t.string "description", default: "1 unit"
     t.bigint "item_id", null: false
     t.date "expiry_date"
     t.bigint "user_id", null: false

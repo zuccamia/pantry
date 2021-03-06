@@ -74,12 +74,12 @@ class RecipesController < ApplicationController
     params.require(:recipe).permit(:tag_list, :recipe_name, :summary, :instructions, :photo, recipe_amounts_attributes: [:description, :item_id, :recipe_id, :id])
   end
 
-  def create_shopping_list(items, user)
+  def create_shopping_list(recipe_amounts, user)
     shopping_list = ShoppingList.new
     shopping_list.user = user
     shopping_list.save
 
-    items.each do |recipe_amount|
+    recipe_amounts.each do |recipe_amount|
       shopping_amount = ShoppingAmount.new(description: recipe_amount.description, item_id: recipe_amount.item.id)
       shopping_amount.shopping_list = shopping_list
       shopping_amount.save
