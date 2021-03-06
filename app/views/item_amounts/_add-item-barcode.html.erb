@@ -3,7 +3,6 @@
     <div class="refresh-button">
       <h5><%= link_to ('Refresh &nbsp;' '<i class="fas fa-sync-alt" alt="Barcode scanner not loading? Try refreshing."></i>').html_safe, new_item_amount_path %></h5>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/scandit-sdk@5.x"></script>
     <%= form_tag '/add_barcode_item', method: :get, id: 'barcode-form' do %>
       <%= hidden_field_tag :upc, params[:upc] %>
     <% end %>
