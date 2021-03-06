@@ -33,7 +33,7 @@ class LinebotsController < ApplicationController
         elsif event.message['text'].downcase.include?('shopping done')
           response = LinebotLoadToPantryJob.perform_now(user)
         elsif event.message['text'].downcase.include?('list')
-          LinebotShareJob.perform_now(items, client, user)
+          LinebotShareJob.perform_now(user.shopping_lists.last, client, user)
         else
           response = default_message
         end
