@@ -1,7 +1,7 @@
 <h5 class="page-title-item">What's the new item?</h5>
 <div class="grid">
   <%= simple_form_for @item_amount do |f| %>
-    <%= f.association :item, label_method: :item_name %>
+    <%= f.association :item, label_method: :item_name, input_html: { class: "select2" }, include_hidden: false %>
     <%= f.input :description %>
     <%= f.submit 'Save to pantry', class: 'btn action-button-solid-leaf' %>
   <% end %>
