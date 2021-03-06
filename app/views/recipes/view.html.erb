@@ -1,4 +1,5 @@
 <div class="container grid">
+  <h2><%= link_to ('<i class="fas fa-long-arrow-alt-left"></i>').html_safe, :back %></h2>
   <%= image_tag(@recipe[:img_url], width: "100%") %>
   <%# Added width above to temporarily solve issues with picture size and lower navbar %>
   <div class="recipe-title text-primary d-flex mb-0">
