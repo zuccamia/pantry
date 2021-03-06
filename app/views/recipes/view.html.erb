@@ -3,7 +3,7 @@
   <%= image_tag(@recipe[:img_url], width: "100%") %>
   <%# Added width above to temporarily solve issues with picture size and lower navbar %>
   <div class="recipe-title text-primary d-flex mb-0">
-    <h3><%= @recipe[:name] %></h3>
+    <h3><%= @recipe[:name] %>&nbsp;</h3>
     <h3><%= link_to ('<i class="fas fa-folder-plus"></i>').html_safe, search_recipe_path, class: "recipe-icon" %></h3>
   </div>
   <div class="content-box">
@@ -18,5 +18,5 @@
       <p><%= simple_format(step) %></p>
     <% end %>
   </div>
-  <%= link_to 'Save recipe', import_recipe_path(recipe_id: @recipe[:id]), class: "action-button-solid" %>
+  <%= link_to 'Save Recipe', import_recipe_path(recipe_id: @recipe[:id]), class: "action-button-solid" %>
 </div>
