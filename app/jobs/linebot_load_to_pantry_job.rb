@@ -1,4 +1,4 @@
-class LinebotAddToListJob < ApplicationJob
+class LinebotLoadToPantryJob < ApplicationJob
 
   def perform(message, user, default_message)
     # return '' unless message.downcase.include?('pantry') # Only answer to messages with 'pantry'
