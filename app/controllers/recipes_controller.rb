@@ -70,9 +70,9 @@ class RecipesController < ApplicationController
   def shopping_list
     @recipe = Recipe.find(params[:recipe_id])
     ingredients = @recipe.recipe_amounts
-    pantry = ItemAmount.all.map { |item_amount| item_amount.item }
+    pantry = ItemAmount.all.map { |item_amount| item_amount.item.item_name }
 
-    @available_items = ingredients.filter { |recipe_amount| pantry.include?(recipe_amount.item) }
+    @available_items = ingredients.filter { |recipe_amount| pantry.include?(recipe_amount.item.item_name) }
     @shopping_list = ingredients - @available_items
 
     LinebotShareJob.perform_now(@shopping_list)
