@@ -19,12 +19,26 @@ import "bootstrap";
 // Internal imports, e.g:
 import { triggerTabList } from '../components/tabs';
 import { pickUpBarcode } from '../components/barcode-picker';
+import { menuItem } from '../components/menu-bar';
+import { menuPantry } from '../components/menu-bar';
+import { menuRecipes } from '../components/menu-bar';
+import { menuAddrecipe } from '../components/menu-bar';
+
+
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
+  const barcodeScanner = document.getElementById('scandit-barcode-picker')
+  if (barcodeScanner) {
+    pickUpBarcode();
+  }
+
   triggerTabList();
-  pickUpBarcode();
+  menuItem();
+  menuPantry();
+  menuRecipes();
+  menuAddrecipe();
   // initSelect2();
 });
 
@@ -42,3 +56,4 @@ document.addEventListener("touchmove", (event) => {
 document.addEventListener("click", (event) => {
   showCircle(event, 1);
 });
+
