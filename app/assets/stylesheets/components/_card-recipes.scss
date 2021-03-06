@@ -10,29 +10,38 @@
   font-family: $headers-font;
 }
 
+// .recipe-card {
+//   border: 1px solid $bright-mint;
+//   border-radius: 24px;
+//   height: 100%;
+// }
+
 .recipe-card-photo{
   height: 200px;
   width: 100%;
   border-radius: 24px;
   object-fit: cover;
   object-position: center;
-  border: 1px solid rgba(0, 0, 0, 0.125);
 }
 
-
 .recipe-card-title{
+  background-color: white;
   color: $bright-mint;
   margin: 16px 0 8px 0;
+  text-align: center;
 
   h6 {
     margin-bottom: 0;
-
   }
   a {
     color: $white;
     text-decoration: none;
     background-color: transparent;
   }
+}
+
+.tags {
+  text-align: center;
 }
 
 
@@ -70,13 +79,23 @@
 table {
   width: 100%;
   background-color: $light-mint;
+  th {
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    background-color: $bright-mint;
+    color: white;
+    padding: 8px;
+    font-family: $headers-font;
+    text-align: center;
+  }
   tr {
     border: 1px solid rgba(0, 0, 0, 0.125);
     p {
       margin-bottom: 0;
     }
+
     td {
-      padding: 16px;
+      padding: 12px;
+      border: 1px solid rgba(0, 0, 0, 0.125);
     }
   }
 }
