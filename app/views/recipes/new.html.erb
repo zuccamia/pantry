@@ -4,6 +4,13 @@
     <div class="grid">
       <%= simple_form_for @recipe do |f| %>
         <%= f.input :recipe_name %>
+        <%= f.simple_fields_for :recipe_amounts do |recipe_amount| %>
+          <%= recipe_amount.association :item,
+                label_method: :item_name,
+                input_html: { class: "select2" },
+                include_hidden: true %>
+          <%= recipe_amount.input :description %>
+        <% end %>
         <%= f.input :instructions %>
         <%= f.input :tag_list, placeholder: "Separate tags with comma." %>
         <%= f.input :photo, as: :file %>

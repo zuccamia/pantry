@@ -1,11 +1,36 @@
-<div class="container">
-  <div>
-    <%= simple_form_for @recipe do |f| %>
-      <%= f.input :recipe_name %>
-      <%= f.input :instructions %>
-      <%= f.input :tag_list, placeholder: "Separate tags with comma." %>
-      <%= f.input :photo, as: :file %>
-      <%= f.submit class: 'btn btn-secondary' %>
+<div>
+  <%= simple_form_for @recipe do |f| %>
+    <h5><strong>Recipe name</strong></h5>
+    <div class="modal-box">
+      <%= f.input :recipe_name, label: false %>
+    </div>
+    <br>
+    <br>
+    <h5><strong>Ingredients</strong></h5>
+    <%= f.simple_fields_for :recipe_amounts do |recipe_amount| %>
+      <div class="modal-box">
+        <div class="item-select"><strong>
+            <%= recipe_amount.association :item,
+                label_method: :item_name,
+                input_html: { class: "select2" },
+                include_hidden: true,
+                label: false %></strong>
+        </div>
+        <%= recipe_amount.input :description,
+                label: false %>
+      </div>
+      <%= link_to ('<i class="far fa-trash-alt"></i>').html_safe, recipe_amount_path(recipe_amount.object), method: :delete %>
     <% end %>
-  </div>
+    <br>
+    <br>
+    <h5><strong>Instructions</strong></h5>
+    <div class="modal-box">
+      <%= f.input :instructions, label: false %>
+    </div>
+    <br>
+    <br>
+    <h5><strong>Photo</strong></h5>
+    <%= f.input :photo, as: :file, label: false %>
+    <%= f.submit class: 'btn action-button-solid' %>
+  <% end %>
 </div>
