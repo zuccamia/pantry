@@ -7,11 +7,13 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+
     ingredients = @recipe.recipe_amounts
     pantry = ItemAmount.all.map { |item_amount| item_amount.item.item_name }
-
     @available_items = ingredients.filter { |recipe_amount| pantry.include?(recipe_amount.item.item_name) }
-    @shopping_list = ingredients - @available_items
+    @missing_items = ingredients - @available_items
+
+    @shopping_list = create_shopping_list(@missing_items, current_user)
   end
 
   def new
@@ -70,5 +72,19 @@ class RecipesController < ApplicationController
 
   def recipe_params
     params.require(:recipe).permit(:tag_list, :recipe_name, :summary, :instructions, :photo, recipe_amounts_attributes: [:description, :item_id, :recipe_id, :id])
+  end
+
+  def create_shopping_list(items, user)
+    shopping_list = ShoppingList.new
+    shopping_list.user = user
+    shopping_list.save
+
+    items.each do |recipe_amount|
+      shopping_amount = ShoppingAmount.new(description: recipe_amount.description, item_id: recipe_amount.item.id)
+      shopping_amount.shopping_list = shopping_list
+      shopping_amount.save
+    end
+
+    shopping_list
   end
 end

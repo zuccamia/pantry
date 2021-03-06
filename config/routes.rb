@@ -26,6 +26,6 @@ Rails.application.routes.draw do
   get '/add_barcode_item', to: 'item_amounts#new_barcode_item'
   
   # routes for LINE bots
-  get '/new_shopping_list', to: 'linebots#share', as: 'shopping_list'
+  get '/new_shopping_list/:id', to: 'linebots#share', as: 'shopping_list'
   post '/callback', to: 'linebots#call_back'
 end

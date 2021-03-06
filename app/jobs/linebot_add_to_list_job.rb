@@ -1,7 +1,6 @@
 class LinebotAddToListJob < ApplicationJob
 
   def perform(message, user, default_message)
-    # return '' unless message.downcase.include?('pantry') # Only answer to messages with 'pantry'
     
     shopping_list = user.shopping_lists.last
 
