@@ -51,7 +51,7 @@
       <p><%= simple_format(@recipe.instructions) %></p>
     </div>
     <%= link_to "Delete recipe", recipe_path(@recipe), method: :delete, data: { confirm: "Delete recipe?" }, class: "action-button-solid" %>
-    <%= link_to 'Create Shopping List', shopping_list_path(shopping_list: @shopping_list) %>
+    <%= link_to 'Create Shopping List', shopping_list_path(shopping_list: @shopping_list), class: "action-button-solid" %>
   </div>
   <%= render 'edit-modal' %>
   
