@@ -1,21 +1,17 @@
 class LinebotsController < ApplicationController
-  require 'line/bot'
+  skip_before_action :verify_authenticity_token
+  skip_before_action :authenticate_user!, only: [ :call_back ]
+  
+  def shopping_list
+    shopping_list = params[:shopping_list].map do |item_id|
+      RecipeAmount.find(item_id.to_i)
+    end
+    LinebotShareJob.perform_now(shopping_list)
+
+    redirect_to recipes_path, notice: "Successfully shared your shopping list to your LINE group!"
+  end
 
   def call_back
-    body = request.body.read
-
-    @client ||= Line::Bot::Client.new { |config|
-      config.channel_secret = ENV["LINE_CHANNEL_SECRET"]
-      config.channel_token = ENV["LINE_ACCESS_TOKEN"]
-    }
-
-    events = @client.parse_events_from(body)
-    events.each do |event|
-      case event.type
-      # when receive a text message
-      when Line::Bot::Event::MessageType::Text
-        @user = User.find_by(line_id: event['source']['userId'])
-      end
-    end
+    LinebotAddToListJob.perform_now()
   end
 end
