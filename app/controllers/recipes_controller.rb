@@ -7,7 +7,6 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
-
     ingredients = @recipe.recipe_amounts
     pantry = ItemAmount.all.map { |item_amount| item_amount.item.item_name }
 

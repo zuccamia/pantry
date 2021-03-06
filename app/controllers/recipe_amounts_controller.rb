@@ -30,6 +30,7 @@ class RecipeAmountsController < ApplicationController
 
   def destroy
     @recipe_amount = RecipeAmount.find(params[:id])
+    @recipe = @recipe_amount.recipe
     @recipe_amount.destroy
     redirect_to recipe_path(@recipe)
   end
