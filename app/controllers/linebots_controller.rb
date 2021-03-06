@@ -11,13 +11,12 @@ class LinebotsController < ApplicationController
 
   def share
     items = params[:shopping_list]
-    user = current_user
-    LinebotShareJob.perform_now(items, client, user)
+    LinebotShareJob.perform_now(items, client, current_user)
 
     redirect_to recipes_path, notice: "Successfully shared your shopping list to your LINE group!"
   end
 
   def call_back
-    LinebotAddToListJob.perform_now()
+    LinebotAddToListJob.perform_now(client, current_user)
   end
 end
