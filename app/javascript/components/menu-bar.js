@@ -17,7 +17,7 @@ export { menuPantry };
 
 
 const menuRecipes = () => {
-  if (location.pathname === '/recipes' || '/search' || '/view' || '/recipes/:id') {
+  if (location.pathname === '/recipes' || location.pathname === '/search' || location.pathname === '/view') {
     $('#recipes-text').addClass('active');
     $('.fa-utensils').addClass('active');
   }
