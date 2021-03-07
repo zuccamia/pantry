@@ -1,7 +1,19 @@
-// .form-container {
-//   padding: 14px;
-// }
+.form {
+  margin: 8px;
+}
 
+.recipe-form {
+  margin-bottom: 24px;
+  padding: 16px;
+  background-color: $light-mint;
+  border-radius: 16px;
+}
+
+.recipe-form {
+  #recipe_instructions {
+    height: 100px;
+  }
+}
 // // pantry new item form
 // label {
 //   font-family: $headers-font;
