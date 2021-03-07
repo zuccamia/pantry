@@ -17,8 +17,7 @@
     <div class="recipe-card-body">
       <div class="recipe-card-title">
         <h3><%= @recipe.recipe_name.capitalize %>&nbsp;
-          <a href="#" class="text-primary" data-toggle="modal" data-target="#editRecipe">
-            <i class="far fa-edit"></i></a>
+          <%= link_to ('<i class="material-icons kitchen">kitchen</i>').html_safe, edit_recipe_path(@recipe) %>
         </div>
       </div>
       <div class="tags">
@@ -54,4 +53,3 @@
     <%= link_to 'Send Ingredients to LINE', shopping_list_path(shopping_list: @shopping_list), class: "action-button-solid" %>
   </div>
   <%= render 'edit-modal' %>
-  
