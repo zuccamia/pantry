@@ -1,15 +1,168 @@
-.background {
-
+.home-background {
+  background-color: $white-gray;
+  background-image: linear-gradient(154deg, #e9f2cb 0%, #e5f7f9 74%);  
 }
 
-.intro-card {
-
+header {
+  margin: 80px 30px 75px;
+  text-align: center;
 }
 
-.function-card {
-
+header > h1 {
+  margin: 20px 0;
 }
 
-.about-card {
-
+header > h1 strong {
+  font-weight: 600;
 }
+
+header > p {
+  max-width: 520px;
+  margin: auto;
+}
+
+@media (max-width: 443px) {
+  header > h1 { font-size: 1.6em; }
+}
+
+/*
+ * ## Cards Container Class
+ */
+
+.cards-container {
+  /* List Styling Clean-Up */
+  list-style: none;
+  padding: 0; margin: 0;
+
+  /* Alignment */
+  margin: auto;
+}
+
+@media (min-width: 788px) {
+  .cards-container { 
+    width: 728px;
+  }
+  /* Clear Fix */
+  .cards-container::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}
+
+@media (min-width: 1166px) {
+  .cards-container {
+    width: 1106px;
+  }
+}
+
+/*
+ * ## Feature Card Class
+ */
+
+[class$='feature-card'] {
+  /* Positioning and Sizing */
+  position: relative;
+  box-sizing: border-box;
+  width: 350px; height: 250px;
+
+  /* Alignment */
+  margin: 0;
+  padding: 32px;
+
+  /* Box Details */
+  border-radius: 10px;
+  border-top: solid 5px black;
+  box-shadow: 2px 5px 20px rgba(0,0,0,0.1);
+}
+
+/*
+ * ### Inner Elements
+ */
+
+[class$='feature-card'] h2, [class$='feature-card'] p { margin: 0; }
+
+[class$='feature-card'] img {
+  position: absolute;
+  bottom: 32px; right: 32px;
+}
+
+/*
+ * ### Top Border Colors Rules
+ */
+
+[class$='feature-card'][class*='mint'] {
+  border-color: hsl(188, 24%, 61%);
+}
+
+[class$='feature-card'][class*='salmon'] {
+  border-color: hsl(22, 100%, 81%);
+}
+
+[class$='feature-card'][class*='leaf'] {
+  border-color: hsl(74, 29%, 59%);
+}
+
+[class$='feature-card'][class*='dusk'] {
+  border-color: hsl(187, 22%, 31%);
+}
+
+@media (min-width: 788px) {
+  [class$='feature-card'] {
+    float: left;
+  }
+
+  @media (min-width: 1166px) {
+    
+    [class$='feature-card']:first-child {
+      margin: 140px 0;
+    }
+
+    [class$='feature-card']:nth-child(2),
+    [class$='feature-card']:nth-child(3) {
+      margin: 0 22px;
+    }
+
+    [class$='feature-card']:last-child {
+      margin-top: -110px;
+    }
+
+    [class$='feature-card']:nth-child(3) {
+      margin-top: 30px;
+    }
+  }
+
+  @media (max-width: 1165px) {
+
+    [class$='feature-card']:nth-child(3),
+    [class$='feature-card']:nth-child(4) {
+      margin-top: 30px;
+    }
+
+    [class$='feature-card']:nth-child(2),
+    [class$='feature-card']:nth-child(4) {
+      margin-left: 28px;
+    }
+  }
+}
+
+@media (max-width: 787px) {
+
+  [class$='feature-card'] {
+    width: 300px; height: 220px;
+    margin: auto;
+  }
+
+  [class$='feature-card']:not(:first-child) {
+    margin-top: 22px;
+  }
+}
+
+/*
+ * ## Main Footer
+ */
+
+footer { margin-top: 80px }
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color:  hsl(187, 22%, 31%); }
