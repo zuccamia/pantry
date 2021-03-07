@@ -15,41 +15,43 @@
       <%= image_tag (@recipe.image), class: "recipe-card-photo" %>
     <% end %>
     <div class="recipe-card-body">
-      <div class="recipe-card-title">
-        <h3><%= @recipe.recipe_name.capitalize %>&nbsp;
-          <%= link_to ('<i class="material-icons kitchen">kitchen</i>').html_safe, edit_recipe_path(@recipe) %>
-        </div>
-      </div>
-      <div class="tags">
-        <%= render 'shared/tag-list' %>
+      <div class="recipe-card-title d-flex justify-content-center">
+        <h3><%= @recipe.recipe_name.capitalize %>&nbsp;</h3>
+        <h3><%= link_to ('<i class="far fa-edit"></i>').html_safe, edit_recipe_path(@recipe) %>
+        </h3>
       </div>
     </div>
-    <br>
-    <h4 class="sub-heading">Ingredients&nbsp;
-      <a href="#" class="text-primary" data-toggle="modal" data-target="#editRecipe">
-        <i class="far fa-edit"></i></a></h4>
-    <table>
-      <% @available_items.each do |recipe_amount| %>
-        <tr class="ingredient-box">
-          <td><%= recipe_amount.item.item_name %> <span><i class="fas fa-check-circle"></i></span></td>
-          <td><%= recipe_amount.description %></td>
-        </tr>
-      <% end %>
-      <% @shopping_list.each do |recipe_amount| %>
-        <tr class="ingredient-box-amount">
-          <td><%= recipe_amount.item.item_name %></td>
-          <td><%= recipe_amount.description %></td>
-        </tr>
-      <% end %>
-    </table>
-    <br>
-    <h4 class="sub-heading">Instructions&nbsp;
-      <a href="#" class="text-primary" data-toggle="modal" data-target="#editRecipe">
-        <i class="far fa-edit"></i></a></h4>
-    <div class="content-box">
-      <p><%= simple_format(@recipe.instructions) %></p>
+    <div class="tags">
+      <%= render 'shared/tag-list' %>
     </div>
-    <%= link_to "Delete Recipe", recipe_path(@recipe), method: :delete, data: { confirm: "Delete recipe?" }, class: "action-button-solid" %>
-    <%= link_to 'Send Ingredients to LINE', shopping_list_path(shopping_list: @shopping_list), class: "action-button-solid" %>
   </div>
-  <%= render 'edit-modal' %>
+  <br>
+  <div class="sub-heading d-flex">
+    <h4>Ingredients&nbsp; </h4>
+    <h4><%= link_to ('<i class="far fa-edit"></i>').html_safe, edit_recipe_path(@recipe) %></h4>
+  </div>
+  <table>
+    <% @available_items.each do |recipe_amount| %>
+      <tr class="ingredient-box">
+        <td><%= recipe_amount.item.item_name %> <span><i class="fas fa-check-circle"></i></span></td>
+        <td><%= recipe_amount.description %></td>
+      </tr>
+    <% end %>
+    <% @shopping_list.each do |recipe_amount| %>
+      <tr class="ingredient-box-amount">
+        <td><%= recipe_amount.item.item_name %></td>
+        <td><%= recipe_amount.description %></td>
+      </tr>
+    <% end %>
+  </table>
+  <br>
+  <div class="sub-heading d-flex">
+    <h4>Instructions&nbsp;</h4>
+    <h4><%= link_to ('<i class="far fa-edit"></i>').html_safe, edit_recipe_path(@recipe) %></h4>
+  </div>
+  <div class="content-box">
+    <p><%= simple_format(@recipe.instructions) %></p>
+  </div>
+  <%= link_to "Delete Recipe", recipe_path(@recipe), method: :delete, data: { confirm: "Delete recipe?" }, class: "action-button-solid" %>
+  <%= link_to 'Send Ingredients to LINE', shopping_list_path(shopping_list: @shopping_list), class: "action-button-solid" %>
+</div>
