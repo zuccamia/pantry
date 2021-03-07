@@ -58,8 +58,9 @@ class LinebotsController < ApplicationController
   def default_message
     "Sorry I am not sure how to do that...🥶 \n"\
     "However, I am good at: 🦾\n"\
-    "🧀 Add a new item to your shopping list.\n👉 'Pantry, add <amount> of <item name>'\n or 'Pantry, add <item_name>'\n"\
+    "🧀 Add a new item to your shopping list.\n👉 'Pantry, add <amount> of <item name>'\n or 'Pantry, add <item name>'\n"\
     "📥 Load all your bought items to your digital pantry in the Pantry app.\n👉 Simply say: 'Pantry, shopping done!'\n"\
+    "📝 Show your latest shopping list.\n👉 Just say: 'Pantry, list!'\n"\
     "Give it a go!😀"
   end
 end
