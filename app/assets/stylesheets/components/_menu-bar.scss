@@ -1,11 +1,10 @@
 .menuicons {
   font-family: $headers-font;
-  background-color: #fcfcfc;
+  background-color: #f7f7f7;
   width: 100%;
   height: 68px;
   padding: 12px;
-  border: 1px solid rgba(0,0,0,0.1);
-  border-radius: 40px;
+  border-top: 1px solid rgba(0,0,0,0.1);
   display: flex;
   justify-content: center;
 
@@ -22,6 +21,7 @@
     margin: 0;
   }
 }
+
 
 .pantryicon {
   display: flex;
