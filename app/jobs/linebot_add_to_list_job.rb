@@ -1,7 +1,6 @@
 class LinebotAddToListJob < ApplicationJob
 
   def perform(message, user, default_message)
-    
     if user.shopping_lists.empty?
       shopping_list = ShoppingList.create(user_id: user.id)
     else
@@ -18,7 +17,7 @@ class LinebotAddToListJob < ApplicationJob
     elsif message.downcase.match?(/^.((?!of).).*add.*$/)
       item_name = message.downcase.gsub(/(pantry|add|,)/, '').strip.capitalize
       add_to_list(item_name, nil, shopping_list)
-      
+
       "#{item_name} added!"
     end
   end
