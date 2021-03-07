@@ -58,6 +58,7 @@ class ItemAmountsController < ApplicationController
   def set_expiry_date(item_amount)
     shelf_life_max = item_amount.item.pantry_max.nil? ? item_amount.item.refrigerate_max : item_amount.item.pantry_max
     shelf_life_metric = item_amount.item.pantry_metric.nil? ? item_amount.item.refrigerate_metric : item_amount.item.pantry_metric
+    return '' if shelf_life_max.nil? || shelf_life_metric.nil?   # sets no expiry date if there is no shelf life information
 
     expiry_date = item_amount.created_at.to_date + days_converter(shelf_life_max, shelf_life_metric)
     item_amount.update(expiry_date: expiry_date)
