@@ -1,0 +1,3 @@
+<%= f.input :item, label_method: :item_name, input_html: { class: "select2" }, include_hidden: true %>
+<%= f.input :description %>
+<%= link_to_remove_association ('<i class="material-icons-outlined">remove_circle_outline</i>').html_safe, f %>
