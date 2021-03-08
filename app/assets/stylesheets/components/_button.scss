@@ -243,4 +243,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  color: $bright-leaf;
+}
+
+.material-icons.md-13 {
+  font-size: 13px;
+  font-style: bolder;
+  h5 {
+    margin-bottom: 0;
+    a:hover {
+      text-decoration: none;
+    }
+  }
 }
