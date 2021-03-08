@@ -18,6 +18,14 @@
     <% else %>
       <% @recipes.each do |recipe| %>
         <div class="recipe-cards">
+          <h5 class="recipe-cards-title"><%= recipe.recipe_name.capitalize %></h5>
+          <div class="tags">
+            <% recipe.tag_list.each do |tag| %>
+              <%= link_to "", class: "btn badge badge-pill badge-light" do %>
+                <%= tag %>
+              <% end %>
+            <% end %>
+          </div>
           <div class="recipe-cards-photo">
             <% if recipe.image.nil? %>
               <%= cl_image_tag recipe.photo.key, class: "recipe-cards-photo", alt: "My Recipe" %>
@@ -25,9 +33,7 @@
               <%= image_tag (recipe.image), class: "recipe-cards-photo" %>
             <% end %>
           </div>
-          <div class="recipe-cards-body">
-            <h5 class="recipe-cards-title"><%= link_to recipe.recipe_name.capitalize, recipe_path(recipe) %></h5>
-          </div>
+          <%= link_to "", recipe_path(recipe), class: "recipe-card-link" %>
         </div>
       <% end %>
     <% end %>
