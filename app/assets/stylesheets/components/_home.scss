@@ -26,38 +26,19 @@ header > p {
 }
 
 /*
- * ## Cards Container Class
+ * Cards Container Class
  */
 
 .cards-container {
-  /* List Styling Clean-Up */
   list-style: none;
-  padding: 0; margin: 0;
-
-  /* Alignment */
-  margin: auto;
-}
-
-@media (min-width: 788px) {
-  .cards-container { 
-    width: 728px;
-  }
-  /* Clear Fix */
-  .cards-container::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-}
-
-@media (min-width: 1166px) {
-  .cards-container {
-    width: 1106px;
-  }
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(auto-fit, 300px);
+  justify-content: center;
 }
 
 /*
- * ## Feature Card Class
+ * Feature Card Class
  */
 
 [class$='feature-card'] {
@@ -77,7 +58,7 @@ header > p {
 }
 
 /*
- * ### Inner Elements
+ * Inner Elements
  */
 
 [class$='feature-card'] h2, [class$='feature-card'] p { margin: 0; }
@@ -88,7 +69,7 @@ header > p {
 }
 
 /*
- * ### Top Border Colors Rules
+ * Top Border Colors Rules
  */
 
 [class$='feature-card'][class*='mint'] {
@@ -107,59 +88,8 @@ header > p {
   border-color: hsl(187, 22%, 31%);
 }
 
-@media (min-width: 788px) {
-  [class$='feature-card'] {
-    float: left;
-  }
-
-  @media (min-width: 1166px) {
-    
-    [class$='feature-card']:first-child {
-      margin: 140px 0;
-    }
-
-    [class$='feature-card']:nth-child(2),
-    [class$='feature-card']:nth-child(3) {
-      margin: 0 22px;
-    }
-
-    [class$='feature-card']:last-child {
-      margin-top: -110px;
-    }
-
-    [class$='feature-card']:nth-child(3) {
-      margin-top: 30px;
-    }
-  }
-
-  @media (max-width: 1165px) {
-
-    [class$='feature-card']:nth-child(3),
-    [class$='feature-card']:nth-child(4) {
-      margin-top: 30px;
-    }
-
-    [class$='feature-card']:nth-child(2),
-    [class$='feature-card']:nth-child(4) {
-      margin-left: 28px;
-    }
-  }
-}
-
-@media (max-width: 787px) {
-
-  [class$='feature-card'] {
-    width: 300px; height: 220px;
-    margin: auto;
-  }
-
-  [class$='feature-card']:not(:first-child) {
-    margin-top: 22px;
-  }
-}
-
 /*
- * ## Main Footer
+ * Footer
  */
 
 footer { margin-top: 80px }
