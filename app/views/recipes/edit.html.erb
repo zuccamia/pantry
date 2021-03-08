@@ -18,8 +18,8 @@
             </div>
             <%= recipe_amount.input :description,
                 label: false %>
+            <%= link_to ('<i class="far fa-trash-alt"></i>').html_safe, recipe_amount_path(recipe_amount.object), method: :delete %>
           </div>
-          <%= link_to ('<i class="far fa-trash-alt"></i>').html_safe, recipe_amount_path(recipe_amount.object), method: :delete %>
         <% end %>
         <div class="recipe-form">
           <%= link_to_add_association ('<i class="material-icons-outlined">add_circle_outline</i>').html_safe, f, :recipe_amounts, data: { association_insertion_method: :append } %>
