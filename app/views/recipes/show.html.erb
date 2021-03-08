@@ -8,32 +8,31 @@
   <% content_for :meta_image, cl_image_path(@recipe.image) %>
 <% end %>
 <div class="container grid">
-  <div class="recipe-card">
-    <% if @recipe.image.nil? %>
-      <%= cl_image_tag @recipe.photo.key, class: "recipe-card-photo", alt: "My Recipe" %>
-    <% else %>
-      <%= image_tag (@recipe.image), class: "recipe-card-photo" %>
-    <% end %>
-    <div class="recipe-card-body">
-      <div class="recipe-card-title d-flex justify-content-center">
-        <h3><%= @recipe.recipe_name.capitalize %>&nbsp;</h3>
-        <h3><%= link_to ('<i class="far fa-edit"></i>').html_safe, edit_recipe_path(@recipe) %>
-        </h3>
-      </div>
+  <% if @recipe.image.nil? %>
+    <%= cl_image_tag @recipe.photo.key, class: "recipe-card-photo", alt: "My Recipe" %>
+  <% else %>
+    <%= image_tag (@recipe.image), class: "recipe-card-photo" %>
+  <% end %>
+  <div class="recipe-card-body">
+    <div class="recipe-card-title d-flex justify-content-center">
+      <h3><%= @recipe.recipe_name.capitalize %>&nbsp;</h3>
+      <h3><%= link_to ('<i class="far fa-edit"></i>').html_safe, edit_recipe_path(@recipe) %>
+      </h3>
+    </div>
+    <div class="recipe-card">
     </div>
     <div class="tags">
       <%= render 'shared/tag-list' %>
     </div>
+    <br>
   </div>
-  <br>
-  <div class="sub-heading d-flex">
-    <h4>Ingredients&nbsp; </h4>
-    <h4><%= link_to ('<i class="far fa-edit"></i>').html_safe, edit_recipe_path(@recipe) %></h4>
+  <div class="sub-heading d-flex justify-content-between">
+    <h4><%= link_to ('Ingredients&nbsp;<i class="far fa-edit"></i>').html_safe, edit_recipe_path(@recipe) %></h4>
   </div>
   <table>
     <% @available_items.each do |recipe_amount| %>
       <tr class="ingredient-box">
-        <td><%= recipe_amount.item.item_name %> <span><i class="fas fa-check-circle"></i></span></td>
+        <td><span><i class="fas fa-check-circle text-primary"></i></span>&nbsp;<%= recipe_amount.item.item_name %></td>
         <td><%= recipe_amount.description %></td>
       </tr>
     <% end %>
@@ -44,14 +43,12 @@
       </tr>
     <% end %>
   </table>
-  <br>
-  <div class="sub-heading d-flex">
-    <h4>Instructions&nbsp;</h4>
-    <h4><%= link_to ('<i class="far fa-edit"></i>').html_safe, edit_recipe_path(@recipe) %></h4>
+  <%= link_to 'Send to LINE', shopping_list_path(shopping_list: @shopping_list), class: "button-solid" %>
+  <div class="sub-heading">
+    <h4><%= link_to ('Instructions&nbsp; <i class="far fa-edit"></i>').html_safe, edit_recipe_path(@recipe) %></h4>
   </div>
   <div class="content-box">
     <p><%= simple_format(@recipe.instructions) %></p>
   </div>
-  <%= link_to "Delete Recipe", recipe_path(@recipe), method: :delete, data: { confirm: "Delete recipe?" }, class: "action-button-solid" %>
-  <%= link_to 'Send Ingredients to LINE', shopping_list_path(shopping_list: @shopping_list), class: "action-button-solid" %>
+  <%= link_to "Delete Recipe", recipe_path(@recipe), method: :delete, data: { confirm: "Delete recipe?" }, class: "button-outline" %>
 </div>
