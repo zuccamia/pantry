@@ -11,7 +11,10 @@
   <%= link_to ('Save recipe <i class="fas fa-folder-plus"></i>').html_safe, import_recipe_path(recipe_id: @recipe[:id]), class: "recipe-icon btn button-solid" %>
   <h4>Ingredients</h4>
   <div class="view-content-box">
-    <% @recipe[:ingredients].each do |ingredient| %>
+    <% @available_items.each do |ingredient| %>
+      <p><i class="fas fa-check-circle text-primary"></i>&nbsp;<%= ingredient[:name] %>: <span><%= ingredient[:description] %></span></p>
+    <% end %>
+    <% @missing_items.each do |ingredient| %>
       <p><%= ingredient[:name] %>: <span><%= ingredient[:description] %></span></p>
     <% end %>
   </div>
