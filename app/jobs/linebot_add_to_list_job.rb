@@ -1,29 +1,40 @@
 class LinebotAddToListJob < ApplicationJob
 
-  def perform
-    body = request.body.read
+  def perform(message, user, default_message)
+    
+    shopping_list = user.shopping_lists.last
 
-    @client ||= Line::Bot::Client.new { |config|
-      config.channel_secret = ENV["LINE_CHANNEL_SECRET"]
-      config.channel_token = ENV["LINE_CHANNEL_TOKEN"]
-    }
-
-    events = @client.parse_events_from(body)
-    events.each do |event|
-      case event.type
-      # when receive a text message
-      when Line::Bot::Event::MessageType::Text
-        p event
-        message = { type: 'text', text: 'Here is your list:' }
-        @client.push_message(event['replyToken'], message)
-        'OK'
-      end
-    end
-
-    private
-
-    def add_item_to
+    if message.downcase.match?(/add.+of.+/)
+      item = message.downcase.gsub(/(pantry|add|,)/, '').split('of')
+      item_name = item.pop.strip.capitalize
+      description = item.shift.strip
       
+      add_to_list(item_name, description, shopping_list)
+      "#{description} of #{item_name} added!"
+    elsif message.downcase.match?(/^.((?!of).).*add.*$/)
+      item_name = message.downcase.gsub(/(pantry|add|,)/, '').strip.capitalize
+      add_to_list(item_name, nil, shopping_list)
+      "#{item_name} added!"
     end
+  end
+
+  private
+
+  def add_to_list(item_name, description, shopping_list)
+    new_shopping_amount = ShoppingAmount.new(description: description)
+    new_shopping_amount.item = find_item(item_name)
+    new_shopping_amount.shopping_list = shopping_list
+    new_shopping_amount.save
+  end
+  
+  def find_item(item_name)      # check if item already exists in item database, if not create new
+    if Item.exists?(item_name: item_name)
+      item = Item.where(item_name: item_name).first
+    else
+      item = Item.new(item_name: item_name)
+      item.category = Category.find_by(main_category: 'TBD')
+      item.save
+    end
+    item
   end
 end

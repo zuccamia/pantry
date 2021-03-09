@@ -36,14 +36,14 @@
         <td><%= recipe_amount.description %></td>
       </tr>
     <% end %>
-    <% @shopping_list.each do |recipe_amount| %>
+    <% @missing_items.each do |recipe_amount| %>
       <tr class="ingredient-box-amount">
         <td><%= recipe_amount.item.item_name %></td>
         <td><%= recipe_amount.description %></td>
       </tr>
     <% end %>
   </table>
-  <%= link_to 'Send to LINE', shopping_list_path(shopping_list: @shopping_list), class: "button-solid" %>
+  <%= link_to 'Send to LINE', shopping_list_path(@shopping_list), class: "button-solid" %>
   <div class="sub-heading">
     <h4><%= link_to ('Instructions&nbsp; <i class="far fa-edit"></i>').html_safe, edit_recipe_path(@recipe) %></h4>
   </div>

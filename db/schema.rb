@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_06_022635) do
+ActiveRecord::Schema.define(version: 2021_03_06_175344) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2021_03_06_022635) do
   end
 
   create_table "item_amounts", force: :cascade do |t|
-    t.string "description"
+    t.string "description", default: "1 unit"
     t.bigint "item_id", null: false
     t.date "expiry_date"
     t.bigint "user_id", null: false
@@ -94,6 +94,23 @@ ActiveRecord::Schema.define(version: 2021_03_06_022635) do
     t.text "instructions"
     t.string "image"
     t.index ["user_id"], name: "index_recipes_on_user_id"
+  end
+
+  create_table "shopping_amounts", force: :cascade do |t|
+    t.bigint "shopping_list_id", null: false
+    t.string "description"
+    t.bigint "item_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["item_id"], name: "index_shopping_amounts_on_item_id"
+    t.index ["shopping_list_id"], name: "index_shopping_amounts_on_shopping_list_id"
+  end
+
+  create_table "shopping_lists", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_shopping_lists_on_user_id"
   end
 
   create_table "taggings", id: :serial, force: :cascade do |t|
@@ -146,5 +163,8 @@ ActiveRecord::Schema.define(version: 2021_03_06_022635) do
   add_foreign_key "recipe_amounts", "items"
   add_foreign_key "recipe_amounts", "recipes"
   add_foreign_key "recipes", "users"
+  add_foreign_key "shopping_amounts", "items"
+  add_foreign_key "shopping_amounts", "shopping_lists"
+  add_foreign_key "shopping_lists", "users"
   add_foreign_key "taggings", "tags"
 end

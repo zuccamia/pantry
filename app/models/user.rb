@@ -5,10 +5,13 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :recipes
+  has_many :shopping_lists
   has_many :item_amounts, dependent: :destroy
 
   validates :first_name, presence: true, length: { minimum: 2 }
   validates :last_name, presence: true, length: { minimum: 2 }
   has_one_attached :photo
-  validates :photo, presence: true
+
+  # Uncomment to update line_id for previously saved users without photos
+  # validates :photo, presence: true
 end
