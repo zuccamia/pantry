@@ -36,7 +36,7 @@
         <td><%= recipe_amount.description %></td>
       </tr>
     <% end %>
-    <% @shopping_list.each do |recipe_amount| %>
+    <% @missing_items.each do |recipe_amount| %>
       <tr class="ingredient-box-amount">
         <td><%= recipe_amount.item.item_name %></td>
         <td><%= recipe_amount.description %></td>
