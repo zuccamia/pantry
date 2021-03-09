@@ -78,34 +78,32 @@
 
 table {
   width: 100%;
-  background-color: $light-mint;
+  // background-color: $white-mint;
   th {
-    border: 1px solid rgba(0, 0, 0, 0.125);
-    background-color: $bright-mint;
     color: white;
     padding: 8px;
     font-family: $headers-font;
-    text-align: center;
+    text-align: top;
   }
   tr {
-    border: 1px solid rgba(0, 0, 0, 0.125);
     p {
       margin-bottom: 0;
     }
 
     td {
       padding: 12px;
-      border: 1px solid rgba(0, 0, 0, 0.125);
+      vertical-align: top;
+      border-top: 1px solid rgba(0, 0, 0, 0.125);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.125);
     }
   }
 }
 
-
 .content-box {
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  padding: 0 16px;
-  margin-bottom: 32px;
-  background-color: $light-mint;
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  padding: 0 24px;
+  // background-color: $white-mint;
 }
 
 .view-content-box {
