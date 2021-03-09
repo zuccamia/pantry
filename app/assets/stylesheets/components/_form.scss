@@ -19,7 +19,12 @@
   .form-control.is-valid {
     border-color: #dbdbdb;
   }
+  li {
+    list-style-type: none;
+    margin-left: -3.2em;
+  }
 }
+
 // // pantry new item form
 // label {
 //   font-family: $headers-font;
