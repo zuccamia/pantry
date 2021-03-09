@@ -6,21 +6,29 @@
       <div class="recipe-form">
         <%= simple_form_for @recipe do |f| %>
           <%= f.input :recipe_name, placeholder: "Egg Scramble" %>
-          <%= f.input :instructions, placeholder: "1. Bring a small pot of salted water to a boil.
-
-2. Add potato and cook until tender but still firm, about 15 minutes." %>
-          <%= f.input :tag_list, placeholder: "Egg, Onion, (Separate tags with comma)" %>
+          <%= f.input :instructions, placeholder: "1. Bring a small pot of salted water to a boil." %>
+          <%= f.input :tag_list, placeholder: "Egg, (Separate tags with comma)" %>
           <%= f.input :photo, as: :file %>
         </div>
         <h5>List ingredients</h5>
         <div class="recipe-form">
-          <%= link_to_add_association ('<i class="material-icons-outlined">add_circle_outline</i>').html_safe, f, :recipe_amounts, data: { association_insertion_method: :append } %>
-          <%= f.simple_fields_for :recipe_amounts do |builder| %>
-            <%= render 'recipe_amount_fields', f: builder %>
-          <% end %>
+          <div class="form-group">
+            <ul class="ingr-input">
+              <li>
+                <%= f.simple_fields_for :recipe_amounts do |f| %>
+                  <%= f.association :item,
+                label_method: :item_name,
+                input_html: { class: "select2" },
+                include_hidden: true %>
+                  <%= f.input :description %>
+                <% end %>
+              </li>
+            </ul>
+            <%= link_to '+ Add Ingredient', "#", class: 'new-ingr-btn' %>
+          </div>
         </div>
-        <%= f.submit class: 'btn action-button-solid' %>
-      <% end %>
-    </div>
+      </div>
+      <%= f.submit class: 'btn action-button-solid' %>
+    <% end %>
   </div>
 </div>
