@@ -12,9 +12,6 @@
         <br>
         <br>
       </div>
-      <div class= "action-button-outline">
-        <h5><%= link_to 'Search &nbsp; <i class="fas fa-search"></i>'.html_safe, search_recipe_path(tag: @tag)%></h5>
-      </div>
     <% else %>
       <% @recipes.each do |recipe| %>
         <div class="recipe-cards">
@@ -36,6 +33,11 @@
           <%= link_to "", recipe_path(recipe), class: "recipe-card-link" %>
         </div>
       <% end %>
+    <% end %>
+    <% unless @recipes.count == Recipe.all.count %>
+      <div class= "action-button-outline">
+        <h5><%= link_to 'Search recipes &nbsp; <i class="fas fa-search"></i>'.html_safe, search_recipe_path(tag: @tag) %></h5>
+      </div>
     <% end %>
   </div>
 </div>
