@@ -33,3 +33,18 @@ button {
   border-style: none;
   background-color: transparent;
 }
+
+
+.material-icons.md-18 {
+  font-size: 22px;
+  font-style: bolder;
+  color: $dark-salmon;
+  line-height: 1.6;
+  margin-left: -15px;
+  h5 {
+    margin-bottom: 0;
+    a:hover {
+      text-decoration: none;
+    }
+  }
+}

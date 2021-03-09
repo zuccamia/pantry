@@ -14,6 +14,12 @@
     height: 100px;
   }
 }
+
+.recipe-form {
+  .form-control.is-valid {
+    border-color: #dbdbdb;
+  }
+}
 // // pantry new item form
 // label {
 //   font-family: $headers-font;
