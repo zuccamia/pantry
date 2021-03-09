@@ -57,6 +57,10 @@ class RecipesController < ApplicationController
   def view
     @recipe = RecipeParser.call(params[:recipe_id])
     # return a @recipe hash with Spoonacular ID, name, summary, image url, array of ingredients and array of instructions as keys
+    ingredients = @recipe[:ingredients]
+    pantry = ItemAmount.all.map { |item_amount| item_amount.item.item_name }
+    @available_items = ingredients.filter { |ingredient| pantry.include?(ingredient[:name]) }
+    @missing_items = ingredients - @available_items
   end
 
   def import

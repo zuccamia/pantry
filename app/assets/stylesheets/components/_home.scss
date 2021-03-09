@@ -33,8 +33,9 @@ header > p {
   list-style: none;
   display: grid;
   grid-gap: 16px;
-  grid-template-columns: repeat(auto-fit, 300px);
+  grid-template-columns: repeat(2, 300px);
   justify-content: center;
+  padding-left: 0px;
 }
 
 /*
@@ -45,7 +46,7 @@ header > p {
   /* Positioning and Sizing */
   position: relative;
   box-sizing: border-box;
-  width: 350px; height: 250px;
+  height: 250px;
 
   /* Alignment */
   margin: 0;

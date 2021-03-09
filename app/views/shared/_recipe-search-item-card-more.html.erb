@@ -1,5 +1,5 @@
-<div class="card-pantry-search">
-  <% @recipes.first(2).each do |recipe| %>
+<div id="card-pantry-search-more">
+  <% @recipes.drop(2).each do |recipe| %>
     <div class="card-pantry-search-name">
       <%= link_to view_recipe_path(recipe_id: recipe[:id]) do %>
         <%= recipe[:name] %>

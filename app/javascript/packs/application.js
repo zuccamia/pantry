@@ -27,7 +27,7 @@ import { menuPantry } from '../components/menu-bar';
 import { menuRecipes } from '../components/menu-bar';
 import { menuAddrecipe } from '../components/menu-bar';
 import { initRecipeForm } from '../components/recipe_amount_form.js'
-
+import {showMoreResults} from '../components/show-more-results';
 
 // import { initSelect2 } from '../components/init_select2';
 
@@ -44,6 +44,7 @@ document.addEventListener('turbolinks:load', () => {
   menuRecipes();
   menuAddrecipe();
   initRecipeForm();
+  showMoreResults();
   // initSelect2();
 });
 
