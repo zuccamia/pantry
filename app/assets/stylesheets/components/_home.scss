@@ -1,0 +1,98 @@
+.home-background {
+  background-color: $white-gray;
+  background-image: linear-gradient(154deg, #e9f2cb 0%, #e5f7f9 74%);  
+}
+
+header {
+  margin: 80px 30px 75px;
+  text-align: center;
+}
+
+header > h1 {
+  margin: 20px 0;
+}
+
+header > h1 strong {
+  font-weight: 600;
+}
+
+header > p {
+  max-width: 520px;
+  margin: auto;
+}
+
+@media (max-width: 443px) {
+  header > h1 { font-size: 1.6em; }
+}
+
+/*
+ * Cards Container Class
+ */
+
+.cards-container {
+  list-style: none;
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(auto-fit, 300px);
+  justify-content: center;
+}
+
+/*
+ * Feature Card Class
+ */
+
+[class$='feature-card'] {
+  /* Positioning and Sizing */
+  position: relative;
+  box-sizing: border-box;
+  width: 350px; height: 250px;
+
+  /* Alignment */
+  margin: 0;
+  padding: 32px;
+
+  /* Box Details */
+  border-radius: 10px;
+  border-top: solid 5px black;
+  box-shadow: 2px 5px 20px rgba(0,0,0,0.1);
+}
+
+/*
+ * Inner Elements
+ */
+
+[class$='feature-card'] h2, [class$='feature-card'] p { margin: 0; }
+
+[class$='feature-card'] img {
+  position: absolute;
+  bottom: 32px; right: 32px;
+}
+
+/*
+ * Top Border Colors Rules
+ */
+
+[class$='feature-card'][class*='mint'] {
+  border-color: hsl(188, 24%, 61%);
+}
+
+[class$='feature-card'][class*='salmon'] {
+  border-color: hsl(22, 100%, 81%);
+}
+
+[class$='feature-card'][class*='leaf'] {
+  border-color: hsl(74, 29%, 59%);
+}
+
+[class$='feature-card'][class*='dusk'] {
+  border-color: hsl(187, 22%, 31%);
+}
+
+/*
+ * Footer
+ */
+
+footer { margin-top: 80px }
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color:  hsl(187, 22%, 31%); }

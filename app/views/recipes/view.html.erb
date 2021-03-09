@@ -1,22 +1,25 @@
 <div class="container grid">
-  <h2><%= link_to ('<i class="fas fa-long-arrow-alt-left"></i>').html_safe, :back %></h2>
-  <%= image_tag(@recipe[:img_url], width: "100%") %>
-  <%# Added width above to temporarily solve issues with picture size and lower navbar %>
-  <div class="recipe-title text-primary d-flex mb-0">
-    <h3><%= @recipe[:name] %></h3>
-    <h3><%= link_to ('<i class="fas fa-folder-plus"></i>').html_safe, search_recipe_path, class: "recipe-icon" %></h3>
+  <div class="d-flex">
+    <h5><%= link_to ('<i class="material-icons md-13">arrow_back</i> back to search results').html_safe, :back %></h5>
   </div>
-  <div class="content-box">
-    <h4>Ingredients</h4>
+  <div class="recipe-cards">
+    <h4 class="recipe-cards-title"><%= @recipe[:name] %></h4>
+    <div class="recipe-cards-photo">
+      <%= image_tag(@recipe[:img_url], width: "100%") %>
+    </div>
+  </div>
+  <%= link_to ('Save recipe <i class="fas fa-folder-plus"></i>').html_safe, import_recipe_path(recipe_id: @recipe[:id]), class: "recipe-icon btn button-solid" %>
+  <h4>Ingredients</h4>
+  <div class="view-content-box">
     <% @recipe[:ingredients].each do |ingredient| %>
       <p><%= ingredient[:name] %>: <span><%= ingredient[:description] %></span></p>
     <% end %>
   </div>
-  <div class="content-box">
-    <h4>Instructions</h4>
+  <h4>Instructions</h4>
+  <div class="view-content-box">
     <% @recipe[:instructions].each do |step| %>
       <p><%= simple_format(step) %></p>
     <% end %>
   </div>
-  <%= link_to 'Save recipe', import_recipe_path(recipe_id: @recipe[:id]), class: "action-button-solid" %>
+  <%= link_to ('Save recipe <i class="fas fa-folder-plus"></i>').html_safe, import_recipe_path(recipe_id: @recipe[:id]), class: "action-button-solid" %>
 </div>

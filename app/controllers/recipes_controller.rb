@@ -18,13 +18,14 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
+    @recipe_amount = RecipeAmount.new
   end
 
   def create
     @recipe = Recipe.new(recipe_params)
     @recipe.user = current_user
     if @recipe.save
-      redirect_to new_recipe_recipe_amount_path(@recipe), notice: 'Your recipe was successfully created!'
+      redirect_to recipe_path(@recipe), notice: 'Your recipe was successfully created!'
     else
       render :new
     end
@@ -71,7 +72,7 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:tag_list, :recipe_name, :summary, :instructions, :photo, recipe_amounts_attributes: [:description, :item_id, :recipe_id, :id])
+    params.require(:recipe).permit(:tag_list, :recipe_name, :summary, :instructions, :photo, recipe_amounts_attributes: [:description, :item_id, :recipe_id, :id].push(:_destroy))
   end
 
   def create_shopping_list(recipe_amounts, user)

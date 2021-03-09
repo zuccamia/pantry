@@ -1,11 +1,40 @@
 <div class="container">
-  <div>
-    <%= simple_form_for @recipe do |f| %>
-      <%= f.input :recipe_name %>
-      <%= f.input :instructions %>
-      <%= f.input :tag_list, placeholder: "Separate tags with comma." %>
-      <%= f.input :photo, as: :file %>
-      <%= f.submit class: 'btn btn-secondary' %>
-    <% end %>
+  <div class="grid">
+    <div class="form">
+      <%= simple_form_for @recipe do |f| %>
+        <h5>Recipe name</h5>
+        <div class="recipe-form">
+          <%= f.input :recipe_name, label: false %>
+        </div>
+        <h5>Ingredients</h5>
+        <%= f.simple_fields_for :recipe_amounts do |recipe_amount| %>
+          <div class="recipe-form">
+            <div class="item-select"><strong>
+                <%= recipe_amount.association :item,
+                label_method: :item_name,
+                input_html: { class: "select2" },
+                include_hidden: true,
+                label: false %></strong>
+            </div>
+            <%= recipe_amount.input :description,
+                label: false %>
+          </div>
+          <%= link_to ('<i class="far fa-trash-alt"></i>').html_safe, recipe_amount_path(recipe_amount.object), method: :delete %>
+        <% end %>
+        <div class="recipe-form">
+          <%= link_to_add_association ('<i class="material-icons-outlined">add_circle_outline</i>').html_safe, f, :recipe_amounts, data: { association_insertion_method: :append } %>
+          <%= f.simple_fields_for :recipe_amounts do |builder| %>
+            <%= render 'recipe_amount_fields', f: builder %>
+          <% end %>
+        </div>
+        <h5>Instructions</h5>
+        <div class="recipe-form">
+          <%= f.input :instructions, label: false %>
+        </div>
+        <h5>Photo</h5>
+        <%= f.input :photo, as: :file, label: false %>
+        <%= f.submit class: 'btn action-button-solid' %>
+      <% end %>
+    </div>
   </div>
 </div>
