@@ -20,7 +20,7 @@ class RecipeFinder < ApplicationService
   private
 
   def fetch_search_results
-    result_number = 5
+    result_number = 10
     search_url = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=#{@tag}&number=#{result_number}&apiKey=#{api_key}"
     results = JSON.parse(URI.open(search_url).read)
 

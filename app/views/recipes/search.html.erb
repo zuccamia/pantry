@@ -7,14 +7,17 @@
     placeholder: "Top results for #{params[:tag]}"
   %>
       <div class="search-button">
-        <%= link_to ('<i class="fa fa-search"></i>').html_safe, search_recipe_path, class: "text-primary" %>
+        <%= link_to ('<i class="fa fa-search"></i>').html_safe, search_recipe_path(tag: @tag), class: "text-primary" %>
       <% end %>
     </div>
     <div class="search-body">
       <%= render '/shared/recipe-search-item-card' %>
     </div>
+    <div class="search-body">
+      <%= render '/shared/recipe-search-item-card-more' %>
+    </div>
   </div>
-  <div class="action-button-outline">
-    <h5>Show More Results &nbsp; <i class="fas fa-arrow-down"></i></h5>
+  <div id="search-more">
+    <button class="action-button-outline">Show More Results &nbsp; <i class="fas fa-arrow-down"></i></button>
   </div>
 </div>
