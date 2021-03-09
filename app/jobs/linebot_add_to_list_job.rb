@@ -1,19 +1,23 @@
 class LinebotAddToListJob < ApplicationJob
 
   def perform(message, user, default_message)
-    
-    shopping_list = user.shopping_lists.last
+    if user.shopping_lists.empty?
+      shopping_list = ShoppingList.create(user_id: user.id)
+    else
+      shopping_list = user.shopping_lists.last
+    end
 
     if message.downcase.match?(/add.+of.+/)
       item = message.downcase.gsub(/(pantry|add|,)/, '').split('of')
       item_name = item.pop.strip.capitalize
       description = item.shift.strip
-      
       add_to_list(item_name, description, shopping_list)
+
       "#{description} of #{item_name} added!"
     elsif message.downcase.match?(/^.((?!of).).*add.*$/)
       item_name = message.downcase.gsub(/(pantry|add|,)/, '').strip.capitalize
       add_to_list(item_name, nil, shopping_list)
+
       "#{item_name} added!"
     end
   end
