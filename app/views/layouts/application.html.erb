@@ -35,8 +35,10 @@
     <meta name="twitter:image:src" content="<%= meta_image %>">
   </head>
   <body>
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/menu' %>
+    <% if user_signed_in? %>
+      <%= render 'shared/navbar' %>
+      <%= render 'shared/menu' %>
+    <% end %>
     <%= render 'shared/flashes' %>
     <%= yield %>
   </body>
