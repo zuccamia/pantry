@@ -35,7 +35,7 @@
       <% end %>
     <% end %>
     <% unless @recipes.count == Recipe.all.count %>
-      <div class= "action-button-outline">
+      <div class= "action-button-solid">
         <h5><%= link_to 'Search recipes &nbsp; <i class="fas fa-search"></i>'.html_safe, search_recipe_path(tag: @tag) %></h5>
       </div>
     <% end %>
