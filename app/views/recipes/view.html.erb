@@ -3,26 +3,37 @@
     <h5><%= link_to ('<i class="material-icons md-13">arrow_back</i> back to search results').html_safe, :back %></h5>
   </div>
   <div class="recipe-cards">
-    <h4 class="recipe-cards-title"><%= @recipe[:name] %></h4>
     <div class="recipe-cards-photo">
-      <%= image_tag(@recipe[:img_url], width: "100%") %>
+      <%= image_tag(@recipe[:img_url], class: "recipe-cards-photo") %>
     </div>
+    <h4 class="recipe-cards-title"><%= @recipe[:name] %></h4>
   </div>
-  <%= link_to ('Save recipe <i class="fas fa-folder-plus"></i>').html_safe, import_recipe_path(recipe_id: @recipe[:id]), class: "recipe-icon btn button-solid" %>
+  <%= link_to ('Save recipe&nbsp;&nbsp;<i class="fas fa-folder-plus"></i>').html_safe, import_recipe_path(recipe_id: @recipe[:id]), class: "recipe-icon btn button-solid" %>
+  <br>
+  <br>
   <h4>Ingredients</h4>
-  <div class="view-content-box">
+  <table>
     <% @available_items.each do |ingredient| %>
-      <p><i class="fas fa-check-circle text-primary"></i>&nbsp;<%= ingredient[:name] %>: <span><%= ingredient[:description] %></span></p>
+      <tr class="ingredient-box">
+        <td><i class="fas fa-check-circle text-primary"></i>&nbsp;<%= ingredient[:name] %></td>
+        <td><%= ingredient[:description] %></td>
+      </tr>
     <% end %>
     <% @missing_items.each do |ingredient| %>
-      <p><%= ingredient[:name] %>: <span><%= ingredient[:description] %></span></p>
+      <tr class="ingredient-box-amount">
+        <td><%= ingredient[:name] %></td>
+        <td><%= ingredient[:description] %></td>
+      </tr>
     <% end %>
-  </div>
+  </table>
+  <br>
+  <br>
   <h4>Instructions</h4>
-  <div class="view-content-box">
+  <div class="content-box">
     <% @recipe[:instructions].each do |step| %>
       <p><%= simple_format(step) %></p>
     <% end %>
   </div>
-  <%= link_to ('Save recipe <i class="fas fa-folder-plus"></i>').html_safe, import_recipe_path(recipe_id: @recipe[:id]), class: "action-button-solid" %>
+  <br>
+  <%= link_to ('Save recipe&nbsp;&nbsp;<i class="fas fa-folder-plus"></i>').html_safe, import_recipe_path(recipe_id: @recipe[:id]), class: "recipe-icon btn button-solid" %>
 </div>
