@@ -72,7 +72,7 @@ class LinebotsController < ApplicationController
       when Line::Bot::Event::MessageType::Text
         if event['source']['groupId']
           group_line_id = event['source']['groupId']
-          unless Household.exists?(line_id: id)
+          unless Household.exists?(line_id: group_line_id)
             household = Household.create(line_id: group_line_id)
             user.update(household_id: household.id)  # update household LINE ID everytime this user added Pantry bot to a new group
           end
