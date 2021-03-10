@@ -25,6 +25,29 @@
   }
 }
 
+//select2 styling
+[class^='select2'] {
+  border-radius: 20px !important;
+}
+
+.select2-container *:focus {
+  outline: none;
+}
+
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+  background-color: transparent !important;
+  color: white;
+}
+
+//date
+#item_amount_expiry_date_1i {
+  margin-left: 0 !important;
+}
+
+#item_amount_expiry_date_3i {
+  margin-right: 0 !important;
+}
+
 // // pantry new item form
 // label {
 //   font-family: $headers-font;
