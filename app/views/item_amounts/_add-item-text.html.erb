@@ -5,7 +5,7 @@
       <%= simple_form_for @item_amount do |f| %>
         <%= f.association :item, label_method: :item_name, input_html: { class: "select2" }, include_hidden: false %>
         <%= f.input :description %>
-        <%= f.input :expiry_date %>
+        <%= f.input :expiry_date, as: :date, html5: true %>
         <br>
       </div>
     </div>
