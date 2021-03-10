@@ -43,9 +43,8 @@ document.addEventListener('turbolinks:load', () => {
   menuPantry();
   menuRecipes();
   menuAddrecipe();
-  initRecipeForm();
   showMoreResults();
-  // initSelect2();
+  initRecipeForm();
 });
 
 import { initSelect2 } from '../components/init_select2';
