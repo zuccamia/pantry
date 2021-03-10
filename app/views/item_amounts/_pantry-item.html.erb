@@ -1,7 +1,7 @@
 <% item_amounts.each do |item_amount| %>
   <div class="card-pantry-item  <%= item_amount.expired? ? "card-pantry-item-expired" : "" %>">
     <div class="card-pantry-item-name justify-content-between">
-      <h5><%= item_amount.item.item_name %></h5>
+      <h6><%= item_amount.item.item_name %></h6>
       <%= link_to recipes_path(tag: item_amount.item.item_name.downcase) do %>
         <p><i class="fas fa-search"></i></p>
       <% end %>

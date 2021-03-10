@@ -9,11 +9,11 @@
 
 // custom css: card-pantry-item
 .card-pantry-item {
-  border-radius: 10px;
+  border-radius: 20px;
   width: 100%;
   margin-bottom: 16px;
-  border: 1px solid #6b6b6b;
-  background-color: white;
+  border: 1px solid $bright-leaf;
+  background-color: $white-leaf;
   a:hover {
     text-decoration: none;
   }
@@ -28,11 +28,12 @@
   justify-content: space-between;
   padding: 16px;
   padding-bottom: 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-  h5 {
+  // border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  h6 {
     font-weight: 400;
     color: $dark-gray;
     margin-bottom: 0;
+    font-size: 14px;
   }
 }
 
@@ -40,15 +41,16 @@
 .card-pantry-item-amount {
   color: $dark-gray;
   text-align: left;
-  padding: 16px;
+  padding: 0 16px;
   padding-bottom: 0;
   width: 100%;
+  border-radius: 20px;
   p {
     font-family: $body-font;
-    font-size: 14px;
     position: relative;
     padding-left: 20px;
     color: #6b6b6b;
+    line-height: 1;
   }
 
   a {
@@ -56,9 +58,9 @@
   }
     .material-icons.md-16 {
     position: absolute;
-    top: 1px;
+    top: -2px;
     left: 0px;
-    font-size: 16px;
+    font-size: 14px;
     font-style: bolder;
     h5 {
       margin-bottom: 0;
