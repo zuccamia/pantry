@@ -5,7 +5,7 @@
     </li>
     <li class="nav-item d-flex" role="presentation">
       <a class="nav-link" id="expiring-tab" data-bs-toggle="tab" href="#expiring" role="tab" aria-controls="expiring" aria-selected="false">Expiring items</a>
-      <%= ('<i class="material-icons md-18">hourglass_bottom</i>').html_safe if @expiring_items.any? %>
+      <%= ('<i class="material-icons md-18">timer</i>').html_safe if @expiring_items.any? %>
     </li>
   </ul>
   <div class="tab-content" id="myTabContent">

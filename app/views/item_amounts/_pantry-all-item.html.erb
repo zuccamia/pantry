@@ -2,7 +2,7 @@
   <div id="accordion">
     <div class="card">
       <div class="card-header" id=<%="heading#{index}"%>>
-        <h4>
+        <h5>
           <button class="pantry-category-header" data-toggle="collapse" data-target="<%="#collapse#{index}"%>" aria-expanded="true" aria-controls="<%="collapse#{index}"%>">
             <% if category.sub_category.nil? %>
               <%= category.main_category.capitalize %>
@@ -10,7 +10,7 @@
               <%= category.sub_category.capitalize %>
             <% end %>
           </button>
-        </h4>
+        </h5>
       </div>
       <div id="<%="collapse#{index}"%>" class="collapse" aria-labelledby="<%="heading#{index}"%>" data-parent="#accordion">
         <div class="card-body">
