@@ -15,7 +15,7 @@
   <table>
     <% @available_items.each do |ingredient| %>
       <tr class="ingredient-box">
-        <td><i class="fas fa-check-circle text-primary"></i>&nbsp;<%= ingredient[:name] %></td>
+        <td><%= ingredient[:name] %>&nbsp;<i class="fas fa-check-circle text-primary"></i></td>
         <td><%= ingredient[:description] %></td>
       </tr>
     <% end %>
