@@ -31,9 +31,6 @@ class LinebotsController < ApplicationController
         return '' unless event.message['text'].downcase.include?('pantry') # Only answer to messages with 'pantry'
 
         if event.message['text'].downcase.include?('add')
-          puts ''
-          p user
-          puts ''
           response = LinebotAddToListJob.perform_now(event.message['text'], user, default_message)
         elsif event.message['text'].downcase.include?('shopping done')
           response = LinebotLoadToPantryJob.perform_now(user)

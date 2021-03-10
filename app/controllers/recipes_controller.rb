@@ -82,9 +82,13 @@ class RecipesController < ApplicationController
   end
 
   def create_shopping_list(recipe_amounts, user)
-    shopping_list = ShoppingList.new
-    shopping_list.user = user
-    shopping_list.save
+    unless user.shopping_lists.any?
+      shopping_list = ShoppingList.new
+      shopping_list.user = user
+      shopping_list.save
+    end
+
+    shopping_list = ShoppingList.last
 
     recipe_amounts.each do |recipe_amount|
       shopping_amount = ShoppingAmount.new(description: recipe_amount.description, item_id: recipe_amount.item.id)
