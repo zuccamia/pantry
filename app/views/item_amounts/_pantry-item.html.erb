@@ -1,23 +1,21 @@
 <% item_amounts.each do |item_amount| %>
-  <div class="card-pantry-item">
-    <div class="card-pantry-item-name <%= item_amount.expired? ? "card-pantry-item-expired" : "" %>">
-      <h5><%= item_amount.item.item_name %></h5>
-      <div class="tag-search">
-        <div>
-          <% if item_amount.expiry_date.present? %>
-            <p>Expires: <%= item_amount.expiry_date %></p>
-          <% end %>
-        </div>
-        <%= link_to recipes_path(tag: item_amount.item.item_name.downcase) do %>
-          <p><i class="fas fa-search"></i></p>
-        <% end %>
-      </div>
-    </div>
-    <div class="card-pantry-item-amount <%= item_amount.expired? ? "card-pantry-item-expired" : "" %>">
-      <h5><%= item_amount.description.to_s %></h5>
-      <%= link_to item_amount_path(item_amount), method: :delete, data: { confirm: "Item used up?" }, class: "text-secondary" do %>
-        <i class="far fa-trash-alt"></i>
+  <div class="card-pantry-item  <%= item_amount.expired? ? "card-pantry-item-expired" : "" %>">
+    <div class="card-pantry-item-name justify-content-between">
+      <h6><%= item_amount.item.item_name %></h6>
+      <%= link_to recipes_path(tag: item_amount.item.item_name.downcase) do %>
+        <p><i class="fas fa-search"></i></p>
       <% end %>
     </div>
+    <div class="card-pantry-item-amount">
+      <div class="d-flex justify-content-between">
+        <p><i class="material-icons kitchen md-16">kitchen</i>&nbsp;<%= item_amount.description.to_s %></p>
+        <%= link_to item_amount_path(item_amount), method: :delete, data: { confirm: "Item used up?" } do %>
+          <i class="far fa-trash-alt"></i>
+        <% end %>
+      </div>
+      <% if item_amount.expiry_date.present? %>
+        <p><i class="material-icons md-16">timer</i></i>&nbsp;<%= item_amount.expiry_date %></p>
+    <% end %>
   </div>
+</div>
 <% end %>

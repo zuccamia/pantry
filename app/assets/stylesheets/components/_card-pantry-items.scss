@@ -4,51 +4,67 @@
   flex: 1 1 auto;
   min-height: 1px;
   padding: 20px;
+  padding-top: 0;
 }
 
 // custom css: card-pantry-item
 .card-pantry-item {
-  border-radius: 10px;
+  border-radius: 20px;
   width: 100%;
-  display: grid;
-  grid-template-columns: 2.8fr 1.2fr;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
+  border: 1px solid $bright-leaf;
+  background-color: $white-leaf;
+  a:hover {
+    text-decoration: none;
+  }
+  a {
+    color: $bright-leaf;
+  }
 }
 
 // custom css: pantry-item-name
 .card-pantry-item-name {
-  background-color: $white-leaf;
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   padding: 16px;
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  border-right: none;
-  border-radius: 20px 0 0 20px;
-  h5 {
+  padding-bottom: 0;
+  // border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  h6 {
     font-weight: 400;
     color: $dark-gray;
-  }
-  p {
-    margin: 0px;
-    font-family: $body-font;
+    margin-bottom: 0;
+    font-size: 14px;
   }
 }
 
 // custom css: pantry-item-days
 .card-pantry-item-amount {
-  background-color: $light-leaf;
   color: $dark-gray;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 16px;
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0 20px 20px 0;
+  text-align: left;
+  padding: 0 16px;
+  padding-bottom: 0;
   width: 100%;
-  h5 {
-    margin: 0px;
+  border-radius: 20px;
+  p {
+    font-family: $body-font;
+    position: relative;
+    padding-left: 20px;
+    color: #6b6b6b;
+    line-height: 1;
+  }
+
+  a {
+    color: $bright-leaf;
+  }
+    .material-icons.md-16 {
+    position: absolute;
+    top: -2px;
+    left: 0px;
+    font-size: 14px;
+    font-style: bolder;
+    h5 {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -86,4 +102,11 @@
 
 .card-pantry-item-expired {
   background-color: $white-salmon;
+  border-color: $dark-salmon;
+  p {
+  color: $dark-gray;
+  }
+  a {
+  color: $dark-gray;
+  }
 }
