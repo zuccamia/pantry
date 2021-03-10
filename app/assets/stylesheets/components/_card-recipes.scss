@@ -10,13 +10,12 @@
   font-family: $headers-font;
 }
 
-// .recipe-card {
-//   border: 1px solid $bright-mint;
-//   border-radius: 24px;
-//   height: 100%;
-// }
+.recipe-card {
+  background-color: $light-mint;
+}
 
 .recipe-card-photo{
+  z-index:-1;
   height: 200px;
   width: 100%;
   border-radius: 24px;
@@ -25,16 +24,21 @@
 }
 
 .recipe-card-title{
-  background-color: white;
-  color: $bright-mint;
-  margin: 16px 0 8px 0;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  bottom: 30px;
   text-align: center;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  color: white;
 
   h6 {
     margin-bottom: 0;
   }
   a {
-    color: $bright-mint;
+    color: white;
     text-decoration: none;
     background-color: transparent;
   }
@@ -46,7 +50,6 @@
 
 
 .sub-heading {
-  margin: 24px 0 8px 0;
   color: $bright-mint;
 }
 
@@ -103,7 +106,6 @@ table {
   border-top: 1px solid rgba(0, 0, 0, 0.125);
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
   padding: 0 12px;
-  // background-color: $white-mint;
 }
 
 .view-content-box {
@@ -113,3 +115,4 @@ table {
   margin-bottom: 32px;
   background-color: $light-mint;
 }
+
