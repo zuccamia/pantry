@@ -1,14 +1,14 @@
+import { initSelect2 } from './init_select2';
 const initRecipeForm = () => {
-  const ingrList = document.querySelector(".form-group .ingr-input");
-  const ingrInput = document.querySelector(".form-group .ingr-input li");
-  const ingrBtn = document.querySelector(".new-ingr-btn");
-  console.log(ingrList)
-  console.log(ingrBtn)
-  const newIngrInput = `<li><input class="text required form-control" required="required" aria-required="true" type="text" value="" name="recipe[ingredient][]" id="recipe_"></li>`;
-  ingrBtn.addEventListener("click", (event) => {
-    event.preventDefault();
-    ingrList.insertAdjacentHTML("beforeend", ingrInput.outerHTML);
+const createButton = document.getElementById("addIngredientBtn");
+  createButton.addEventListener("click", () => {
+    console.log("click");
+    const lastId = document.querySelector(".fieldsetContainer").lastElementChild.id;
+    const newId = parseInt(lastId, 10) + 1;
+    const newFieldset = document.querySelector("[id='0']").outerHTML.replace(/0/g,newId);
+    document.querySelector(".fieldsetContainer").insertAdjacentHTML("beforeend", newFieldset);
+    document.querySelector(`[id="${newId}"] span`).remove();
+    initSelect2();
   });
 }
-
 export { initRecipeForm };
