@@ -25,12 +25,14 @@
 
 // custom css
 // button: category heading
-button {
-  margin: 10px 0 10px 0;
-  color: $dark-gray;
-  border-image: none;
-  border-style: none;
-  background-color: transparent;
+#accordion {
+    button {
+    margin: 10px 0 10px 0;
+    color: $dark-gray;
+    border-image: none;
+    border-style: none;
+    background-color: transparent;
+  }
 }
 
 

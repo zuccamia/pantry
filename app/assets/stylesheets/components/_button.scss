@@ -61,7 +61,13 @@
 
 .button-solid-leaf:hover {
   background: $leaf;
-  color: white;
+  color: white !important;
+  a {
+    color: white !important;
+  }
+  .btn:hover {
+    color: white !important;
+  }
 }
 
 
