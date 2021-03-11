@@ -12,7 +12,7 @@
   border-radius: 20px;
   width: 100%;
   margin-bottom: 16px;
-  border: 1px solid $bright-leaf;
+  border: 1px solid $light-leaf;
   background-color: $white-leaf;
   a:hover {
     text-decoration: none;
@@ -34,6 +34,10 @@
     color: $dark-gray;
     margin-bottom: 0;
     font-size: 14px;
+  }
+
+  .fa-search {
+    font-size: 15px;
   }
 }
 

@@ -35,7 +35,7 @@
   <table class="recipe-card">
     <% @available_items.each do |recipe_amount| %>
       <tr class="ingredient-box">
-        <td><i class="fas fa-check-circle text-primary"></i>&nbsp;<%= recipe_amount.item.item_name %></td>
+        <td><%= recipe_amount.item.item_name %>&nbsp;<i class="fas fa-check-circle text-primary"></i></td>
         <td><%= recipe_amount.description %></td>
       </tr>
     <% end %>
