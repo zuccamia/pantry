@@ -3,15 +3,22 @@
 }
 
 .recipe-form {
-  margin-bottom: 24px;
   padding: 16px;
+  padding-bottom: 0;
   background-color: $light-mint;
   border-radius: 16px;
 }
 
+.recipe-form-white {
+  padding: 16px;
+  border-radius: 16px;
+  padding-bottom: 0;
+  border: 1px solid rgba(80, 143, 150, 0.3);
+}
+
 .recipe-form {
   #recipe_instructions {
-    height: 100px;
+    height: 200px;
   }
 }
 
@@ -39,8 +46,20 @@
   color: white;
 }
 
+fieldset {
+  .form-group.select.required.recipe_recipe_amounts_item {
+    margin-bottom: 3px !important;
+  }
+  .select2-container--default .select2-selection--single {
+    border: 1px solid #ced4da;
+  }
+}
+
 //date
 #item_amount_expiry_date {
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
+
+
+
