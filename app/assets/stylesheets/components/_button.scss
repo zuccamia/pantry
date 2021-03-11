@@ -3,7 +3,7 @@
   color: $bright-mint;
   font-family: $headers-font;
   text-align: center;
-  border: 1px solid $mint;
+  border: 1px solid $bright-mint;
   padding: 8px 16px;
   border-radius: 30px;
   font-weight: bold;
@@ -59,7 +59,7 @@
   }
 }
 
-.button-solid:hover {
+.button-solid-leaf:hover {
   background: $leaf;
   color: white;
 }
@@ -107,7 +107,7 @@
   border: 1px solid $bright-leaf;
   transition: background 0.3s ease;
   min-width: 40%;
-  max-width: 60%;
+  max-width: 80%;
   justify-self: center;
   margin: 10px 0;
   h5 {
@@ -134,15 +134,13 @@
   color: white;
   font-family: $headers-font;
   text-align: center;
-  padding: 16px;
+  padding: 16px 24px;
   border-radius: 50px;
   background-color: $bright-mint;
   transition: background 0.3s ease;
   min-width: 40%;
-  max-width: 60%;
+  max-width: 80%;
   justify-self: center;
-  margin: 10px 0;
-
   h5 {
     margin: 0;
   }
@@ -169,7 +167,7 @@
   color: $white;
   font-family: $headers-font;
   text-align: center;
-  padding: 16px;
+  padding: 16px 24px;
   border-radius: 50px;
   background-color: $bright-leaf;
   transition: background 0.3s ease;
@@ -249,4 +247,10 @@
   color: $bright-leaf;
 }
 
-
+.material-icons.md-13 {
+    font-size: 12px;
+    font-style: bolder;
+    h5 {
+      margin-bottom: 0;
+    }
+}
