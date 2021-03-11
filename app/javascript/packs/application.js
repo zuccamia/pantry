@@ -43,6 +43,7 @@ document.addEventListener('turbolinks:load', () => {
   menuPantry();
   menuRecipes();
   menuAddrecipe();
+
   if (document.getElementById('card-pantry-search-more')) {
   showMoreResults();
   }
@@ -50,6 +51,7 @@ document.addEventListener('turbolinks:load', () => {
   if (document.querySelector(".fieldsetContainer")) {
   initRecipeForm();
   }
+
 });
 
 import { initSelect2 } from '../components/init_select2';

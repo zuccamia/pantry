@@ -7,8 +7,10 @@
         <%= f.input :description %>
         <%= f.input :expiry_date, as: :date, html5: true %>
         <br>
-      </div>
+        <div class="save-to-pantry">
+        <%= f.submit 'Save to Pantry', class: 'btn button-solid-leaf' %>
+        </div>
+      <% end %>
     </div>
-    <%= f.submit 'Save to Pantry', class: 'btn button-solid-leaf' %>
-  <% end %>
+  </div>
 </div>
