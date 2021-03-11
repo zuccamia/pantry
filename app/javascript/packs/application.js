@@ -43,11 +43,15 @@ document.addEventListener('turbolinks:load', () => {
   menuPantry();
   menuRecipes();
   menuAddrecipe();
-  
+
   if (document.getElementById('card-pantry-search-more')) {
-    showMoreResults();
+  showMoreResults();
   }
-  //initRecipeForm();
+
+  if (document.querySelector(".fieldsetContainer")) {
+  initRecipeForm();
+  }
+
 });
 
 import { initSelect2 } from '../components/init_select2';
