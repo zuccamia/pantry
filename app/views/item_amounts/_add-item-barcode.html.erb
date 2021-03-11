@@ -1,16 +1,14 @@
-<div class="grid">
   <br>
-  <div class="mt-2">
-    <div class="refresh-button mb-4">
-      <h4><%= link_to ('Refresh &nbsp;' '<i class="fas fa-sync-alt" alt="Barcode scanner not loading? Try refreshing."></i>').html_safe, new_item_amount_path, class: "text-success" %></h4>
-    </div>
-    <%= form_tag '/add_barcode_item', method: :get, id: 'barcode-form' do %>
-      <%= hidden_field_tag :upc, params[:upc] %>
-    <% end %>
-    <div id="scandit-barcode-picker" style="max-width: 1280px; max-height: 80%;"></div>
+<div class="mt-2">
+  <div class="refresh-button mb-4">
+    <h4><%= link_to ('Refresh &nbsp;' '<i class="fas fa-sync-alt" alt="Barcode scanner not loading? Try refreshing."></i>').html_safe, new_item_amount_path, class: "text-success" %></h4>
   </div>
-  <div class="error-message mt-4">
-    <h4>Product not found?<br>
-      <%= link_to 'Create one for later!', "https://world.openfoodfacts.org/", class: "text-success" %></h4>
-  </div>
+  <%= form_tag '/add_barcode_item', method: :get, id: 'barcode-form' do %>
+    <%= hidden_field_tag :upc, params[:upc] %>
+  <% end %>
+  <div id="scandit-barcode-picker" style="max-width: 1280px; max-height: 80%;"></div>
+</div>
+<div class="error-message mt-4">
+  <h4>Product not found?<br>
+    <%= link_to 'Create one for later!', "https://world.openfoodfacts.org/", class: "text-success" %></h4>
 </div>
