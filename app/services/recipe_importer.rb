@@ -11,7 +11,7 @@ class RecipeImporter < ApplicationService
     my_recipe = Recipe.new(
       recipe_name: @recipe[:name],
       summary: @recipe[:summary],
-      instructions: @recipe[:instructions].join("\n"),
+      instructions: @recipe[:instructions].join("\n\n"),
       image: @recipe[:img_url]
     )
     my_recipe.user = @user

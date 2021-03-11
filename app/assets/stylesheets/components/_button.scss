@@ -20,7 +20,6 @@
   opacity: 1;
 }
 
-
 // button with outline, white background
 .button-solid {
   color: white;
@@ -31,12 +30,11 @@
   background: $bright-mint;
   transition: background 0.3s ease;
   margin: 0 24px;
-    p {
+  p {
     font-size: 16px;
     margin: 0;
-    }
+  }
 }
-
 
 .button-solid:hover {
   background: $mint;
@@ -53,7 +51,7 @@
   background: $bright-leaf;
   transition: background 0.3s ease;
   margin: 0 24px;
-    p {
+  p {
     font-size: 16px;
     margin: 0;
   }
@@ -69,7 +67,6 @@
     color: white !important;
   }
 }
-
 
 // action button - outline
 .action-button-outline {
@@ -102,7 +99,6 @@
   }
 }
 
-
 // action button outline leaf
 .action-button-outline-leaf {
   color: $bright-leaf;
@@ -134,6 +130,20 @@
   }
 }
 
+.save-to-pantry {
+  color: $white;
+  font-family: $headers-font;
+  text-align: center;
+  padding: 8px 16px;
+  border-radius: 30px;
+  background: $bright-leaf;
+  transition: background 0.3s ease;
+  margin: 0 24px;
+  p {
+    font-size: 16px;
+    margin: 0;
+  }
+}
 
 // action button solid mint
 .action-button-solid {
@@ -167,7 +177,6 @@
   }
 }
 
-
 // action button solid leaf
 .action-button-solid-leaf {
   color: $white;
@@ -199,12 +208,11 @@
   }
 }
 
-
 // delete badge, "x",
 .badge-delete {
-  p{
-  font-size: 20px;
-  color: $dark-gray;
+  p {
+    font-size: 20px;
+    color: $dark-gray;
   }
 }
 
@@ -223,7 +231,7 @@
   padding: 4px;
   background: $mint;
   transition: background 0.3s ease;
-    p {
+  p {
     font-size: 13px;
     color: white;
     margin: 0;
@@ -254,9 +262,9 @@
 }
 
 .material-icons.md-13 {
-    font-size: 12px;
-    font-style: bolder;
-    h5 {
-      margin-bottom: 0;
-    }
+  font-size: 12px;
+  font-style: bolder;
+  h5 {
+    margin-bottom: 0;
+  }
 }

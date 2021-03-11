@@ -4,7 +4,7 @@
 <% end %>
 <% if @recipe.photo.key %>
   <% content_for :meta_image, cl_image_path(@recipe.photo.key) %>
-<% else %>
+<% elsif @recipe.image %>
   <% content_for :meta_image, cl_image_path(@recipe.image) %>
 <% end %>
 <!-- title and photo -->
