@@ -41,6 +41,21 @@
   color: white;
 }
 
+.add-recipe-btn {
+  color: white;
+  font-family: $headers-font;
+  text-align: center;
+  padding: 8px 16px;
+  border-radius: 30px;
+  background: $bright-mint;
+  transition: background 0.3s ease;
+  margin: 0 24px;
+  p {
+    font-size: 16px;
+    margin: 0;
+  }
+}
+
 // button light-yellow
 .button-solid-leaf {
   color: $white;
