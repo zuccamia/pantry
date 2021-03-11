@@ -55,6 +55,11 @@
   }
 }
 
+.add-recipe-btn:hover {
+  background: $mint;
+  color: white;
+}
+
 // button light-yellow
 .button-solid-leaf {
   color: $white;
@@ -155,6 +160,16 @@
   p {
     font-size: 16px;
     margin: 0;
+  }
+}
+
+.save-to-pantry:hover {
+  background: $leaf;
+  color: white;
+  opacity: 1;
+  a {
+    background: $white-leaf;
+    color: white;
   }
 }
 
