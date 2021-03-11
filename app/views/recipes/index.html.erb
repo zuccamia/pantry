@@ -15,7 +15,7 @@
     <% else %>
       <% @recipes.each do |recipe| %>
         <div class="recipe-cards">
-          <h5 class="recipe-cards-title"><%= recipe.recipe_name.capitalize %></h5>
+          <h5 class="recipe-cards-title"><%= recipe.recipe_name.capitalize %>&nbsp;&nbsp;<i class="fas fa-chevron-right"></i></h5>
           <div class="tags">
             <% recipe.tag_list.each do |tag| %>
               <%= link_to "", class: "btn badge badge-pill badge-light" do %>
