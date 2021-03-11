@@ -1,10 +1,11 @@
-<div class="container">
+<div class="container grid">
+  <br>
   <div>
-  <p>Add amount for <strong><%= @item.item_name %></strong>:</p>
+    <h6>Add amount for <strong><%= @item.item_name %></strong>:</h6>
     <%= simple_form_for @item_amount do |f| %>
       <%= f.hidden_field :item_id, value: @item.id %>
-      <%= f.input :description %>
-      <%= f.submit class: 'btn btn-secondary' %>
+      <%= f.input :description, label: false %>
+      <%= f.submit class: 'btn btn-success' %>
     <% end %>
   </div>
-</div> 
+</div>
