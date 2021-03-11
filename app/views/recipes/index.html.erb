@@ -34,7 +34,7 @@
         </div>
       <% end %>
     <% end %>
-    <% unless @recipes.count == Recipe.all.count %>
+    <% unless @recipes.count == Recipe.all.count && @recipes.any? %>
       <div class= "action-button-solid">
         <h5><%= link_to 'Search recipes &nbsp; <i class="fas fa-search"></i>'.html_safe, search_recipe_path(tag: @tag) %></h5>
       </div>
