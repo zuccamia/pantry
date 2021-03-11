@@ -35,7 +35,13 @@ header > p {
   grid-gap: 16px;
   grid-template-columns: repeat(2, 300px);
   justify-content: center;
-  padding-left: 0px;
+  padding: 16px;
+}
+
+@media (max-width: 443px) {
+  .cards-container {
+    grid-template-columns: repeat(1, 300px);
+  }
 }
 
 /*
