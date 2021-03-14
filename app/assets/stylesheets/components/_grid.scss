@@ -1,5 +1,6 @@
 .grid {
   display: grid;
+  flex-direction: columns;
   grid-template-columns: 1fr;
   grid-gap: 4px;
   flex-grow: 1;
@@ -8,40 +9,69 @@
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
-  .cards {
+  .grid {
     grid-template-columns: 1fr;
   }
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
-  .cards {
+  .grid {
     grid-template-columns: 1fr;
   }
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-  .cards {
-    grid-template-columns: 1fr 1fr;
+  .grid {
+    grid-template-columns: 1fr;
   }
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
+  .grid {
+    grid-template-columns: 1fr;
   }
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+  .grid {
+    grid-template-columns: 1fr;
   }
 }
 
 
 .grid-container {
   border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+
+.main-container {
+  align-items: center;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 768px) {
+  .main-container {
+    max-width: 500px;
+
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .main-container {
+    max-width: 600px;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .main-container {
+    max-width: 600px;
+  }
 }

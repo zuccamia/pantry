@@ -1,16 +1,14 @@
 <h4 class="page-title-item mt-3">Add an item to Pantry</h4>
-<div class="grid">
-  <div class="form">
-    <div class="add-item-pantry">
-      <%= simple_form_for @item_amount do |f| %>
-        <%= f.association :item, label_method: :item_name, input_html: { class: "select2" }, include_hidden: false %>
-        <%= f.input :description %>
-        <%= f.input :expiry_date, as: :date, html5: true %>
-        <br>
-        <div class="save-to-pantry">
+<div class="form">
+  <div class="add-item-pantry">
+    <%= simple_form_for @item_amount do |f| %>
+      <%= f.association :item, label_method: :item_name, input_html: { class: "select2" }, include_hidden: false %>
+      <%= f.input :description %>
+      <%= f.input :expiry_date, as: :date, html5: true %>
+      <br>
+      <div class="save-to-pantry">
         <%= f.submit 'Save to Pantry', class: 'btn button-solid-leaf' %>
-        </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
 </div>
