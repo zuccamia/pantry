@@ -14,7 +14,7 @@
       </div>
       <div id="<%="collapse#{index}"%>" class="collapse" aria-labelledby="<%="heading#{index}"%>" data-parent="#accordion">
         <div class="card-body">
-          <%= render 'pantry-item', item_amounts: category.item_amounts %>
+          <%= render 'pantry-item', item_amounts: category.item_amounts.where(user_id: current_user.id) %>
         </div>
       </div>
     </div>

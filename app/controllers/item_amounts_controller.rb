@@ -1,7 +1,7 @@
 class ItemAmountsController < ApplicationController
   def index
-    @categories = filtered_categories
-    @item_amounts = ItemAmount.all
+    @item_amounts = current_user.item_amounts
+    @categories = @item_amounts.map { |item_amount| item_amount.category }.uniq.sort
     @expiring_items = @item_amounts.filter { |item_amount| item_amount.expired? }
     @recipes = Recipe.all
   end
@@ -81,11 +81,5 @@ class ItemAmountsController < ApplicationController
       number
     end
 
-  end
-
-  def filtered_categories
-    categories = Category.all.filter do |category|
-      category.item_amounts.any?
-    end
   end
 end
