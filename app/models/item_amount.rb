@@ -1,6 +1,7 @@
 class ItemAmount < ApplicationRecord
   belongs_to :item
   belongs_to :user
+  has_one :category, through: :item
 
   validates :description, presence: true, length: { minimum: 2 }
   validate :expiry_date_is_after_created_date
