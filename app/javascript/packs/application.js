@@ -61,11 +61,11 @@ document.addEventListener("turbolinks:load", function() {
 });
 
 //mobile pointer
-import { showCircle } from '../components/mobile-pointer.js';
-document.addEventListener("touchmove", (event) => {
-  showCircle(event.targetTouches[0], 0.1);
-});
-document.addEventListener("click", (event) => {
-  showCircle(event, 1);
-});
+// import { showCircle } from '../components/mobile-pointer.js';
+// document.addEventListener("touchmove", (event) => {
+//   showCircle(event.targetTouches[0], 0.1);
+// });
+// document.addEventListener("click", (event) => {
+//   showCircle(event, 1);
+// });
 
