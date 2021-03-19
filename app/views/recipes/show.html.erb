@@ -8,57 +8,59 @@
   <% content_for :meta_image, cl_image_path(@recipe.image) %>
 <% end %>
 <!-- title and photo -->
-<div class="container grid">
-  <div class="recipe-cards mb-1">
-    <div class="recipe-card-photo">
-      <% if @recipe.image.nil? %>
-        <%= cl_image_tag @recipe.photo.key, class: "recipe-cards-photo", alt: "My Recipe" %>
-      <% else %>
-        <%= image_tag (@recipe.image), class: "recipe-card-photo" %>
+<div class="main-container">
+  <div class="container grid">
+    <div class="recipe-cards mb-1">
+      <div class="recipe-card-photo">
+        <% if @recipe.image.nil? %>
+          <%= cl_image_tag @recipe.photo.key, class: "recipe-cards-photo", alt: "My Recipe" %>
+        <% else %>
+          <%= image_tag (@recipe.image), class: "recipe-card-photo" %>
+        <% end %>
+      </div>
+      <div class="recipe-card-title">
+        <h4><%= @recipe.recipe_name.capitalize %>&nbsp;<%= link_to ('<i class="far fa-edit"></i>').html_safe, edit_recipe_path(@recipe) %></h4>
+      </div>
+    </div>
+    <div class="recipe-card-body">
+      <div class="tags">
+        <%= render 'shared/tag-list' %>
+      </div>
+    </div>
+    <br>
+    <br>
+    <!-- ingredients -->
+    <div class="sub-heading d-flex justify-content-between">
+      <h4><%= link_to ('Ingredients&nbsp;<i class="far fa-edit"></i>').html_safe, edit_recipe_path(@recipe) %></h4>
+    </div>
+    <table class="recipe-card">
+      <% @available_items.each do |recipe_amount| %>
+        <tr class="ingredient-box">
+          <td><%= recipe_amount.item.item_name %>&nbsp;<i class="fas fa-check-circle text-primary"></i></td>
+          <td><%= recipe_amount.description %></td>
+        </tr>
       <% end %>
+      <% @missing_items.each do |recipe_amount| %>
+        <tr class="ingredient-box-amount">
+          <td><%= recipe_amount.item.item_name %></td>
+          <td><%= recipe_amount.description %></td>
+        </tr>
+      <% end %>
+    </table>
+    <br>
+    <%= link_to 'Send to LINE', shopping_list_path(@shopping_list), class: "button-solid" %>
+    <br>
+    <br>
+    <!-- instructions -->
+    <div class="sub-heading">
+      <h4><%= link_to ('Instructions&nbsp; <i class="far fa-edit"></i>').html_safe, edit_recipe_path(@recipe) %></h4>
     </div>
-    <div class="recipe-card-title">
-      <h4><%= @recipe.recipe_name.capitalize %>&nbsp;<%= link_to ('<i class="far fa-edit"></i>').html_safe, edit_recipe_path(@recipe) %></h4>
+    <div class="content-box recipe-card">
+      <p><%= simple_format(@recipe.instructions) %></p>
     </div>
+    <br>
+    <%= link_to "Delete Recipe", recipe_path(@recipe), method: :delete, data: { confirm: "Delete recipe?" }, class: "button-outline" %>
   </div>
-  <div class="recipe-card-body">
-    <div class="tags">
-      <%= render 'shared/tag-list' %>
-    </div>
-  </div>
-  <br>
-  <br>
-  <!-- ingredients -->
-  <div class="sub-heading d-flex justify-content-between">
-    <h4><%= link_to ('Ingredients&nbsp;<i class="far fa-edit"></i>').html_safe, edit_recipe_path(@recipe) %></h4>
-  </div>
-  <table class="recipe-card">
-    <% @available_items.each do |recipe_amount| %>
-      <tr class="ingredient-box">
-        <td><%= recipe_amount.item.item_name %>&nbsp;<i class="fas fa-check-circle text-primary"></i></td>
-        <td><%= recipe_amount.description %></td>
-      </tr>
-    <% end %>
-    <% @missing_items.each do |recipe_amount| %>
-      <tr class="ingredient-box-amount">
-        <td><%= recipe_amount.item.item_name %></td>
-        <td><%= recipe_amount.description %></td>
-      </tr>
-    <% end %>
-  </table>
-  <br>
-  <%= link_to 'Send to LINE', shopping_list_path(@shopping_list), class: "button-solid" %>
-  <br>
-  <br>
-  <!-- instructions -->
-  <div class="sub-heading">
-    <h4><%= link_to ('Instructions&nbsp; <i class="far fa-edit"></i>').html_safe, edit_recipe_path(@recipe) %></h4>
-  </div>
-  <div class="content-box recipe-card">
-    <p><%= simple_format(@recipe.instructions) %></p>
-  </div>
-  <br>
-  <%= link_to "Delete Recipe", recipe_path(@recipe), method: :delete, data: { confirm: "Delete recipe?" }, class: "button-outline" %>
 </div>
 <br>
 <br>

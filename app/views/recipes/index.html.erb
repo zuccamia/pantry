@@ -1,44 +1,46 @@
-<div class="container grid-center">
-  <% if @recipes.empty? %>
-    <div class="recipe-cards-grid">
-      <div class="error-message">
-        <div class="error-image">
-          <i class="fas fa-utensils"></i>
-        </div>
-        <h4>Nothing yet saved with<br>
-          <span class="text-primary"><%= params[:tag].nil? ? "this recipe" : params[:tag].capitalize %>.</span><br>
+<div class="container">
+  <div class="repeated-items-container">
+    <% if @recipes.empty? %>
+      <div class="recipe-cards-grid">
+        <div class="error-message">
+          <div class="error-image">
+            <i class="fas fa-utensils"></i>
+          </div>
+          <h4>Nothing yet saved with<br>
+            <span class="text-primary"><%= params[:tag].nil? ? "this recipe" : params[:tag].capitalize %>.</span><br>
+            <br>
+            Would you like to search our recommended recipes?</h4>
           <br>
-          Would you like to search our recommended recipes?</h4>
-        <br>
-        <br>
-      </div>
-    <% else %>
-      <% @recipes.each do |recipe| %>
-        <div class="recipe-cards">
-          <h5 class="recipe-cards-title"><%= recipe.recipe_name.capitalize %>&nbsp;&nbsp;<i class="fas fa-chevron-right"></i></h5>
-          <div class="tags">
-            <% recipe.tag_list.each do |tag| %>
-              <%= link_to "", class: "btn badge badge-pill badge-light" do %>
-                <%= tag %>
+          <br>
+        </div>
+      <% else %>
+        <% @recipes.each do |recipe| %>
+          <div class="recipe-cards">
+            <h5 class="recipe-cards-title"><%= recipe.recipe_name.capitalize %>&nbsp;&nbsp;<i class="fas fa-chevron-right"></i></h5>
+            <div class="tags">
+              <% recipe.tag_list.each do |tag| %>
+                <%= link_to "", class: "btn badge badge-pill badge-light" do %>
+                  <%= tag %>
+                <% end %>
               <% end %>
-            <% end %>
+            </div>
+            <div class="recipe-cards-photo">
+              <% if recipe.image.nil? %>
+                <%= cl_image_tag recipe.photo.key, class: "recipe-cards-photo", alt: "My Recipe" %>
+              <% else %>
+                <%= image_tag (recipe.image), class: "recipe-cards-photo" %>
+              <% end %>
+            </div>
+            <%= link_to "", recipe_path(recipe), class: "recipe-card-link" %>
           </div>
-          <div class="recipe-cards-photo">
-            <% if recipe.image.nil? %>
-              <%= cl_image_tag recipe.photo.key, class: "recipe-cards-photo", alt: "My Recipe" %>
-            <% else %>
-              <%= image_tag (recipe.image), class: "recipe-cards-photo" %>
-            <% end %>
-          </div>
-          <%= link_to "", recipe_path(recipe), class: "recipe-card-link" %>
+        <% end %>
+      <% end %>
+      <% unless @recipes.count == Recipe.all.count && @recipes.any? %>
+        <div class= "action-button-solid">
+          <h5><%= link_to 'Search recipes &nbsp; <i class="fas fa-search"></i>'.html_safe, search_recipe_path(tag: @tag) %></h5>
         </div>
       <% end %>
-    <% end %>
-    <% unless @recipes.count == Recipe.all.count && @recipes.any? %>
-      <div class= "action-button-solid">
-        <h5><%= link_to 'Search recipes &nbsp; <i class="fas fa-search"></i>'.html_safe, search_recipe_path(tag: @tag) %></h5>
-      </div>
-    <% end %>
+    </div>
   </div>
 </div>
 <br>

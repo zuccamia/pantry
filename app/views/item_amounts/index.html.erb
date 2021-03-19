@@ -1,15 +1,17 @@
-<div class="container">
-  <ul class="nav nav-tabs bootstrap-tabs" id="myTab" role="tablist">
-    <li class="nav-item" role="presentation">
-      <a class="nav-link active" id="all-items-tab" data-bs-toggle="tab" href="#all-items" role="tab" aria-controls="all-items" aria-selected="true">All items</a>
-    </li>
-    <li class="nav-item d-flex" role="presentation">
-      <a class="nav-link" id="expiring-tab" data-bs-toggle="tab" href="#expiring" role="tab" aria-controls="expiring" aria-selected="false">Expiring items</a>
-      <%= ('<i class="material-icons md-18">timer</i>').html_safe if @expiring_items.any? %>
-    </li>
-  </ul>
-  <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active" id="all-items" role="tabpanel" aria-labelledby="all-items-tab"><%= render 'pantry-all-item' %></div>
-    <div class="tab-pane fade" id="expiring" role="tabpanel" aria-labelledby="expiring-tab"><%= render 'expiring-items' %></div>
+<div class="main-container">
+  <div class="container">
+    <ul class="nav nav-tabs bootstrap-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="all-items-tab" data-bs-toggle="tab" href="#all-items" role="tab" aria-controls="all-items" aria-selected="true">All items</a>
+      </li>
+      <li class="nav-item d-flex" role="presentation">
+        <a class="nav-link" id="expiring-tab" data-bs-toggle="tab" href="#expiring" role="tab" aria-controls="expiring" aria-selected="false">Expiring items</a>
+        <%= ('<i class="material-icons md-18">timer</i>').html_safe if @expiring_items.any? %>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="all-items" role="tabpanel" aria-labelledby="all-items-tab"><%= render 'pantry-all-item' %></div>
+      <div class="tab-pane fade" id="expiring" role="tabpanel" aria-labelledby="expiring-tab"><%= render 'expiring-items' %></div>
+    </div>
   </div>
 </div>

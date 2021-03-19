@@ -1,41 +1,43 @@
-<div class="container grid">
-  <div class="d-flex">
-    <h5><%= link_to ('<i class="material-icons md-13">arrow_back</i> back to search results').html_safe, :back %></h5>
-  </div>
-  <div class="recipe-cards">
-    <div class="recipe-cards-photo">
-      <%= image_tag(@recipe[:img_url], class: "recipe-cards-photo") %>
+<div class="main-container">
+  <div class="container grid">
+    <div class="d-flex">
+      <h5><%= link_to ('<i class="material-icons md-13">arrow_back</i> back to search results').html_safe, :back %></h5>
     </div>
-    <h4 class="recipe-cards-title"><%= @recipe[:name] %></h4>
+    <div class="recipe-cards">
+      <div class="recipe-cards-photo">
+        <%= image_tag(@recipe[:img_url], class: "recipe-cards-photo") %>
+      </div>
+      <h4 class="recipe-cards-title"><%= @recipe[:name] %></h4>
+    </div>
+    <%= link_to ('Save recipe&nbsp;&nbsp;<i class="fas fa-folder-plus"></i>').html_safe, import_recipe_path(recipe_id: @recipe[:id]), class: "recipe-icon btn button-solid" %>
+    <br>
+    <br>
+    <h4>Ingredients</h4>
+    <table>
+      <% @available_items.each do |ingredient| %>
+        <tr class="ingredient-box">
+          <td><%= ingredient[:name] %>&nbsp;<i class="fas fa-check-circle text-primary"></i></td>
+          <td><%= ingredient[:description] %></td>
+        </tr>
+      <% end %>
+      <% @missing_items.each do |ingredient| %>
+        <tr class="ingredient-box-amount">
+          <td><%= ingredient[:name] %></td>
+          <td><%= ingredient[:description] %></td>
+        </tr>
+      <% end %>
+    </table>
+    <br>
+    <br>
+    <h4>Instructions</h4>
+    <div class="content-box">
+      <% @recipe[:instructions].each do |step| %>
+        <p><%= simple_format(step) %></p>
+      <% end %>
+    </div>
+    <br>
+    <%= link_to ('Save recipe&nbsp;&nbsp;<i class="fas fa-folder-plus"></i>').html_safe, import_recipe_path(recipe_id: @recipe[:id]), class: "recipe-icon btn button-solid" %>
   </div>
-  <%= link_to ('Save recipe&nbsp;&nbsp;<i class="fas fa-folder-plus"></i>').html_safe, import_recipe_path(recipe_id: @recipe[:id]), class: "recipe-icon btn button-solid" %>
-  <br>
-  <br>
-  <h4>Ingredients</h4>
-  <table>
-    <% @available_items.each do |ingredient| %>
-      <tr class="ingredient-box">
-        <td><%= ingredient[:name] %>&nbsp;<i class="fas fa-check-circle text-primary"></i></td>
-        <td><%= ingredient[:description] %></td>
-      </tr>
-    <% end %>
-    <% @missing_items.each do |ingredient| %>
-      <tr class="ingredient-box-amount">
-        <td><%= ingredient[:name] %></td>
-        <td><%= ingredient[:description] %></td>
-      </tr>
-    <% end %>
-  </table>
-  <br>
-  <br>
-  <h4>Instructions</h4>
-  <div class="content-box">
-    <% @recipe[:instructions].each do |step| %>
-      <p><%= simple_format(step) %></p>
-    <% end %>
-  </div>
-  <br>
-  <%= link_to ('Save recipe&nbsp;&nbsp;<i class="fas fa-folder-plus"></i>').html_safe, import_recipe_path(recipe_id: @recipe[:id]), class: "recipe-icon btn button-solid" %>
 </div>
 <br>
 <br>

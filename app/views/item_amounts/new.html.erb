@@ -1,14 +1,16 @@
-<div class="container">
-  <ul class="nav nav-tabs bootstrap-tabs" id="myTab" role="tablist">
-    <li class="nav-item" role="presentation">
-      <a class="nav-link active" id="barcode-tab" data-bs-toggle="tab" href="#barcode" role="tab" aria-controls="barcode" aria-selected="false">Barcode&nbsp; <i class="fas fa-barcode"></i></a>
-    </li>
-    <li class="nav-item" role="presentation">
-      <a class="nav-link" id="text-tab" data-bs-toggle="tab" href="#text" role="tab" aria-controls="text" aria-selected="true">Text&nbsp; <i class="far fa-keyboard"></i></a>
-    </li>
-  </ul>
-  <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active" id="barcode" role="tabpanel" aria-labelledby="barcode-tab"><%= render 'add-item-barcode' %></div>
-    <div class="tab-pane fade" id="text" role="tabpanel" aria-labelledby="text-tab"><%= render 'add-item-text' %></div>
+<div class="main-container">
+  <div class="container">
+    <ul class="nav nav-tabs bootstrap-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="barcode-tab" data-bs-toggle="tab" href="#barcode" role="tab" aria-controls="barcode" aria-selected="false">Barcode&nbsp; <i class="fas fa-barcode"></i></a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="text-tab" data-bs-toggle="tab" href="#text" role="tab" aria-controls="text" aria-selected="true">Text&nbsp; <i class="far fa-keyboard"></i></a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="barcode" role="tabpanel" aria-labelledby="barcode-tab"><%= render 'add-item-barcode' %></div>
+      <div class="tab-pane fade" id="text" role="tabpanel" aria-labelledby="text-tab"><%= render 'add-item-text' %></div>
+    </div>
   </div>
 </div>
