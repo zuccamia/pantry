@@ -1,25 +1,27 @@
-<div class="container grid">
-  <div class="search-results">
-    <%= form_tag recipes_path, method: :get do %>
-      <%= text_field_tag :query,
+<div class="main-container">
+  <div class="container grid">
+    <div class="search-results">
+      <%= form_tag recipes_path, method: :get do %>
+        <%= text_field_tag :query,
     params[:query],
     class: "search-form",
     placeholder: "Top results for #{params[:tag]}"
   %>
-      <div class="search-button">
-        <%= link_to ('<i class="fa fa-search"></i>').html_safe, search_recipe_path(tag: @tag), class: "text-primary" %>
-      <% end %>
+        <div class="search-button">
+          <%= link_to ('<i class="fa fa-search"></i>').html_safe, search_recipe_path(tag: @tag), class: "text-primary" %>
+        <% end %>
+      </div>
+      <div class="search-body">
+        <%= render '/shared/recipe-search-item-card' %>
+      </div>
+      <div class="search-body">
+        <%= render '/shared/recipe-search-item-card-more' %>
+      </div>
     </div>
-    <div class="search-body">
-      <%= render '/shared/recipe-search-item-card' %>
+    <div id="search-more">
+      <button class="btn action-button-solid">Show More Results &nbsp; <i class="fas fa-arrow-down"></i></button>
     </div>
-    <div class="search-body">
-      <%= render '/shared/recipe-search-item-card-more' %>
-    </div>
+    <br>
+    <br>
   </div>
-  <div id="search-more">
-    <button class="btn action-button-solid">Show More Results &nbsp; <i class="fas fa-arrow-down"></i></button>
-  </div>
-  <br>
-  <br>
 </div>
