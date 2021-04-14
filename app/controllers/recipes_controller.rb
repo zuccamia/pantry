@@ -59,6 +59,7 @@ class RecipesController < ApplicationController
   def search
     @recipes = RecipeFinder.call(params[:tag])
     # return a search result array @recipes of recipe hashes with Spoonacular ID, recipe title and image url as keys
+    skip_authorization
   end
 
   def view
