@@ -1,11 +1,13 @@
 class RecipeAmountsController < ApplicationController
   def index
     @recipe_amounts = RecipeAmount.all
+    @recipe_amounts = policy_scope(RecipeAmount)
   end
 
   def new
     @recipe = Recipe.find(params[:recipe_id])
     @recipe_amount = RecipeAmount.new
+    authorize @recipe
   end
 
   def create
@@ -14,6 +16,7 @@ class RecipeAmountsController < ApplicationController
     @recipe_amount.recipe = @recipe
     @recipe_amount.save
     redirect_to recipe_path(@recipe)
+    authorize @recipe
   end
 
   # def edit
@@ -33,6 +36,7 @@ class RecipeAmountsController < ApplicationController
     @recipe = @recipe_amount.recipe
     @recipe_amount.destroy
     redirect_to recipe_path(@recipe)
+    authorize @recipe
   end
 
   private
