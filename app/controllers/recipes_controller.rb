@@ -3,10 +3,12 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all
     @recipes = Recipe.tagged_with(params[:tag]) if params[:tag].present?
     @tag = params[:tag]
+    @recipes = policy_scope(Recipe)
   end
 
   def show
     @recipe = Recipe.find(params[:id])
+    authorize @recipe
 
     ingredients = @recipe.recipe_amounts
     pantry = ItemAmount.all.map { |item_amount| item_amount.item.item_name }
@@ -19,6 +21,7 @@ class RecipesController < ApplicationController
   def new
     @recipe = Recipe.new
     @recipe.recipe_amounts.build
+    authorize @recipe
   end
 
   def create
@@ -29,21 +32,27 @@ class RecipesController < ApplicationController
     else
       render :new
     end
+    authorize @recipe
   end
 
   def edit
     @recipe = Recipe.find(params[:id])
+    authorize @recipe
   end
 
   def update
     @recipe = Recipe.find(params[:id])
     @recipe.update(recipe_params)
+    authorize @recipe
+
     redirect_to recipe_path(@recipe), notice: 'Your recipe was successfully updated.'
   end
 
   def destroy
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
+    authorize @recipe
+
     redirect_to recipes_path, notice: 'Your recipe was successfully deleted.'
   end
 
