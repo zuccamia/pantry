@@ -1,9 +1,9 @@
 class RecipesController < ApplicationController
   def index
     @recipes = Recipe.all
+    @recipes = policy_scope(Recipe)
     @recipes = Recipe.tagged_with(params[:tag]) if params[:tag].present?
     @tag = params[:tag]
-    @recipes = policy_scope(Recipe)
   end
 
   def show
