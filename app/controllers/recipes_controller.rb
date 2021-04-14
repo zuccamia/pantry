@@ -81,6 +81,7 @@ class RecipesController < ApplicationController
 
     redirect_to recipes_path
     # to see the imported recipe added to my recipes
+    skip_authorization
   end
 
   private
