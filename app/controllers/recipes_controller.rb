@@ -69,6 +69,7 @@ class RecipesController < ApplicationController
     pantry = ItemAmount.all.map { |item_amount| item_amount.item.item_name }
     @available_items = ingredients.filter { |ingredient| pantry.include?(ingredient[:name]) }
     @missing_items = ingredients - @available_items
+    skip_authorization
   end
 
   def import
