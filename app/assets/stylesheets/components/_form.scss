@@ -33,7 +33,7 @@
 }
 
 //select2 styling
-[class^='select2'] {
+[class^="select2"] {
   border-radius: 20px !important;
 }
 
@@ -41,7 +41,8 @@
   outline: none;
 }
 
-.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+.select2-container--default
+  .select2-results__option--highlighted.select2-results__option--selectable {
   background-color: transparent !important;
   color: white;
 }
@@ -61,5 +62,28 @@ fieldset {
   margin-right: 0 !important;
 }
 
+.pageclip-form__submit {
+  color: white;
+  font-family: $headers-font;
+  text-align: center;
+  padding: 8px 16px;
+  border-radius: 30px;
+  background: $bright-mint;
+  transition: background 0.3s ease;
+  margin: 0 24px;
+  p {
+    font-size: 16px;
+    margin: 0;
+  }
+  border: none;
+}
 
+.form-inputs {
+  display: flex;
+  justify-content: center;
+}
 
+.rounded {
+  border: 1px solid gray;
+  padding: 8px 20px;
+}
