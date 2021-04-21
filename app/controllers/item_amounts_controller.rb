@@ -4,10 +4,12 @@ class ItemAmountsController < ApplicationController
     @categories = @item_amounts.map { |item_amount| item_amount.category }.uniq.sort
     @expiring_items = @item_amounts.filter { |item_amount| item_amount.expired? }
     @recipes = Recipe.all
+    @item_amounts = policy_scope(ItemAmount)
   end
 
   def new
     @item_amount = ItemAmount.new
+    authorize @item_amount
   end
 
   def create
@@ -16,23 +18,29 @@ class ItemAmountsController < ApplicationController
     @item_amount.user = current_user
     @item_amount.save
     set_expiry_date(@item_amount) unless @item_amount.expiry_date.present?
+    authorize @item_amount
 
     redirect_to item_amounts_path
   end
 
   def edit
     @item_amount = ItemAmount.find(params[:id])
+    authorize @item_amount
   end
 
   def update
     @item_amount = ItemAmount.find(params[:id])
     @item_amount.update(item_amount_params)
+    authorize @item_amount
+
     redirect_to item_amounts_path
   end
 
   def destroy
     @item_amount = ItemAmount.find(params[:id])
     @item_amount.destroy
+    authorize @item_amount
+
     redirect_to item_amounts_path
   end
 

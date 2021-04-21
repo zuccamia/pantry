@@ -1,12 +1,14 @@
 class RecipesController < ApplicationController
   def index
     @recipes = Recipe.all
+    @recipes = policy_scope(Recipe)
     @recipes = Recipe.tagged_with(params[:tag]) if params[:tag].present?
     @tag = params[:tag]
   end
 
   def show
     @recipe = Recipe.find(params[:id])
+    authorize @recipe
 
     ingredients = @recipe.recipe_amounts
     pantry = ItemAmount.all.map { |item_amount| item_amount.item.item_name }
@@ -19,6 +21,7 @@ class RecipesController < ApplicationController
   def new
     @recipe = Recipe.new
     @recipe.recipe_amounts.build
+    authorize @recipe
   end
 
   def create
@@ -29,27 +32,34 @@ class RecipesController < ApplicationController
     else
       render :new
     end
+    authorize @recipe
   end
 
   def edit
     @recipe = Recipe.find(params[:id])
+    authorize @recipe
   end
 
   def update
     @recipe = Recipe.find(params[:id])
     @recipe.update(recipe_params)
+    authorize @recipe
+
     redirect_to recipe_path(@recipe), notice: 'Your recipe was successfully updated.'
   end
 
   def destroy
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
+    authorize @recipe
+
     redirect_to recipes_path, notice: 'Your recipe was successfully deleted.'
   end
 
   def search
     @recipes = RecipeFinder.call(params[:tag])
     # return a search result array @recipes of recipe hashes with Spoonacular ID, recipe title and image url as keys
+    skip_authorization
   end
 
   def view
@@ -59,6 +69,7 @@ class RecipesController < ApplicationController
     pantry = ItemAmount.all.map { |item_amount| item_amount.item.item_name }
     @available_items = ingredients.filter { |ingredient| pantry.include?(ingredient[:name]) }
     @missing_items = ingredients - @available_items
+    skip_authorization
   end
 
   def import
@@ -71,6 +82,7 @@ class RecipesController < ApplicationController
 
     redirect_to recipes_path
     # to see the imported recipe added to my recipes
+    skip_authorization
   end
 
   private

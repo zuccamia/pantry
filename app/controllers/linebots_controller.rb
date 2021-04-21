@@ -10,6 +10,7 @@ class LinebotsController < ApplicationController
   end
 
   def share
+    skip_authorization
     shopping_list = ShoppingList.find(params[:id])
     LinebotShareJob.perform_now(shopping_list, client, current_user)
 
