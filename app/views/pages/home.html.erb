@@ -3,41 +3,44 @@
   <br>
   <h1>In Japan, 50% of all food waste comes from households.</h1>
   <br>
-  <h2>Get notified when Pantry is here to help you reduce food waste!</h2> 
-  <%#h1><strong><%#= link_to "Join Pantry to reduce your food waste.", new_user_session_path %></strong></h1>
-  <br>
-        <form action="https://send.pageclip.co/Iy0vVPmTPwzAMUKcrHfroWfa9ggtjAzY/waiting_list" class="pageclip-form" method="post">
-          <div class="form-inputs">
-          <!-- Email sign up form. "Name" attribute! -->
-            <input type="text" name="name" value="Rosie Jones" class="rounded"/>
-            <input type="email" name="email" value="rosiej@example.com" class="rounded"/>
-          <!-- This button will have a loading spinner. Keep the inner span for best results. -->
-            <div class="form-actions">
-              <button type="submit" class="pageclip-form__submit">
-                <span>Submit</span>
-              </button>
-            </div>
-          </div>
-        </form>
-  <br>
-  <br>
+  <h1 class="intro"><strong>Pantry is a new way to reduce food waste.</strong></h1>
+  <br><br>
+  <div class="invite">
+  <br><br>
+    <h3>We are currently in beta. Sign up to receive an invitation.</h3> 
+    <%#h1><strong><%#= link_to "Join Pantry to reduce your food waste.", new_user_session_path %></strong></h1>
+    <br><br>
+    <form action="https://send.pageclip.co/Iy0vVPmTPwzAMUKcrHfroWfa9ggtjAzY/waiting_list" class="pageclip-form" method="post">
+      <div class="form-inputs">
+        <!-- Email sign up form. "Name" attribute! -->
+        <input type="email" name="email" value="rosiej@example.com" class="rounded"/>
+        <!-- This button will have a loading spinner. Keep the inner span for best results. -->
+        <div class="form-actions">
+          <button type="submit" class="pageclip-form__submit">
+            <span>Sign Up</span>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <br><br>
   <img src="pantry-logo-pic.png" width="30%">
 </header>
 <main>
   <ul class="cards-container">
-    <li class="salmon-feature-card">
+    <li class="mint-feature-card">
       <h1><i class="material-icons input">input</i></h1><br>
       <p>Add items to your Pantry by scanning the barcodes.</p>
     </li>
-    <li class="mint-feature-card">
+    <li class="leaf-feature-card">
       <h1><i class="material-icons kitchen">kitchen</i></h1><br>
       <p>View all items in your Pantry at a glance.</p>
     </li>
-    <li class="leaf-feature-card">
+    <li class="dusk-feature-card">
       <h1><i class="material-icons">timer</i></h1><br>
       <p>Be notified 3 days before an item expires.</p>
     </li>
-    <li class="dusk-feature-card">
+    <li class="salmon-feature-card">
       <h1><i class="material-icons restaurant">restaurant</i></h1><br>
       <p>Find recipes for an expiring item.</p>
     </li>
