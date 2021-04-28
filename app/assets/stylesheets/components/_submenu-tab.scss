@@ -3,23 +3,24 @@
   font-size: 16px;
   font-family: $headers-font;
   font-weight: 300;
+  border-bottom: 0.5px solid $bright-mint;
+
   a {
     font-family: $headers-font;
   }
 }
 
 #barcode-tab {
-  padding: 8px 52px;
+  padding: 0.5rem 3.3rem;
 }
 
 #text-tab {
-  padding: 8px 70px;
+  padding: 0.5rem 4.3rem;
 }
 
 
-
 .nav-tabs .nav-link.active {
-  margin-bottom: 16px;
+  margin-bottom: 0;
   font-weight: bold;
   color: $bright-mint;
   border-bottom: 2px solid $bright-mint;
@@ -29,13 +30,14 @@
 }
 
 .nav-tabs .nav-link {
+  margin-bottom: 0;
   color: $bright-mint;
   border-bottom: 0.5px solid $bright-mint;
+
 }
 
 .nav-tabs .nav-item.show .nav-link {
   color: $bright-mint;
-  border-bottom: 0.5px solid $bright-mint;
 }
 
 .nav-tabs {
@@ -46,11 +48,21 @@
 //   margin: 0 16px;
 // }
 
+.tab-content {
+  padding: 2rem 0;
+}
+
+#all-items-tab {
+  padding: 0.5rem 2.2rem;
+}
+
 #expiring-tab {
-  color: $dark-gray;
+  color: $bright-mint;
+  padding: 0.5rem 3rem 0.5rem 2rem;
   border-top: none;
   border-right: none;
   border-left: none;
+  position: relative;
 }
 
 #expiring-tab.active {
@@ -58,5 +70,5 @@
   border-top: none;
   border-right: none;
   border-left: none;
-  border-bottom: 1px solid $dark-salmon;
+  border-bottom: 2px solid $dark-salmon;
 }

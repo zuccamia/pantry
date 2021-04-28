@@ -6,21 +6,23 @@
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
+  border: none;
   background-clip: border-box;
   border-radius: 20px;
-  font-family: $headers-font;
-  margin: 8px 0;
+  margin: 0 0 0.5rem 0;
 }
 .card-header {
-  padding: 12px 20px 0 20px;
+  padding: 0.8rem 1.6rem 0 1.6rem;
   margin-bottom: 0;
-  background-color: transparent;
+  background-color: $white-mint;
   border-bottom: none;
-  border-radius: 24px;
+  h5 {
+    font-family: $body-font;
+  }
 }
 
 .card-header:first-child {
-  border-radius: 24px;
+  border-radius: 20px;
 }
 
 // custom css
@@ -40,8 +42,9 @@
   font-size: 22px;
   font-style: bolder;
   color: $dark-salmon;
-  line-height: 1.6;
-  margin-left: -15px;
+  line-height: 1;
+  right: 22px;
+  position: absolute;
   h5 {
     margin-bottom: 0;
     a:hover {
