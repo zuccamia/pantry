@@ -9,7 +9,7 @@ header {
 }
 
 header > h1 {
-  margin: 20px 0;
+  margin: 22px 0;
 }
 
 header > h1 strong {
@@ -22,11 +22,24 @@ header > p {
 }
 
 @media (max-width: 443px) {
-  header > h1 { font-size: 1.6em; }
+  header > h1 { font-size: 2em; }
+}
+
+h1.intro {
+  color: $bright-mint;
 }
 
 h2 {
-  color: $bright-mint;
+  color: $dark-gray;
+}
+
+h3 {
+  color: $dark-gray;
+  font-family: "Libre Baskerville", "Helvetica", "sans-serif";
+}
+
+p {
+  font-size: 18px;
 }
 
 /*
@@ -97,6 +110,24 @@ h2 {
 
 [class$='feature-card'][class*='dusk'] {
   border-color: hsl(187, 22%, 31%);
+}
+
+/*
+ * Invite
+ */
+
+.invite {
+  background-color: $white; 
+  padding:20px 47px;
+  box-shadow: 2px 5px 20px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  position: relative;
+  box-sizing: border-box;
+  height: 250px;
+  border-top: solid 5px hsl(22, 100%, 81%);
+  text-align: center;
+  justify-content: center;
+  padding: 16px;
 }
 
 /*
