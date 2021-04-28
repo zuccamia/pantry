@@ -283,10 +283,11 @@
 }
 
 .refresh-button {
-  display: flex;
-  justify-content: center;
+  text-align: center;
   align-items: center;
-  color: $bright-leaf;
+    h5 {
+    font-family: $body-font;
+    }
 }
 
 .material-icons.md-13 {
