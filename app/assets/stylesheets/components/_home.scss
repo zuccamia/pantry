@@ -29,6 +29,19 @@ h2 {
   color: $bright-mint;
 }
 
+h1.intro {
+  color: $bright-mint;
+}
+
+h3.intro {
+  color: $dark-gray;
+  font-family: "Libre Baskerville", "Helvetica", "sans-serif";
+}
+
+p.home-card {
+  font-size: 18px;
+}
+
 /*
  * Cards Container Class
  */
@@ -97,6 +110,26 @@ h2 {
 
 [class$='feature-card'][class*='dusk'] {
   border-color: hsl(187, 22%, 31%);
+}
+
+/*
+ * Invite
+ */
+
+.invite {
+  background-color: $white; 
+  padding: 20px 47px;
+  box-shadow: 2px 5px 20px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  position: relative;
+  box-sizing: border-box;
+  height: 250px;
+  border-top: solid 5px hsl(22, 100%, 81%);
+  text-align: center;
+  justify-content: center;
+  width: 50%;
+  vertical-align: middle;
+  margin: 0 auto;
 }
 
 /*
