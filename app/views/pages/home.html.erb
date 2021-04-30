@@ -1,15 +1,27 @@
 <header>
-  <h1>Worldwide, 33% of all food goes to waste.</h1>
-  <br>
-  <h1>In Japan, 50% of all food waste comes from households.</h1>
-  <br>
-  <h1 class="intro"><strong>Pantry is a new way to reduce food waste.</strong></h1>
-  <br><br>
-  <div class="invite">
-  <br><br>
-    <h3 class="intro">We are currently in beta. Sign up to receive an invitation.</h3> 
-    <%#h1><strong><%#= link_to "Join Pantry to reduce your food waste.", new_user_session_path %></strong></h1>
-    <br><br>
+  <section class="intro-tagline">
+    <div>
+      <h1>Worldwide,</h1>
+      <h1>33% of all food </h1>
+      <h1>goes to waste.</h1>
+    </div>
+    <br>
+    <div>
+      <h1>In Japan,</h1>
+      <h1>50% of all food waste</h1>
+      <h1>comes from households.</h1>
+    </div>
+  </section>
+  <section class="logo-brand">
+    <img src="pantry-logo-pic.png" width="30%">
+    <h1>pantry</h1>
+    <h2 class="intro">a new way to reduce food waste.</h2>
+  </section>
+  <section>
+    <div class="invitation">
+      <h3>We are currently in beta</h3>
+      <h3><span id="sign-up">Sign up</span> to receive an invitation.</h3>
+    </div>
     <form action="https://send.pageclip.co/Iy0vVPmTPwzAMUKcrHfroWfa9ggtjAzY/waiting_list" class="pageclip-form" method="post">
       <div class="form-inputs">
         <!-- Email sign up form. "Name" attribute! -->
@@ -22,34 +34,38 @@
         </div>
       </div>
     </form>
-  </div>
-  <br><br>
-  <img src="pantry-logo-pic.png" width="30%">
+  </section>
 </header>
 <main>
   <ul class="cards-container">
     <li class="mint-feature-card">
-      <h1><i class="material-icons input">input</i></h1><br>
+      <h1><i class="material-icons input">input</i></h1>
+      <br>
       <p class="home-card">Add items to your Pantry by scanning the barcodes.</p>
     </li>
     <li class="leaf-feature-card">
-      <h1><i class="material-icons kitchen">kitchen</i></h1><br>
+      <h1><i class="material-icons kitchen">kitchen</i></h1>
+      <br>
       <p class="home-card">View all items in your Pantry at a glance.</p>
     </li>
     <li class="dusk-feature-card">
-      <h1><i class="material-icons">timer</i></h1><br>
+      <h1><i class="material-icons">timer</i></h1>
+      <br>
       <p class="home-card">Be notified 3 days before an item expires.</p>
     </li>
     <li class="salmon-feature-card">
-      <h1><i class="material-icons restaurant">restaurant</i></h1><br>
+      <h1><i class="material-icons restaurant">restaurant</i></h1>
+      <br>
       <p class="home-card">Find recipes for an expiring item.</p>
     </li>
     <li class="mint-feature-card">
-      <h1><i class="material-icons-outlined note_alt">note_alt</i></h1><br>
+      <h1><i class="material-icons-outlined note_alt">note_alt</i></h1>
+      <br>
       <p class="home-card">Save your favorite recipes.</p>
     </li>
     <li class="leaf-feature-card">
-      <h1><i class="fab fa-line"></i></h1><br>
+      <h1><i class="fab fa-line"></i></h1>
+      <br>
       <p class="home-card">Send your shopping list to LINE.</p>
     </li>
   </ul>
