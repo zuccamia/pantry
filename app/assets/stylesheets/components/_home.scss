@@ -36,31 +36,34 @@ header {
     color: $bright-mint;
     font-size: 2rem;
     letter-spacing: 2px;
-    font-weight: 400;
+    margin-top: 1rem;
   }
   h2 {
     color: $dark-salmon;
     font-family: $body-font;
     font-size: 1rem;
-    font-weight: 400;
-    padding: 0.5rem 6.5rem;
-    line-height: 1.3rem;
+    margin: 0.2rem;
+  }
+  .logo-tagline {
+    padding: 0.5rem;
   }
 }
+
+#mint-bold {
+    color: $bright-mint;
+    font-weight: 600;
+  }
 
 .invitation {
   margin: 1rem;
   h3 {
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     font-family: $body-font;
     color: $dark-gray;
     font-weight: 300;
   }
-  #sign-up {
-    color: $bright-mint;
-    font-weight: 600;
-  }
 }
+
 
 header > p {
   max-width: 520px;
