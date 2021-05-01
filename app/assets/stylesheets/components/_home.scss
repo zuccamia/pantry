@@ -30,8 +30,8 @@ header {
 
 .logo-brand {
   background-color: $white-mint;
-  margin: 2rem 0 !important;
-  padding: 1.2rem 0;
+  margin: 2rem 0 0 0 !important;
+  padding: 2rem 0 3rem;
   h1 {
     color: $bright-mint;
     font-size: 2rem;
@@ -47,6 +47,11 @@ header {
   .logo-tagline {
     padding: 0.5rem;
   }
+
+  img {
+    min-width: 7rem;
+    max-width: 18%;
+  }
 }
 
 #mint-bold {
@@ -55,7 +60,7 @@ header {
   }
 
 .invitation {
-  margin: 1rem;
+  padding: 3rem 0 1rem;
   h3 {
     font-size: 0.75rem;
     font-family: $body-font;
