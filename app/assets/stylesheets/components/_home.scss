@@ -1,20 +1,74 @@
 .home-background {
   background-color: $white-gray;
-  background-image: linear-gradient(154deg, #e9f2cb 0%, #e5f7f9 74%);  
+  background-image: linear-gradient(154deg, #e9f2cb 0%, #e5f7f9 74%);
 }
 
 header {
-  margin: 80px 30px 75px;
+  margin: 3rem 0 3rem;
   text-align: center;
 }
 
-header > h1 {
-  margin: 20px 0;
+// header > h1 {
+//   margin: 20px 0;
+//   font-size: 0.875rem;
+//   font-family: $body-font;
+// }
+
+// header > h1 strong {
+//   font-weight: 400;
+// }
+
+.intro-tagline {
+  h1 {
+  font-size: 0.75rem;
+  font-family: $body-font;
+  color: $dark-gray;
+  font-weight: 300;
+  }
 }
 
-header > h1 strong {
-  font-weight: 600;
+
+.logo-brand {
+  background-color: $white-mint;
+  margin: 2rem 0 0 0 !important;
+  padding: 2rem 0 3rem;
+  h1 {
+    color: $bright-mint;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    margin-top: 1rem;
+  }
+  h2 {
+    color: $dark-salmon;
+    font-family: $body-font;
+    font-size: 1rem;
+    margin: 0.2rem;
+  }
+  .logo-tagline {
+    padding: 0.5rem;
+  }
+
+  img {
+    min-width: 7rem;
+    max-width: 18%;
+  }
 }
+
+#mint-bold {
+    color: $bright-mint;
+    font-weight: 600;
+  }
+
+.invitation {
+  padding: 3rem 0 1rem;
+  h3 {
+    font-size: 0.75rem;
+    font-family: $body-font;
+    color: $dark-gray;
+    font-weight: 300;
+  }
+}
+
 
 header > p {
   max-width: 520px;
@@ -22,16 +76,16 @@ header > p {
 }
 
 @media (max-width: 443px) {
-  header > h1 { font-size: 1.6em; }
+  header > h1 { font-size: 0.875rem; }
 }
 
-h2 {
-  color: $bright-mint;
-}
+// h2 {
+//   color: $bright-mint;
+// }
 
-h1.intro {
-  color: $bright-mint;
-}
+// h1.intro {
+//   color: $bright-mint;
+// }
 
 h3.intro {
   color: $dark-gray;
@@ -117,7 +171,7 @@ p.home-card {
  */
 
 .invite {
-  background-color: $white; 
+  background-color: $white;
   padding: 20px 47px;
   box-shadow: 2px 5px 20px rgba(0,0,0,0.1);
   border-radius: 10px;
