@@ -11,7 +11,7 @@ class User < ApplicationRecord
   has_many :item_amounts, dependent: :destroy
 
   validates :first_name, presence: true, length: { minimum: 2 }
-  validates :last_name, presence: true, length: { minimum: 2 }
+
   has_one_attached :photo
 
   # Uncomment to update line_id for previously saved users without photos
@@ -24,8 +24,7 @@ class User < ApplicationRecord
       # a screenshot that shows how your app asks for consent and explains 
       # what you're using the email addresses for.
       user.password = Devise.friendly_token[0, 20]
-      user.first_name = auth.info.name.split[0]
-      user.last_name = auth.info.name.split[1]
+      user.first_name = auth.info.name
     end
   end
 
