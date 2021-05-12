@@ -28,7 +28,7 @@ gem 'redis', '~> 4.0'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
-gem 'devise'
+gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
@@ -71,3 +71,5 @@ gem 'cloudinary', '~> 1.16.0'
 gem 'openfoodfacts'
 gem 'line-bot-api'
 gem 'pundit'
+gem 'omniauth', '~> 1.9.1'
+gem 'omniauth-line', '~> 0.1.0'
