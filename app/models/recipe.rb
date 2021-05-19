@@ -7,4 +7,9 @@ class Recipe < ApplicationRecord
   acts_as_taggable_on :tags
 
   has_one_attached :photo
+
+  enum status: {
+    private: 0,
+    public: 1,
+  }, _prefix: true
 end

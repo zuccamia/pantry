@@ -88,7 +88,7 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:tag_list, :recipe_name, :summary, :instructions, :photo, recipe_amounts_attributes: [:description, :item_id, :recipe_id, :id].push(:_destroy))
+    params.require(:recipe).permit(:tag_list, :recipe_name, :summary, :instructions, :photo, :status, recipe_amounts_attributes: [:description, :item_id, :recipe_id, :id].push(:_destroy))
   end
 
   def create_shopping_list(recipe_amounts, user)
