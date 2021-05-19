@@ -34,5 +34,7 @@ Pantry was built using:
 ## Demo
 [Watch](https://www.youtube.com/watch?v=Zl-D6htsWBA&t=3765s) the original Pantry demo from Le Wagon Tokyo's Demo Day in March 2021. 
 	
-## Join
-Pantry is currently undergoing updates. [Sign up to try it in the future.](http://www.digitalpantry.me/)
+## URL
+Pantry: https://www.digitalpantry.me/ 
+
+Service available soon.
