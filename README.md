@@ -5,7 +5,7 @@
 * [Introduction](#introduction)
 * [Technologies](#technologies)
 * [Demo](#demo)
-* [Join](#join)
+* [URL](#URL)
 
 ## Introduction
 Pantry is a mobile web app that reduces household food waste by reminding you when your food will expire and offering recipes that use your expiring ingredients.
@@ -21,8 +21,8 @@ Use the camera on your smartphone as a barcode scanner to instantly add new item
 ## Technologies
 Pantry was built using:
 * Ruby on Rails 6.0
-* HTML5
-* SCSS
+* Webpack
+* SCSS/HTML
 * JavaScript
 * Heroku
 * [Scandit Barcode Scanner SDK for the Web](https://docs.scandit.com/stable/web/)
