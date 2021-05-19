@@ -24,6 +24,7 @@ Pantry was built using:
 * HTML5
 * SCSS
 * JavaScript
+* Heroku
 * [Scandit Barcode Scanner SDK for the Web](https://docs.scandit.com/stable/web/)
 * [LINE Login](https://developers.line.biz/en/services/line-login/)
 * [LINE Messaging API](https://developers.line.biz/en/services/messaging-api/)
